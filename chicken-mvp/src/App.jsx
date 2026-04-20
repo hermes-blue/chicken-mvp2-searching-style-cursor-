@@ -6,6 +6,7 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState('s0')
   const [stack, setStack] = useState([])
   const [selectedCard, setSelectedCard] = useState(null)
+  const [backPressed, setBackPressed] = useState(false)
 
   const navigate = (target) => {
     setStack(prev => [...prev, currentScreen])
@@ -29,65 +30,144 @@ export default function App() {
 
   return (
     <div style={{
-      background: '#0a0c10',
+      background: 'var(--color-bg-base)',
       minHeight: '100dvh',
       width: '100%',
       maxWidth: 390,
       margin: '0 auto',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      color: '#eee',
+      fontFamily: 'var(--font-korean)',
+      color: 'var(--color-text-primary)',
       overflowY: 'auto',
     }}>
-      <div style={{ padding: 18 }}>
+      <div style={{ padding: '56px 20px 40px' }}>
         {/* 뒤로가기 + 단계 표시 */}
         {stack.length > 0 && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
             <button
-              onClick={back}
+              onPointerDown={() => setBackPressed(true)}
+              onPointerUp={() => { setBackPressed(false); back() }}
+              onPointerLeave={() => setBackPressed(false)}
               style={{
-                background: '#1e2128', border: '0.5px solid #2e3140', borderRadius: 8,
-                color: '#aaa', fontSize: 12, padding: '6px 12px', cursor: 'pointer',
+                background: backPressed ? 'var(--color-bg-card-hover)' : 'var(--color-bg-card)',
+                border: `1px solid ${backPressed ? 'var(--color-border-hover)' : 'var(--color-border-default)'}`,
+                borderRadius: 'var(--radius-button)',
+                color: 'var(--color-text-secondary)',
+                fontFamily: 'var(--font-mono)',
+                fontSize: 11,
+                letterSpacing: '0.06em',
+                padding: '7px 14px',
+                cursor: 'pointer',
+                transform: backPressed ? 'scale(0.97)' : 'scale(1)',
+                transition: 'transform 0.12s ease, background 0.12s ease',
               }}
             >
               ← 뒤로
             </button>
             <span style={{
-              fontSize: 10, color: '#555', background: '#1e2128',
-              border: '0.5px solid #2e3140', borderRadius: 6, padding: '2px 8px',
+              fontFamily: 'var(--font-mono)',
+              fontSize: 10,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'var(--color-text-faint)',
+              background: 'var(--color-bg-card)',
+              border: '1px solid var(--color-border-default)',
+              borderRadius: 'var(--radius-badge)',
+              padding: '3px 10px',
               marginLeft: 'auto',
             }}>
-              {stack.length + 1}단계
+              Step {stack.length + 1}
             </span>
           </div>
         )}
 
         {/* 브레드크럼 */}
         {screen.breadcrumb && (
-          <p style={{ fontSize: 11, color: '#555', marginBottom: 16 }}>
-            {screen.breadcrumb[0]} › <span style={{ color: '#888' }}>{screen.breadcrumb[1]}</span>
+          <p style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 10,
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-faint)',
+            marginBottom: 20,
+          }}>
+            {screen.breadcrumb[0]} <span style={{ opacity: 0.4 }}>›</span>{' '}
+            <span style={{ color: 'var(--color-text-muted)' }}>{screen.breadcrumb[1]}</span>
           </p>
         )}
 
         {/* 브랜드명 (1단계만) */}
         {screen.brand && (
-          <p style={{ fontSize: 11, color: '#555', marginBottom: 4, letterSpacing: '.5px' }}>
+          <p style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 10,
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-faint)',
+            marginBottom: 10,
+          }}>
             {screen.brand}
           </p>
         )}
 
+        {/* 섹션 레이블 (s0에만) */}
+        {!screen.brand && !screen.breadcrumb && (
+          <p style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 11,
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: 'rgba(255,255,255,0.3)',
+            marginBottom: 8,
+            fontWeight: 500,
+          }}>
+            치킨 프랜차이즈 인텔리전스
+          </p>
+        )}
+
         {/* 제목 */}
-        <p style={{ fontSize: 20, fontWeight: 500, color: '#eee', marginBottom: 3 }}>
-          {screen.title}
-        </p>
-        <p style={{ fontSize: 12, color: '#555', marginBottom: 16 }}>
+        {!screen.brand && !screen.breadcrumb ? (
+          <h1 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 38,
+            color: 'var(--color-text-primary)',
+            letterSpacing: '-0.5px',
+            lineHeight: 1.1,
+            marginBottom: 10,
+          }}
+            dangerouslySetInnerHTML={{
+              __html: screen.title.replace('궁금해', '<span style="font-style:italic;color:#C9A365">궁금해</span>')
+            }}
+          />
+        ) : (
+          <p style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 28,
+            color: 'var(--color-text-primary)',
+            letterSpacing: '-0.5px',
+            lineHeight: 1.2,
+            marginBottom: 8,
+          }}>
+            {screen.title}
+          </p>
+        )}
+
+        {/* 서브타이틀 */}
+        <p style={{
+          fontSize: 12,
+          fontWeight: 300,
+          color: 'rgba(255,255,255,0.35)',
+          lineHeight: 1.6,
+          marginBottom: 28,
+        }}>
           {screen.sub}
         </p>
 
         {/* 카드 목록 */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {screen.cards.map((card, i) => (
             <Card
               key={i}
+              index={i}
               data={card}
               selected={selectedCard === i}
               onToggle={() => toggleCard(i)}

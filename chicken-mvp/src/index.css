@@ -1,1 +1,47 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-bg-base:       #09080A;
+  --color-bg-card:       #111010;
+  --color-bg-card-hover: #1C1B18;
+  --color-bg-subtle:     rgba(255, 255, 255, 0.04);
+
+  --color-border-default: rgba(255, 255, 255, 0.07);
+  --color-border-hover:   rgba(255, 255, 255, 0.12);
+
+  --color-text-primary:   #F5F0E8;
+  --color-text-secondary: rgba(255, 255, 255, 0.55);
+  --color-text-muted:     rgba(255, 255, 255, 0.30);
+  --color-text-faint:     rgba(255, 255, 255, 0.18);
+
+  --color-accent-gold:    #C9A365;
+  --color-accent-cyan:    #3DBFB8;
+  --color-accent-violet:  #9B7FE8;
+  --color-accent-red:     #E05A4E;
+
+  --color-accent-gold-tint:   rgba(201, 163, 101, 0.12);
+  --color-accent-cyan-tint:   rgba(61, 191, 184, 0.12);
+  --color-accent-violet-tint: rgba(155, 127, 232, 0.12);
+  --color-accent-red-tint:    rgba(224, 90, 78, 0.12);
+
+  --color-accent-gold-border:   rgba(201, 163, 101, 0.30);
+  --color-accent-cyan-border:   rgba(61, 191, 184, 0.30);
+  --color-accent-violet-border: rgba(155, 127, 232, 0.30);
+  --color-accent-red-border:    rgba(224, 90, 78, 0.30);
+
+  --font-display: "DM Serif Display", serif;
+  --font-korean:  "Noto Sans KR", sans-serif;
+  --font-mono:    "Space Grotesk", sans-serif;
+
+  --radius-card:   18px;
+  --radius-badge:  9999px;
+  --radius-button: 14px;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
