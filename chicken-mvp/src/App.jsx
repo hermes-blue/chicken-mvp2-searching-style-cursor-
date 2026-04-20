@@ -56,7 +56,7 @@ export default function App() {
               border: '0.5px solid #2e3140', borderRadius: 6, padding: '2px 8px',
               marginLeft: 'auto',
             }}>
-              2단계
+              {stack.length + 1}단계
             </span>
           </div>
         )}
