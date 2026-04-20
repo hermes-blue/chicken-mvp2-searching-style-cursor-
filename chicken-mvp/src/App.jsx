@@ -163,13 +163,15 @@ export default function App() {
         </p>
 
         {/* 카드 목록 */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: currentScreen === 's0' && selectedCard !== null ? 8 : 10 }}>
           {screen.cards.map((card, i) => (
             <Card
               key={i}
               index={i}
               data={card}
               selected={selectedCard === i}
+              anySelected={selectedCard !== null}
+              focusMode={true}
               onToggle={() => toggleCard(i)}
               onNavigate={navigate}
             />

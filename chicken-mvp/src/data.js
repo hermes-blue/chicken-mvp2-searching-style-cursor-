@@ -18,7 +18,7 @@ export const screens = {
           { label: '자금 2억+', type: 'warn' },
         ],
         text: '브랜드 파워 최강. 초기 투자금이 가장 높고, 본사 통제가 강한 편.',
-        qBtn: { label: '교촌 자세히 보기 →', target: 'sgyo0' },
+        qBtn: { label: '브랜드 최강인데 왜 2억을 써야 해?', target: 'sgyo0' },
       },
       {
         title: '비비큐(BBQ)',
@@ -33,7 +33,7 @@ export const screens = {
           { label: '로열티 부담', type: 'warn' },
         ],
         text: '글로벌 브랜드 이미지. 단가가 높아 객단가 유리하나 가격 저항도 있음.',
-        qBtn: { label: 'BBQ 자세히 보기 →', target: 'sbbq0' },
+        qBtn: { label: '비싼 치킨, 불황 오면 첫 번째로 망한다고?', target: 'sbbq0' },
       },
       {
         title: 'BHC치킨',
@@ -48,7 +48,7 @@ export const screens = {
           { label: '초보 가능', type: 'ok' },
         ],
         text: '시스템화 잘 돼있어 초보 창업자에게 진입 장벽 낮은 편.',
-        qBtn: { label: 'BHC 자세히 보기 →', target: 'sbhc0' },
+        qBtn: { label: '초보도 된다는데, 1.5억 쓰고 월 280이 전부야?', target: 'sbhc0' },
       },
       {
         title: '푸라닭치킨',
@@ -63,7 +63,7 @@ export const screens = {
           { label: '소자본 창업', type: 'ok' },
         ],
         text: '초기 투자 부담이 상대적으로 낮아 소자본 창업자에게 주목받는 브랜드.',
-        qBtn: { label: '푸라닭 자세히 보기 →', target: 'spura0' },
+        qBtn: { label: '1억으로 치킨집, 진짜 될까?', target: 'spura0' },
       },
     ],
   },
@@ -75,6 +75,7 @@ export const screens = {
     cards: [
       {
         title: '해볼 만할까?',
+        brandKey: 'BHC치킨',
         hint: '솔직한 한 줄 평가',
         val: '중상',
         valColor: 'yellow',
@@ -90,6 +91,7 @@ export const screens = {
       },
       {
         title: '얼마 드나?',
+        brandKey: 'BHC치킨',
         hint: '초기 투자 현실적으로',
         val: '1억 5천',
         valColor: 'red',
@@ -105,6 +107,7 @@ export const screens = {
       },
       {
         title: '얼마 남나?',
+        brandKey: 'BHC치킨',
         hint: '한 달 실제 순이익',
         val: '약 280만',
         valColor: 'yellow',
@@ -120,6 +123,7 @@ export const screens = {
       },
       {
         title: '어디서 망하나?',
+        brandKey: 'BHC치킨',
         hint: '폐업 패턴 분석',
         val: '입지 1위',
         valColor: 'red',
@@ -399,6 +403,7 @@ export const screens = {
     cards: [
       {
         title: '해볼 만할까?',
+        brandKey: '교촌치킨',
         hint: '솔직한 한 줄 평가',
         val: '중상',
         valColor: 'yellow',
@@ -414,6 +419,7 @@ export const screens = {
       },
       {
         title: '얼마 드나?',
+        brandKey: '교촌치킨',
         hint: '초기 투자 현실적으로',
         val: '2억 이상',
         valColor: 'red',
@@ -429,6 +435,7 @@ export const screens = {
       },
       {
         title: '얼마 남나?',
+        brandKey: '교촌치킨',
         hint: '한 달 실제 순이익',
         val: '약 320만',
         valColor: 'yellow',
@@ -444,6 +451,7 @@ export const screens = {
       },
       {
         title: '어디서 망하나?',
+        brandKey: '교촌치킨',
         hint: '폐업 패턴 분석',
         val: '자금 1위',
         valColor: 'red',
@@ -724,6 +732,7 @@ export const screens = {
     cards: [
       {
         title: '해볼 만할까?',
+        brandKey: '비비큐(BBQ)',
         hint: '솔직한 한 줄 평가',
         val: '중상',
         valColor: 'yellow',
@@ -739,6 +748,7 @@ export const screens = {
       },
       {
         title: '얼마 드나?',
+        brandKey: '비비큐(BBQ)',
         hint: '초기 투자 현실적으로',
         val: '2억 내외',
         valColor: 'red',
@@ -754,6 +764,7 @@ export const screens = {
       },
       {
         title: '얼마 남나?',
+        brandKey: '비비큐(BBQ)',
         hint: '한 달 실제 순이익',
         val: '약 340만',
         valColor: 'yellow',
@@ -769,6 +780,7 @@ export const screens = {
       },
       {
         title: '어디서 망하나?',
+        brandKey: '비비큐(BBQ)',
         hint: '폐업 패턴 분석',
         val: '가격저항 1위',
         valColor: 'red',
@@ -792,6 +804,7 @@ export const screens = {
     cards: [
       {
         title: '해볼 만할까?',
+        brandKey: '푸라닭치킨',
         hint: '솔직한 한 줄 평가',
         val: '중',
         valColor: 'yellow',
@@ -807,6 +820,7 @@ export const screens = {
       },
       {
         title: '얼마 드나?',
+        brandKey: '푸라닭치킨',
         hint: '초기 투자 현실적으로',
         val: '1억 내외',
         valColor: 'yellow',
@@ -822,6 +836,7 @@ export const screens = {
       },
       {
         title: '얼마 남나?',
+        brandKey: '푸라닭치킨',
         hint: '한 달 실제 순이익',
         val: '약 220만',
         valColor: 'yellow',
@@ -837,6 +852,7 @@ export const screens = {
       },
       {
         title: '어디서 망하나?',
+        brandKey: '푸라닭치킨',
         hint: '폐업 패턴 분석',
         val: '집객 1위',
         valColor: 'red',
