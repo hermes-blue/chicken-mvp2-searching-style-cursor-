@@ -6,6 +6,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  background: #09080A;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --color-bg-base:       #09080A;
   --color-bg-card:       #111010;
