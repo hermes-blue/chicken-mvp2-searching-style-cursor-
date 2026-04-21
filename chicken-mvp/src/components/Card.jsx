@@ -774,20 +774,18 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
             onPointerDown={(e) => { e.stopPropagation(); setBtnPressed(true) }}
             onPointerUp={(e) => { e.stopPropagation(); setBtnPressed(false); if (data.qBtn.target) onNavigate(data.qBtn.target) }}
             onPointerLeave={(e) => { e.stopPropagation(); setBtnPressed(false) }}
+            className="cta-pulse"
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              width: '100%', background: ac.color, border: 'none', borderRadius: 14,
+              width: '100%', background: '#E8D5B0', border: 'none', borderRadius: 14,
               padding: '14px 18px', fontFamily: 'var(--font-korean)',
               fontSize: 13, fontWeight: 900, color: '#0A0907', cursor: 'pointer',
-              transform: btnPressed ? 'scale(0.97)' : 'scale(1)',
-              transition: 'transform 0.12s ease, opacity 0.12s ease',
+              animationPlayState: btnPressed ? 'paused' : 'running',
               opacity: btnPressed ? 0.85 : 1,
+              transition: 'opacity 0.12s ease',
             }}
           >
             <span>{data.qBtn.label}</span>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-              <path d="M1 7h12M7 1l6 6-6 6" stroke="#0A0907" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </button>
         )}
       </div>

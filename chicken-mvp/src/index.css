@@ -56,3 +56,34 @@ html, body {
   from { width: 0%; }
   to   { width: var(--bar-w); }
 }
+
+@keyframes ctaPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ctaShine {
+  0%   { left: -120%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { left: 160%; opacity: 0; }
+}
+
+.cta-pulse {
+  position: relative;
+  overflow: hidden;
+  animation: ctaPulse 2.0s ease-in-out infinite;
+}
+
+.cta-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  animation: ctaShine 3s ease-in-out infinite;
+  pointer-events: none;
+}
