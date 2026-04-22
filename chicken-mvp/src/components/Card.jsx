@@ -101,6 +101,25 @@ function extractRevenue(label = '') {
   return m ? parseInt(m[1]) : 1300
 }
 
+// ── insight 점 2개 렌더링 ─────────────────────────────────────
+const INSIGHT_DOT = { teal: '#3DBFB8', gold: '#C9A365' }
+
+function InsightList({ insights, text }) {
+  if (Array.isArray(insights) && insights.length) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+        {insights.map((item, i) => (
+          <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+            <div style={{ width: 6, height: 6, borderRadius: '50%', background: INSIGHT_DOT[item.dot] ?? '#9B7FE8', flexShrink: 0, marginTop: 4 }} />
+            <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{item.text}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  return <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>{text}</p>
+}
+
 // ── 바 공통 ───────────────────────────────────────────────────
 function Bar({ pct, color, delay = 0, ready, height = 5 }) {
   return (
@@ -761,9 +780,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
 
         {/* insight */}
         <div style={{ padding: '11px 13px', borderRadius: 12, background: 'rgba(255,255,255,0.04)' }}>
-          <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>
-            {data.text}
-          </p>
+          <InsightList insights={data.insights} text={data.text} />
         </div>
       </div>
 
@@ -865,7 +882,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
           </div>
           <div style={{ paddingTop: 10 }}>
             <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.04)', marginBottom: 10 }}>
-              <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>{text}</p>
+              <InsightList insights={data.insights} text={text} />
             </div>
             {qBtn && (
               <button

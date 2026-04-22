@@ -17,7 +17,10 @@ export const screens = {
           { label: '가맹비 높음', type: 'warn' },
           { label: '자금 2억+', type: 'warn' },
         ],
-        text: '브랜드 파워 최강. 초기 투자금이 가장 높고, 본사 통제가 강한 편.',
+        insights: [
+          { dot: 'teal', text: '1위 브랜드, 간판이 손님 데려와요.' },
+          { dot: 'gold', text: '2억 넘게 써야 시작할 수 있어요.' },
+        ],
         qBtn: { label: '브랜드 최강인데 왜 2억을 써야 해?', target: 'sgyo0' },
       },
       {
@@ -32,7 +35,10 @@ export const screens = {
           { label: '가격 프리미엄', type: 'neu' },
           { label: '로열티 부담', type: 'warn' },
         ],
-        text: '글로벌 브랜드 이미지. 단가가 높아 객단가 유리하나 가격 저항도 있음.',
+        insights: [
+          { dot: 'teal', text: '50개국 나간 이름, 손님이 알아서 와요.' },
+          { dot: 'gold', text: '마리 2만 원대, 잘 팔리지만 눈치 봐요.' },
+        ],
         qBtn: { label: '비싼 치킨, 불황 오면 첫 번째로 망한다고?', target: 'sbbq0' },
       },
       {
@@ -47,7 +53,10 @@ export const screens = {
           { label: '자금 1.5억+', type: 'warn' },
           { label: '초보 가능', type: 'ok' },
         ],
-        text: '시스템화 잘 돼있어 초보 창업자에게 진입 장벽 낮은 편.',
+        insights: [
+          { dot: 'teal', text: '매뉴얼 잘 돼있어 처음도 할 수 있어요.' },
+          { dot: 'gold', text: '1.5억 써야 해요. 3개월이 고비예요.' },
+        ],
         qBtn: { label: '초보도 된다는데, 1.5억 쓰고 월 280이 전부야?', target: 'sbhc0' },
       },
       {
@@ -62,7 +71,10 @@ export const screens = {
           { label: '브랜드 인지도↓', type: 'warn' },
           { label: '소자본 창업', type: 'ok' },
         ],
-        text: '초기 투자 부담이 상대적으로 낮아 소자본 창업자에게 주목받는 브랜드.',
+        insights: [
+          { dot: 'teal', text: '1억 미만으로 시작할 수 있어요.' },
+          { dot: 'gold', text: '이름이 약해서 손님을 직접 모아야 해요.' },
+        ],
         qBtn: { label: '1억으로 치킨집, 진짜 될까?', target: 'spura0' },
       },
     ],
@@ -86,7 +98,10 @@ export const screens = {
           { label: '자금 1.5억+', type: 'warn' },
           { label: '브랜드 3위', type: 'neu' },
         ],
-        text: '시스템화 잘 돼있어 배우기 쉽지만, 준비금 2억 미만이면 3개월 위기.',
+        insights: [
+          { dot: 'teal', text: '초보도 배워서 할 수 있는 구조예요.' },
+          { dot: 'gold', text: '2억 못 채우면 3개월이 고비예요.' },
+        ],
         qBtn: { label: '3개월 안에 위기 온다는데, 진짜야? →', target: 's1' },
       },
       {
@@ -102,7 +117,10 @@ export const screens = {
           { label: '인테리어 6.5천', type: 'warn' },
           { label: '예비금 별도', type: 'warn' },
         ],
-        text: '공개 금액 외 보증금·예비금 3천 추가. 인테리어 본사 지정업체 강제.',
+        insights: [
+          { dot: 'teal', text: '총 1.5억, 공개된 금액이에요.' },
+          { dot: 'gold', text: '보증금·예비금 더하면 2억 돼요.' },
+        ],
         qBtn: { label: '1억 5천인데 왜 2억이 필요하다고? →', target: 's5' },
       },
       {
@@ -118,7 +136,10 @@ export const screens = {
           { label: '인건비 -250만', type: 'warn' },
           { label: '임대료 -150만', type: 'warn' },
         ],
-        text: '재료비 38%는 절감 불가 고정 구조. 직원 2명이면 100만대로 급락.',
+        insights: [
+          { dot: 'teal', text: '잘 되면 한 달에 280만 남아요.' },
+          { dot: 'gold', text: '직원 한 명 더 쓰면 100만대예요.' },
+        ],
         qBtn: { label: '열심히 해도 월 280이 전부야? →', target: 's9' },
       },
       {
@@ -134,7 +155,10 @@ export const screens = {
           { label: '자금 31%', type: 'warn' },
           { label: '본사갈등 18%', type: 'neu' },
         ],
-        text: '배달 상권인데 홀 인테리어로 갔다가 망한 케이스 다수.',
+        insights: [
+          { dot: 'teal', text: '망하는 이유 1위는 자리예요.' },
+          { dot: 'gold', text: '오픈 3~6개월이 가장 위험해요.' },
+        ],
         qBtn: { label: '10명 중 3명이 망한다고? →', target: 's13' },
       },
     ],
@@ -156,7 +180,10 @@ export const screens = {
           { label: '자연 집객 가능', type: 'ok' },
           { label: '로열티 2~3%', type: 'warn' },
         ],
-        text: 'TV 광고 연 200억+ 투자. 오픈 초기 집객 빠름.',
+        insights: [
+          { dot: 'teal', text: 'TV에 자주 나와서 이름을 알아요.' },
+          { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
+        ],
         qBtn: { label: '브랜드 좋은데 왜 30%가 망해? →', target: 's13' },
       },
       {
@@ -170,7 +197,10 @@ export const screens = {
           { label: '레시피 표준화', type: 'ok' },
           { label: '1인 운영 불가', type: 'warn' },
         ],
-        text: '3주 교육 후 운영 가능. 단 1인은 물리적으로 불가.',
+        insights: [
+          { dot: 'teal', text: '3주 교육 받으면 혼자 돌려요.' },
+          { dot: 'gold', text: '사람 없이 혼자는 못 해요.' },
+        ],
         qBtn: { label: '쉽다더니 왜 혼자는 못 하나? →', target: 's9' },
       },
       {
@@ -184,7 +214,10 @@ export const screens = {
           { label: '동일브랜드 500m 보호', type: 'ok' },
           { label: '타브랜드 무제한', type: 'warn' },
         ],
-        text: '같은 BHC는 500m 보호. 교촌·BBQ는 바로 옆도 가능.',
+        insights: [
+          { dot: 'teal', text: '같은 BHC는 500m 안에 못 열어요.' },
+          { dot: 'gold', text: '교촌·BBQ는 바로 옆도 가능해요.' },
+        ],
         qBtn: { label: '치킨집이 편의점보다 많다고? →', target: 's13' },
       },
       {
@@ -198,7 +231,10 @@ export const screens = {
           { label: '입지 실패 1위', type: 'warn' },
           { label: '자금 소진 2위', type: 'warn' },
         ],
-        text: '사전 준비가 생존을 결정. 예비금 3천, 유동인구 3회 조사 최소.',
+        insights: [
+          { dot: 'teal', text: '사전 준비가 생존을 결정해요.' },
+          { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
+        ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 's13' },
       },
     ],
@@ -220,7 +256,10 @@ export const screens = {
           { label: '교촌보다 100만 저렴', type: 'neu' },
           { label: '환불 조건 까다로움', type: 'warn' },
         ],
-        text: '1개월 내 일부 환불만 가능. 서명 전 특약 조항 필수 확인.',
+        insights: [
+          { dot: 'teal', text: '900만 원, 3사 중 가장 싸요.' },
+          { dot: 'gold', text: '한 달 안에만 일부 돌려받아요.' },
+        ],
         qBtn: { label: '계약 취소하면 돈 돌려받을 수 있어? →', target: 's13' },
       },
       {
@@ -234,7 +273,10 @@ export const screens = {
           { label: '본사 마진 20~30%', type: 'warn' },
           { label: '직접 업체 불가', type: 'warn' },
         ],
-        text: '일반 인테리어 대비 과도하게 비쌈. 5년 후 리모델링 또 발생.',
+        insights: [
+          { dot: 'teal', text: '20평 기준 6,500만 원이에요.' },
+          { dot: 'gold', text: '본사 업체만 써야 해요. 직접 못 해요.' },
+        ],
         qBtn: { label: '6,500에 본사 마진 30%가 포함됐다고? →', target: 's13' },
       },
       {
@@ -248,7 +290,10 @@ export const screens = {
           { label: '튀김기 3년 교체', type: 'warn' },
           { label: 'POS 300만', type: 'neu' },
         ],
-        text: '튀김기 1,200만이 핵심. 3년 후 교체 비용 또 발생 예정.',
+        insights: [
+          { dot: 'teal', text: '튀김기·냉장·POS 포함 4,800만이에요.' },
+          { dot: 'gold', text: '튀김기는 3년 되면 또 사야 해요.' },
+        ],
         qBtn: { label: '3년마다 또 수천만이 나간다고? →', target: 's9' },
       },
       {
@@ -262,7 +307,10 @@ export const screens = {
           { label: '보증금 2,500만~', type: 'warn' },
           { label: '예비금 3,000만', type: 'warn' },
         ],
-        text: '공개 금액만 준비하면 오픈 3개월 내 자금 부족 위기.',
+        insights: [
+          { dot: 'teal', text: '공개 금액 외에 5,500만 더 필요해요.' },
+          { dot: 'gold', text: '이 돈 없으면 3개월에 바닥나요.' },
+        ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 's13' },
       },
     ],
@@ -284,7 +332,10 @@ export const screens = {
           { label: '절감 여지 없음', type: 'warn' },
           { label: '매출 줄어도 고정', type: 'warn' },
         ],
-        text: '본사 공급 85%. 닭고기 단가 마리당 4,200원 고정.',
+        insights: [
+          { dot: 'teal', text: '매출의 38%, 줄일 방법이 없어요.' },
+          { dot: 'gold', text: '본사에서 85% 사야 해서 고정이에요.' },
+        ],
         qBtn: { label: '본사가 단가 올리면 내가 다 떠안아? →', target: 's13' },
       },
       {
@@ -298,7 +349,10 @@ export const screens = {
           { label: '1인 운영 불가', type: 'warn' },
           { label: '매년 상승', type: 'warn' },
         ],
-        text: '최저임금 인상으로 매년 오르는 구조. 주말 알바 포함 시 330만 넘을 수 있음.',
+        insights: [
+          { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
+          { dot: 'gold', text: '최저임금 오를 때마다 같이 올라요.' },
+        ],
         qBtn: { label: '혼자 다 하면 1~2년 안에 번아웃 온다고? →', target: 's13' },
       },
       {
@@ -312,7 +366,10 @@ export const screens = {
           { label: '200만 되면 반토막', type: 'warn' },
           { label: '권리금 별도', type: 'warn' },
         ],
-        text: '임대료는 계약 후 조정 불가. 손익분기 매출 1,050만 기준.',
+        insights: [
+          { dot: 'teal', text: '월 1,050만 매출이 손익 기준이에요.' },
+          { dot: 'gold', text: '임대료 50만 차이가 순이익 반 날려요.' },
+        ],
         qBtn: { label: '임대 50만 차이가 순이익을 반으로 만든다고? →', target: 's13' },
       },
       {
@@ -326,7 +383,10 @@ export const screens = {
           { label: '직원 2명 → 100만대', type: 'warn' },
           { label: '매출 1,500만 → 420만', type: 'neu' },
         ],
-        text: '매출 200만만 더 올리면 순이익 50% 상승. 배달 비율이 핵심.',
+        insights: [
+          { dot: 'teal', text: '매출 200만 올리면 순이익 50% 올라요.' },
+          { dot: 'gold', text: '직원 한 명 더 쓰면 100만대로 줄어요.' },
+        ],
         qBtn: { label: '직원 한 명 더 쓰면 남는 게 없다고? →', target: 's13' },
       },
     ],
@@ -348,7 +408,10 @@ export const screens = {
           { label: '배달vs홀 미스매치', type: 'warn' },
           { label: '조사 최소 3회', type: 'warn' },
         ],
-        text: '배달 상권인데 홀 인테리어. 평일·주말·저녁 유동인구 직접 조사 필수.',
+        insights: [
+          { dot: 'teal', text: '망하는 이유 1위, 자리 잘못 잡은 거예요.' },
+          { dot: 'gold', text: '배달 상권에 홀 인테리어하면 망해요.' },
+        ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 's1' },
       },
       {
@@ -362,7 +425,10 @@ export const screens = {
           { label: '예비금 3천 필수', type: 'warn' },
           { label: '대출이자 포함 계획', type: 'warn' },
         ],
-        text: '손익분기점 보통 4~6개월. 예비금 없으면 빠르게 악화.',
+        insights: [
+          { dot: 'teal', text: '오픈 1~2개월은 손님이 몰려요.' },
+          { dot: 'gold', text: '3~4개월차에 돈이 제일 많이 나가요.' },
+        ],
         qBtn: { label: '3개월 버티는 데 돈이 얼마나 필요해? →', target: 's5' },
       },
       {
@@ -376,7 +442,10 @@ export const screens = {
           { label: '단가 연 2~5% 강제 인상', type: 'warn' },
           { label: '해지 조건 까다로움', type: 'warn' },
         ],
-        text: '메뉴 강제 변경, 단가 인상 거부 불가. 해지 시 위약금 수천만.',
+        insights: [
+          { dot: 'teal', text: '메뉴·가격 다 본사가 정해요.' },
+          { dot: 'gold', text: '나가고 싶어도 위약금이 수천만이에요.' },
+        ],
         qBtn: { label: '그만두고 싶어도 못 나온다고? →', target: 's5' },
       },
       {
@@ -390,7 +459,10 @@ export const screens = {
           { label: '1인 운영 시 고위험', type: 'warn' },
           { label: '1~2년 내 한계', type: 'neu' },
         ],
-        text: '인력 계획 없으면 1~2년 내 체력·정신 한계 도달.',
+        insights: [
+          { dot: 'teal', text: '치킨은 주 7일, 하루 12시간이에요.' },
+          { dot: 'gold', text: '1~2년차에 체력 한계 오는 경우 많아요.' },
+        ],
         qBtn: { label: '월 280 벌려고 주 7일 일하는 거 맞아? →', target: 's9' },
       },
     ],
@@ -414,7 +486,10 @@ export const screens = {
           { label: '자금 2억+', type: 'warn' },
           { label: '본사 통제 강함', type: 'warn' },
         ],
-        text: '브랜드 파워는 업계 최강이나 초기 투자금 부담이 크고 본사 규정이 엄격한 편.',
+        insights: [
+          { dot: 'teal', text: '업계 1위, 이름 하나는 최강이에요.' },
+          { dot: 'gold', text: '2억 넘게 쓰고 본사 규정도 빡빡해요.' },
+        ],
         qBtn: { label: '브랜드 1위인데 왜 통제가 강하다고? →', target: 'sgyo1' },
       },
       {
@@ -430,7 +505,10 @@ export const screens = {
           { label: '인테리어 8천+', type: 'warn' },
           { label: '예비금 별도', type: 'warn' },
         ],
-        text: '교촌은 3대 브랜드 중 초기 투자비가 가장 높음. 인테리어 단가 업계 최고 수준.',
+        insights: [
+          { dot: 'teal', text: '총 2억~2.5억, 3사 중 가장 비싸요.' },
+          { dot: 'gold', text: '공개 금액 외 숨겨진 비용이 꽤 있어요.' },
+        ],
         qBtn: { label: '왜 교촌이 가장 비싼 거야? →', target: 'sgyo5' },
       },
       {
@@ -446,7 +524,10 @@ export const screens = {
           { label: '인건비 -250만', type: 'warn' },
           { label: '임대료 -150만', type: 'warn' },
         ],
-        text: '객단가가 높아 매출 규모는 크지만 재료비·로열티 비율도 높아 실질 마진은 제한적.',
+        insights: [
+          { dot: 'teal', text: '잘 되면 한 달에 320만 남아요.' },
+          { dot: 'gold', text: '재료비·로열티 비율 높아 실속이 적어요.' },
+        ],
         qBtn: { label: '객단가 높은데 왜 순이익이 별로야? →', target: 'sgyo9' },
       },
       {
@@ -462,7 +543,10 @@ export const screens = {
           { label: '입지 33%', type: 'warn' },
           { label: '본사갈등 20%', type: 'neu' },
         ],
-        text: '초기 투자금이 크기 때문에 손익분기점 도달 전 자금 소진이 가장 큰 위험 요인.',
+        insights: [
+          { dot: 'teal', text: '자금 소진이 망하는 이유 1위예요.' },
+          { dot: 'gold', text: '2억 쓰고 손익분기 전에 바닥나요.' },
+        ],
         qBtn: { label: '2억 넘게 쓰고 망하면 얼마나 날아가? →', target: 'sgyo13' },
       },
     ],
@@ -484,7 +568,10 @@ export const screens = {
           { label: '자연 집객 최강', type: 'ok' },
           { label: '로열티 2%', type: 'warn' },
         ],
-        text: '간장·허니콤보 시리즈로 고정 팬층 두터움. 오픈 초기 집객 속도 3사 중 가장 빠름.',
+        insights: [
+          { dot: 'teal', text: '인지도 99%, 간장치킨 하면 교촌이에요.' },
+          { dot: 'gold', text: '로열티가 매달 2% 빠져나가요.' },
+        ],
         qBtn: { label: '브랜드 최강인데 왜 비용도 최강이야? →', target: 'sgyo5' },
       },
       {
@@ -499,7 +586,10 @@ export const screens = {
           { label: '메뉴 수 많음', type: 'warn' },
           { label: '1인 운영 불가', type: 'warn' },
         ],
-        text: '간장소스 계열 메뉴가 많아 BHC보다 숙련 시간이 더 걸림. 4주 교육 필수.',
+        insights: [
+          { dot: 'teal', text: '4주 교육 받으면 혼자 돌려요.' },
+          { dot: 'gold', text: '메뉴가 많아서 BHC보다 배울 게 많아요.' },
+        ],
         qBtn: { label: '메뉴 많으면 운영이 얼마나 힘들어? →', target: 'sgyo9' },
       },
       {
@@ -513,7 +603,10 @@ export const screens = {
           { label: '동일브랜드 500m 보호', type: 'ok' },
           { label: '타브랜드 무제한', type: 'warn' },
         ],
-        text: '교촌 간 500m 보호 존재. 그러나 BBQ·BHC·푸라닭은 바로 옆 입점 가능.',
+        insights: [
+          { dot: 'teal', text: '같은 교촌은 500m 안에 못 열어요.' },
+          { dot: 'gold', text: 'BBQ·BHC는 바로 옆도 가능해요.' },
+        ],
         qBtn: { label: '보호구역 있어도 경쟁 심하다고? →', target: 'sgyo13' },
       },
       {
@@ -527,7 +620,10 @@ export const screens = {
           { label: '자금 소진 1위', type: 'warn' },
           { label: '입지 실패 2위', type: 'warn' },
         ],
-        text: '초기 투자금이 크기 때문에 손익분기 전에 자금 소진되는 케이스 다수.',
+        insights: [
+          { dot: 'teal', text: '사전 준비가 생존을 결정해요.' },
+          { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
+        ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'sgyo13' },
       },
     ],
@@ -549,7 +645,10 @@ export const screens = {
           { label: 'BHC보다 100만 비쌈', type: 'warn' },
           { label: '환불 조건 까다로움', type: 'warn' },
         ],
-        text: '3대 브랜드 중 가맹비 중간 수준. 단 교육비 200만 별도 청구.',
+        insights: [
+          { dot: 'teal', text: '1,000만 원, 교육비 200만 별도예요.' },
+          { dot: 'gold', text: '1개월 지나면 못 돌려받아요.' },
+        ],
         qBtn: { label: '교육비가 왜 따로 있어? →', target: 'sgyo13' },
       },
       {
@@ -563,7 +662,10 @@ export const screens = {
           { label: '본사 마진 25~35%', type: 'warn' },
           { label: '직접 업체 불가', type: 'warn' },
         ],
-        text: 'BHC보다 500만 이상 비쌈. 브랜드 아이덴티티 유지 명목으로 업체 선택 불가.',
+        insights: [
+          { dot: 'teal', text: '20평 기준 7,000만 원이에요.' },
+          { dot: 'gold', text: '본사 업체만 써야 해요. 직접 못 해요.' },
+        ],
         qBtn: { label: '왜 직접 업체 쓰면 안 돼? →', target: 'sgyo13' },
       },
       {
@@ -577,7 +679,10 @@ export const screens = {
           { label: '튀김기 3년 교체', type: 'warn' },
           { label: 'POS 350만', type: 'neu' },
         ],
-        text: '소스 전용 냉장설비 추가로 BHC 대비 200만 높음. 3년 후 교체비 또 발생.',
+        insights: [
+          { dot: 'teal', text: '튀김기·냉장·POS 포함 5,000만이에요.' },
+          { dot: 'gold', text: '소스 냉장고 따로 있어 BHC보다 비싸요.' },
+        ],
         qBtn: { label: '3년마다 또 수천만이 나간다고? →', target: 'sgyo9' },
       },
       {
@@ -591,7 +696,10 @@ export const screens = {
           { label: '보증금 2,500만~', type: 'warn' },
           { label: '예비금 3,000만', type: 'warn' },
         ],
-        text: '공개 금액만 보고 2억 준비했다가 오픈 후 3개월에 자금 위기 오는 패턴.',
+        insights: [
+          { dot: 'teal', text: '공개 금액 외에 5,500만 더 필요해요.' },
+          { dot: 'gold', text: '2억만 보고 시작하면 3개월에 위기 와요.' },
+        ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 'sgyo13' },
       },
     ],
@@ -613,7 +721,10 @@ export const screens = {
           { label: '절감 여지 없음', type: 'warn' },
           { label: '매출 줄어도 고정', type: 'warn' },
         ],
-        text: '본사 공급 비율 90%로 BHC보다 높음. 닭고기 단가 마리당 4,500원 고정.',
+        insights: [
+          { dot: 'teal', text: '매출의 40%, 본사에서 90% 사야 해요.' },
+          { dot: 'gold', text: '닭값 올라도 내가 그대로 써야 해요.' },
+        ],
         qBtn: { label: '본사 공급 90%면 내 마음대로 못 해? →', target: 'sgyo13' },
       },
       {
@@ -627,7 +738,10 @@ export const screens = {
           { label: '1인 운영 불가', type: 'warn' },
           { label: '매년 상승', type: 'warn' },
         ],
-        text: '메뉴 복잡도가 높아 숙련 직원이 필요. 알바 교체 시 재교육 비용도 발생.',
+        insights: [
+          { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
+          { dot: 'gold', text: '메뉴 복잡해서 숙련된 직원이 필요해요.' },
+        ],
         qBtn: { label: '메뉴 복잡해서 알바 구하기 어렵다고? →', target: 'sgyo13' },
       },
       {
@@ -641,7 +755,10 @@ export const screens = {
           { label: '200만 되면 반토막', type: 'warn' },
           { label: '권리금 별도', type: 'warn' },
         ],
-        text: '브랜드 파워로 A급 상권 입점 욕구 높지만 임대료 오르면 수익 급감.',
+        insights: [
+          { dot: 'teal', text: 'A급 상권 들어가고 싶은 브랜드예요.' },
+          { dot: 'gold', text: '임대료 오르면 순이익이 바로 줄어요.' },
+        ],
         qBtn: { label: '좋은 상권 들어가면 임대료가 얼마야? →', target: 'sgyo13' },
       },
       {
@@ -655,7 +772,10 @@ export const screens = {
           { label: '직원 2명 → 130만대', type: 'warn' },
           { label: '매출 1,600만 → 460만', type: 'neu' },
         ],
-        text: '매출이 300만 오르면 순이익 44% 상승. 배달 비율·점심 매출 확보가 핵심.',
+        insights: [
+          { dot: 'teal', text: '매출 300만 올리면 순이익 44% 올라요.' },
+          { dot: 'gold', text: '직원 한 명 더 쓰면 130만대로 줄어요.' },
+        ],
         qBtn: { label: '월 320이면 투자금 회수에 몇 년 걸려? →', target: 'sgyo5' },
       },
     ],
@@ -677,7 +797,10 @@ export const screens = {
           { label: '예비금 3천 필수', type: 'warn' },
           { label: '손익분기 5~7개월', type: 'warn' },
         ],
-        text: '2억+ 투자 후 손익분기 전에 예비금 소진. 대출이자까지 포함하면 빠르게 악화.',
+        insights: [
+          { dot: 'teal', text: '망하는 이유 1위, 돈 먼저 바닥나요.' },
+          { dot: 'gold', text: '2억 쓰고 손익분기에 5~7개월 걸려요.' },
+        ],
         qBtn: { label: '손익분기까지 버티는 게 왜 이렇게 힘들어? →', target: 'sgyo5' },
       },
       {
@@ -691,7 +814,10 @@ export const screens = {
           { label: '배달vs홀 미스매치', type: 'warn' },
           { label: '조사 최소 3회', type: 'warn' },
         ],
-        text: '교촌은 홀 매출 비중이 높아 유동인구 분석이 특히 중요. 배달 전용 상권에 홀 인테리어하면 망함.',
+        insights: [
+          { dot: 'teal', text: '홀 손님 비중이 높은 브랜드예요.' },
+          { dot: 'gold', text: '배달 상권에 홀 인테리어하면 망해요.' },
+        ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'sgyo1' },
       },
       {
@@ -705,7 +831,10 @@ export const screens = {
           { label: '단가 연 3~5% 강제 인상', type: 'warn' },
           { label: '메뉴 강제 변경', type: 'warn' },
         ],
-        text: '본사 통제가 3사 중 가장 강함. 메뉴·가격·인테리어 모두 본사 결정. 거부 불가.',
+        insights: [
+          { dot: 'teal', text: '3사 중 본사 규정이 가장 빡빡해요.' },
+          { dot: 'gold', text: '나가고 싶어도 위약금이 수천만이에요.' },
+        ],
         qBtn: { label: '그만두고 싶어도 못 나온다고? →', target: 'sgyo5' },
       },
       {
@@ -719,7 +848,10 @@ export const screens = {
           { label: '1인 운영 시 고위험', type: 'warn' },
           { label: '1~2년 내 한계', type: 'neu' },
         ],
-        text: '메뉴 복잡도 높아 직원 없이 혼자 운영 시 BHC보다 체력 소모 큼.',
+        insights: [
+          { dot: 'teal', text: '메뉴 많아서 BHC보다 몸이 더 힘들어요.' },
+          { dot: 'gold', text: '1~2년차에 체력 한계 오는 경우 많아요.' },
+        ],
         qBtn: { label: '월 320 벌려고 주 7일 일하는 거 맞아? →', target: 'sgyo9' },
       },
     ],
@@ -743,7 +875,10 @@ export const screens = {
           { label: '자금 2억+', type: 'warn' },
           { label: '객단가 높음', type: 'neu' },
         ],
-        text: '프리미엄 포지셔닝으로 객단가는 높지만 초기 투자와 로열티 부담이 큰 구조.',
+        insights: [
+          { dot: 'teal', text: '해외까지 나간 이름, 브랜드가 불러요.' },
+          { dot: 'gold', text: '초기비용 높고 로열티 부담도 있어요.' },
+        ],
         qBtn: { label: '프리미엄인데 왜 로열티가 부담이야? →', target: 'sbbq1' },
       },
       {
@@ -759,7 +894,10 @@ export const screens = {
           { label: '인테리어 9천+', type: 'warn' },
           { label: '예비금 별도', type: 'warn' },
         ],
-        text: '3대 브랜드 중 가맹비 최고 수준. 인테리어도 프리미엄 기준 적용.',
+        insights: [
+          { dot: 'teal', text: '총 1.9억~2.5억이에요.' },
+          { dot: 'gold', text: '가맹비가 3사 중 제일 비싸요.' },
+        ],
         qBtn: { label: '가맹비 1,500만이면 얼마나 비싼 거야? →', target: 'sbbq5' },
       },
       {
@@ -775,7 +913,10 @@ export const screens = {
           { label: '인건비 -250만', type: 'warn' },
           { label: '로열티 -42만', type: 'warn' },
         ],
-        text: '단가 높아 매출은 크지만 재료비·로열티 합산 비율이 높아 실수령은 생각보다 낮음.',
+        insights: [
+          { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
+          { dot: 'gold', text: '재료비·로열티 합치면 실속이 적어요.' },
+        ],
         qBtn: { label: '매출 1,400인데 순이익이 340뿐이야? →', target: 'sbbq9' },
       },
       {
@@ -791,7 +932,10 @@ export const screens = {
           { label: '입지 31%', type: 'warn' },
           { label: '자금소진 25%', type: 'warn' },
         ],
-        text: '경기 불황기에 프리미엄 가격 저항으로 매출 급감 리스크. 상권 선택이 핵심.',
+        insights: [
+          { dot: 'teal', text: '비싼 상품이라 경기에 민감해요.' },
+          { dot: 'gold', text: '불황 오면 BBQ부터 안 시켜요.' },
+        ],
         qBtn: { label: '비싼 치킨 안 팔리면 어떻게 돼? →', target: 'sbbq13' },
       },
     ],
@@ -815,7 +959,10 @@ export const screens = {
           { label: '브랜드 인지도↓', type: 'warn' },
           { label: '틈새 포지션', type: 'neu' },
         ],
-        text: '소자본으로 시작 가능하지만 브랜드 자체 집객이 약해 마케팅 노력이 더 필요.',
+        insights: [
+          { dot: 'teal', text: '1억 미만으로 시작할 수 있어요.' },
+          { dot: 'gold', text: '이름이 약해서 손님을 직접 모아야 해요.' },
+        ],
         qBtn: { label: '인지도 낮으면 손님이 올까? →', target: 'spura1' },
       },
       {
@@ -831,7 +978,10 @@ export const screens = {
           { label: '인테리어 5천~', type: 'neu' },
           { label: '예비금 별도', type: 'warn' },
         ],
-        text: '초기 투자 부담이 낮아 소자본 창업자에게 유리. 단 예비금은 필수.',
+        insights: [
+          { dot: 'teal', text: '총 9천~1.2억, 3사보다 훨씬 싸요.' },
+          { dot: 'gold', text: '싸게 시작해도 예비금은 꼭 있어야 해요.' },
+        ],
         qBtn: { label: '싸게 시작하면 나중에 더 드는 거 아냐? →', target: 'spura5' },
       },
       {
@@ -847,7 +997,10 @@ export const screens = {
           { label: '인건비 -250만', type: 'warn' },
           { label: '임대료 -120만', type: 'warn' },
         ],
-        text: '매출 규모가 작아 절대 순이익은 낮은 편. 매출 확대가 수익의 핵심 변수.',
+        insights: [
+          { dot: 'teal', text: '투자금 회수는 3사보다 빠를 수 있어요.' },
+          { dot: 'gold', text: '매출이 작아서 절대 금액은 낮아요.' },
+        ],
         qBtn: { label: '월 220만이면 너무 적은 거 아냐? →', target: 'spura9' },
       },
       {
@@ -863,7 +1016,10 @@ export const screens = {
           { label: '입지 30%', type: 'warn' },
           { label: '자금소진 20%', type: 'warn' },
         ],
-        text: '브랜드 파워가 약해 오픈 초기 집객을 본인이 만들어야 함. SNS·배달앱 마케팅 필수.',
+        insights: [
+          { dot: 'teal', text: '손님 모으는 게 가장 큰 숙제예요.' },
+          { dot: 'gold', text: 'SNS·배달앱 광고 안 하면 빨리 망해요.' },
+        ],
         qBtn: { label: '브랜드 힘 없이 어떻게 손님을 모아? →', target: 'spura13' },
       },
     ],
@@ -885,7 +1041,10 @@ export const screens = {
           { label: '프리미엄 이미지', type: 'ok' },
           { label: '로열티 2~3%', type: 'warn' },
         ],
-        text: '황금올리브치킨으로 프리미엄 포지셔닝 성공. 단가가 높아 객단가 유리.',
+        insights: [
+          { dot: 'teal', text: '황금올리브로 고급 이미지 만들었어요.' },
+          { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
+        ],
         qBtn: { label: '프리미엄 브랜드인데 왜 30%가 망해? →', target: 'sbbq13' },
       },
       {
@@ -899,7 +1058,10 @@ export const screens = {
           { label: '레시피 표준화', type: 'ok' },
           { label: '1인 운영 불가', type: 'warn' },
         ],
-        text: '3주 교육 후 운영 가능. 메뉴 수 적어 숙련이 빠른 편.',
+        insights: [
+          { dot: 'teal', text: '3주 교육 받으면 혼자 돌려요.' },
+          { dot: 'gold', text: '혼자서는 못 해요, 사람이 필요해요.' },
+        ],
         qBtn: { label: '쉽다더니 왜 혼자는 못 하나? →', target: 'sbbq9' },
       },
       {
@@ -913,7 +1075,10 @@ export const screens = {
           { label: '동일브랜드 500m 보호', type: 'ok' },
           { label: '타브랜드 무제한', type: 'warn' },
         ],
-        text: '같은 BBQ는 500m 보호. 교촌·BHC는 바로 옆도 가능. 가격 경쟁 심함.',
+        insights: [
+          { dot: 'teal', text: '같은 BBQ는 500m 안에 못 열어요.' },
+          { dot: 'gold', text: '비싼데 옆에 싼 치킨집 생기면 힘들어요.' },
+        ],
         qBtn: { label: '비싼데 옆에 싼 치킨집 생기면? →', target: 'sbbq13' },
       },
       {
@@ -927,7 +1092,10 @@ export const screens = {
           { label: '가격저항 1위', type: 'warn' },
           { label: '자금 소진 2위', type: 'warn' },
         ],
-        text: '경기 불황기에 프리미엄 가격 저항이 가장 큰 리스크. 상권 선택이 생존 열쇠.',
+        insights: [
+          { dot: 'teal', text: '소득 높은 상권에서는 잘 버텨요.' },
+          { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
+        ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'sbbq13' },
       },
     ],
@@ -949,7 +1117,10 @@ export const screens = {
           { label: '3사 중 가장 비쌈', type: 'warn' },
           { label: '환불 조건 까다로움', type: 'warn' },
         ],
-        text: 'BHC보다 600만, 교촌보다 500만 비쌈. 계약 전 특약 조항 꼼꼼히 확인 필수.',
+        insights: [
+          { dot: 'teal', text: '1,500만 원, 3사 중 가장 비싸요.' },
+          { dot: 'gold', text: '계약 전 특약 조항 꼭 확인하세요.' },
+        ],
         qBtn: { label: '계약 취소하면 돈 돌려받을 수 있어? →', target: 'sbbq13' },
       },
       {
@@ -963,7 +1134,10 @@ export const screens = {
           { label: '본사 마진 25~35%', type: 'warn' },
           { label: '직접 업체 불가', type: 'warn' },
         ],
-        text: '3사 최고가 인테리어. 프리미엄 인테리어 콘셉트로 업체 변경 불가.',
+        insights: [
+          { dot: 'teal', text: '20평 기준 9,000만 원이에요.' },
+          { dot: 'gold', text: '3사 중 인테리어가 제일 비싸요.' },
+        ],
         qBtn: { label: '9,000에 본사 마진이 포함됐다고? →', target: 'sbbq13' },
       },
       {
@@ -977,7 +1151,10 @@ export const screens = {
           { label: '튀김기 3년 교체', type: 'warn' },
           { label: 'POS 350만', type: 'neu' },
         ],
-        text: '튀김기 1,200만이 핵심. 3년 후 교체 비용 별도 발생.',
+        insights: [
+          { dot: 'teal', text: '튀김기·냉장·POS 포함 4,500만이에요.' },
+          { dot: 'gold', text: '튀김기는 3년 되면 또 사야 해요.' },
+        ],
         qBtn: { label: '3년마다 또 수천만이 나간다고? →', target: 'sbbq9' },
       },
       {
@@ -991,7 +1168,10 @@ export const screens = {
           { label: '보증금 2,500만~', type: 'warn' },
           { label: '예비금 3,000만', type: 'warn' },
         ],
-        text: '공개 금액만 준비하면 오픈 3개월 내 자금 부족. 총 2.5억 준비가 안전선.',
+        insights: [
+          { dot: 'teal', text: '공개 금액 외에 5,500만 더 필요해요.' },
+          { dot: 'gold', text: '총 2.5억 준비해야 안전해요.' },
+        ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 'sbbq13' },
       },
     ],
@@ -1013,7 +1193,10 @@ export const screens = {
           { label: '절감 여지 없음', type: 'warn' },
           { label: '매출 줄어도 고정', type: 'warn' },
         ],
-        text: '본사 공급 비율 88%. 올리브유 등 고급 재료 사용으로 원가율이 높은 구조.',
+        insights: [
+          { dot: 'teal', text: '매출의 38%, 올리브유라 원가 높아요.' },
+          { dot: 'gold', text: '본사에서 88% 사야 해서 줄일 수 없어요.' },
+        ],
         qBtn: { label: '본사가 단가 올리면 내가 다 떠안아? →', target: 'sbbq13' },
       },
       {
@@ -1027,7 +1210,10 @@ export const screens = {
           { label: '1인 운영 불가', type: 'warn' },
           { label: '매년 상승', type: 'warn' },
         ],
-        text: '최저임금 인상으로 매년 오르는 구조. 주말 알바 포함 시 330만 넘을 수 있음.',
+        insights: [
+          { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
+          { dot: 'gold', text: '최저임금 오를 때마다 같이 올라요.' },
+        ],
         qBtn: { label: '혼자 다 하면 1~2년 안에 번아웃 온다고? →', target: 'sbbq13' },
       },
       {
@@ -1041,7 +1227,10 @@ export const screens = {
           { label: '매출 올라도 비율 고정', type: 'warn' },
           { label: '분쟁 시 인상 가능', type: 'warn' },
         ],
-        text: '3% 로열티는 BHC(2%)보다 부담 큼. 매출 2,000만 되면 로열티만 60만.',
+        insights: [
+          { dot: 'teal', text: '매출의 3%, 3사 중 가장 높아요.' },
+          { dot: 'gold', text: '매출 2,000만 되면 로열티만 60만이에요.' },
+        ],
         qBtn: { label: '로열티 3%가 얼마나 큰 차이야? →', target: 'sbbq5' },
       },
       {
@@ -1055,7 +1244,10 @@ export const screens = {
           { label: '직원 2명 → 120만대', type: 'warn' },
           { label: '매출 1,700만 → 480만', type: 'neu' },
         ],
-        text: '객단가 높아 매출 확대 여지 있음. 단 경기 불황 시 프리미엄 저항으로 매출 급락 위험.',
+        insights: [
+          { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
+          { dot: 'gold', text: '불황 오면 매출이 확 빠지는 구조예요.' },
+        ],
         qBtn: { label: '불황 오면 매출이 얼마나 빠져? →', target: 'sbbq13' },
       },
     ],
@@ -1077,7 +1269,10 @@ export const screens = {
           { label: '경기 민감도 높음', type: 'warn' },
           { label: '상권 선택 핵심', type: 'warn' },
         ],
-        text: '경기 불황기 BBQ 매출 감소율이 3사 중 가장 큼. 소득 높은 상권에서만 안정적.',
+        insights: [
+          { dot: 'teal', text: '고급 상권에서는 잘 버텨요.' },
+          { dot: 'gold', text: '불황 오면 3사 중 매출이 제일 빠져요.' },
+        ],
         qBtn: { label: '어떤 상권이 BBQ에 맞아? →', target: 'sbbq1' },
       },
       {
@@ -1091,7 +1286,10 @@ export const screens = {
           { label: '저소득 상권 위험', type: 'warn' },
           { label: '조사 최소 3회', type: 'warn' },
         ],
-        text: '일반 치킨 상권에서 프리미엄 가격 판매 시 가격 저항으로 이탈. 상권 소득 수준 분석 필수.',
+        insights: [
+          { dot: 'teal', text: '소득 높은 동네에서 해야 잘 돼요.' },
+          { dot: 'gold', text: '서민 상권에서는 비싸서 안 팔려요.' },
+        ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'sbbq1' },
       },
       {
@@ -1105,7 +1303,10 @@ export const screens = {
           { label: '예비금 3천 필수', type: 'warn' },
           { label: '대출이자 포함 계획', type: 'warn' },
         ],
-        text: '손익분기점 보통 5~7개월. 초기 투자비가 커서 BHC보다 손익분기 도달이 늦음.',
+        insights: [
+          { dot: 'teal', text: '오픈 1~2개월은 손님이 몰려요.' },
+          { dot: 'gold', text: '손익분기까지 5~7개월 버텨야 해요.' },
+        ],
         qBtn: { label: '3개월 버티는 데 돈이 얼마나 필요해? →', target: 'sbbq5' },
       },
       {
@@ -1119,7 +1320,10 @@ export const screens = {
           { label: '단가 연 2~4% 강제 인상', type: 'warn' },
           { label: '해지 조건 까다로움', type: 'warn' },
         ],
-        text: '메뉴·가격 강제 변경, 거부 불가. 해지 시 위약금 수천만. 계약 전 법무 검토 권장.',
+        insights: [
+          { dot: 'teal', text: '메뉴·가격 다 본사가 정해요.' },
+          { dot: 'gold', text: '나가고 싶어도 위약금이 수천만이에요.' },
+        ],
         qBtn: { label: '그만두고 싶어도 못 나온다고? →', target: 'sbbq5' },
       },
     ],
@@ -1141,7 +1345,10 @@ export const screens = {
           { label: '마니아층 존재', type: 'ok' },
           { label: '자연 집객 약함', type: 'warn' },
         ],
-        text: '허브시리즈 팬층은 있지만 3대 브랜드 대비 인지도 낮아 직접 마케팅이 필수.',
+        insights: [
+          { dot: 'teal', text: '허브치킨 좋아하는 단골이 있어요.' },
+          { dot: 'gold', text: '이름이 약해서 광고를 직접 해야 해요.' },
+        ],
         qBtn: { label: '인지도 낮으면 오픈 초기 어때? →', target: 'spura13' },
       },
       {
@@ -1155,7 +1362,10 @@ export const screens = {
           { label: '레시피 표준화', type: 'ok' },
           { label: '소규모 운영 가능', type: 'ok' },
         ],
-        text: '메뉴 수 적고 조리 과정 단순해 초보 창업자가 빠르게 적응 가능.',
+        insights: [
+          { dot: 'teal', text: '2~3주면 혼자 돌릴 수 있어요.' },
+          { dot: 'gold', text: '소규모라 혼자도 운영 가능해요.' },
+        ],
         qBtn: { label: '소규모로 혼자 운영할 수 있어? →', target: 'spura9' },
       },
       {
@@ -1169,7 +1379,10 @@ export const screens = {
           { label: '동일브랜드 500m 보호', type: 'ok' },
           { label: '3대 브랜드와 경쟁', type: 'warn' },
         ],
-        text: '3대 브랜드보다 인지도 낮아 경쟁 체감이 더 큼. 배달앱 상위 노출 전략 필수.',
+        insights: [
+          { dot: 'teal', text: '같은 푸라닭은 500m 안에 못 열어요.' },
+          { dot: 'gold', text: '3대 브랜드랑 싸워야 해서 더 힘들어요.' },
+        ],
         qBtn: { label: '브랜드 약한데 경쟁에서 살아남으려면? →', target: 'spura13' },
       },
       {
@@ -1183,7 +1396,10 @@ export const screens = {
           { label: '집객 부족 1위', type: 'warn' },
           { label: '입지 실패 2위', type: 'warn' },
         ],
-        text: '브랜드 파워로 커버가 안 돼 오픈 초기 집객을 스스로 만들어야 하는 부담이 큼.',
+        insights: [
+          { dot: 'teal', text: '초기비용 낮아서 손실이 작아요.' },
+          { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
+        ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'spura13' },
       },
     ],
@@ -1205,7 +1421,10 @@ export const screens = {
           { label: 'BHC보다 400만 저렴', type: 'ok' },
           { label: '환불 조건 확인 필요', type: 'warn' },
         ],
-        text: '3대 브랜드 대비 가맹비 부담 크게 낮음. 단 브랜드 지원도 상대적으로 적음.',
+        insights: [
+          { dot: 'teal', text: '500만 원, 3사 중 가장 싸요.' },
+          { dot: 'gold', text: '싼 만큼 본사 지원도 적은 편이에요.' },
+        ],
         qBtn: { label: '가맹비 싸면 지원도 적은 거야? →', target: 'spura1' },
       },
       {
@@ -1219,7 +1438,10 @@ export const screens = {
           { label: '3사보다 40% 저렴', type: 'ok' },
           { label: '직접 업체 불가', type: 'warn' },
         ],
-        text: 'BHC(6,500만) 대비 1,500만 저렴. 단 직접 업체 사용은 불가.',
+        insights: [
+          { dot: 'teal', text: '20평 기준 5,000만 원이에요.' },
+          { dot: 'gold', text: '직접 업체 사용은 안 돼요.' },
+        ],
         qBtn: { label: '5년 후 리모델링 비용도 똑같이 나와? →', target: 'spura13' },
       },
       {
@@ -1233,7 +1455,10 @@ export const screens = {
           { label: '튀김기 3년 교체', type: 'warn' },
           { label: 'POS 250만', type: 'neu' },
         ],
-        text: '3대 브랜드 대비 장비 비용 낮음. 소규모 매장 특성상 장비 수도 적은 편.',
+        insights: [
+          { dot: 'teal', text: '소규모 매장이라 장비도 적어요.' },
+          { dot: 'gold', text: '튀김기는 3년 되면 또 사야 해요.' },
+        ],
         qBtn: { label: '장비 싸면 품질도 다른 거야? →', target: 'spura1' },
       },
       {
@@ -1247,7 +1472,10 @@ export const screens = {
           { label: '보증금 1,500만~', type: 'warn' },
           { label: '예비금 2,000만', type: 'warn' },
         ],
-        text: '초기 투자가 낮아도 예비금은 반드시 확보. 공개 금액만 보면 3개월 내 위기.',
+        insights: [
+          { dot: 'teal', text: '공개 금액 외에 3,000만 더 필요해요.' },
+          { dot: 'gold', text: '이 돈 없으면 3~4개월에 바닥나요.' },
+        ],
         qBtn: { label: '1억 미만으로 진짜 창업 가능해? →', target: 'spura13' },
       },
     ],
@@ -1269,7 +1497,10 @@ export const screens = {
           { label: '절감 여지 제한적', type: 'warn' },
           { label: '허브재료 단가 높음', type: 'warn' },
         ],
-        text: '허브 재료 특성상 일반 치킨보다 원재료 단가 높음. 본사 공급 외 일부 직접 구매 가능.',
+        insights: [
+          { dot: 'teal', text: '본사 의존도 낮아 일부 직접 구매 가능해요.' },
+          { dot: 'gold', text: '허브 재료 비싸서 원가가 높은 편이에요.' },
+        ],
         qBtn: { label: '허브재료 비싸면 원가가 더 높아? →', target: 'spura13' },
       },
       {
@@ -1283,7 +1514,10 @@ export const screens = {
           { label: '소규모 운영 유리', type: 'ok' },
           { label: '매년 상승', type: 'warn' },
         ],
-        text: '소규모 매장 특성상 파트타임 활용이 쉬워 인건비 조절 여지 있음.',
+        insights: [
+          { dot: 'teal', text: '파트타임으로 돌릴 수 있어요.' },
+          { dot: 'gold', text: '직원 1명 기준 200만 원이에요.' },
+        ],
         qBtn: { label: '파트타임으로 운영하면 품질 유지돼? →', target: 'spura1' },
       },
       {
@@ -1297,7 +1531,10 @@ export const screens = {
           { label: '소규모 상권 가능', type: 'ok' },
           { label: '권리금 별도', type: 'warn' },
         ],
-        text: '15평 소규모 매장으로 임대료 부담 낮은 것이 최대 장점. 주택가 상권도 가능.',
+        insights: [
+          { dot: 'teal', text: '소규모라 임대료가 낮아요.' },
+          { dot: 'gold', text: '상권 따라 매출 차이가 많이 나요.' },
+        ],
         qBtn: { label: '주택가에서도 장사가 돼? →', target: 'spura1' },
       },
       {
@@ -1311,7 +1548,10 @@ export const screens = {
           { label: '직원 2명 → 50만대', type: 'warn' },
           { label: '매출 1,300만 → 350만', type: 'neu' },
         ],
-        text: '절대 금액은 낮지만 투자금 대비 회수 기간은 3대 브랜드보다 짧을 수 있음.',
+        insights: [
+          { dot: 'teal', text: '투자금 회수는 3사보다 빠를 수 있어요.' },
+          { dot: 'gold', text: '직원 한 명 더 쓰면 50만대로 줄어요.' },
+        ],
         qBtn: { label: '월 220인데 투자금 회수에 몇 년 걸려? →', target: 'spura5' },
       },
     ],
@@ -1333,7 +1573,10 @@ export const screens = {
           { label: 'SNS 마케팅 필수', type: 'warn' },
           { label: '배달앱 광고비 부담', type: 'warn' },
         ],
-        text: '브랜드 자체 집객이 없어 오픈 후 본인이 직접 손님을 만들어야 함. 마케팅 비용 추가 발생.',
+        insights: [
+          { dot: 'teal', text: '직접 마케팅하면 충성 손님이 생겨요.' },
+          { dot: 'gold', text: 'SNS·배달앱 안 하면 손님이 안 와요.' },
+        ],
         qBtn: { label: '마케팅 안 하면 얼마나 빨리 망해? →', target: 'spura9' },
       },
       {
@@ -1347,7 +1590,10 @@ export const screens = {
           { label: '배달 상권 필수', type: 'warn' },
           { label: '조사 최소 3회', type: 'warn' },
         ],
-        text: '브랜드 파워 없으니 입지가 더 중요. 배달 수요 높은 상권 선정이 생존 핵심.',
+        insights: [
+          { dot: 'teal', text: '배달 많이 시키는 동네가 맞아요.' },
+          { dot: 'gold', text: '브랜드 약하니까 자리가 더 중요해요.' },
+        ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'spura1' },
       },
       {
@@ -1361,7 +1607,10 @@ export const screens = {
           { label: '예비금 2천 필수', type: 'warn' },
           { label: '마케팅비 예산 확보', type: 'warn' },
         ],
-        text: '초기 투자비는 낮지만 집객이 안 되면 예비금 소진 속도가 빠름.',
+        insights: [
+          { dot: 'teal', text: '초기비용은 3사보다 적어요.' },
+          { dot: 'gold', text: '손님 안 오면 예비금이 빨리 없어져요.' },
+        ],
         qBtn: { label: '예비금 없으면 언제 망해? →', target: 'spura5' },
       },
       {
@@ -1375,7 +1624,10 @@ export const screens = {
           { label: '마케팅 직접 해야 함', type: 'warn' },
           { label: '운영+홍보 이중 소모', type: 'warn' },
         ],
-        text: '조리는 단순하나 SNS·배달앱 관리까지 혼자 하면 정신적 소모 큼.',
+        insights: [
+          { dot: 'teal', text: '조리 자체는 단순해서 몸은 덜 힘들어요.' },
+          { dot: 'gold', text: 'SNS까지 혼자 하면 머리가 지쳐요.' },
+        ],
         qBtn: { label: '월 220 벌려고 이 고생을 해야 해? →', target: 'spura9' },
       },
     ],
