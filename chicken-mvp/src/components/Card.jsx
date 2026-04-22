@@ -760,7 +760,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
         </div>
 
         {/* insight */}
-        <div style={{ padding: '11px 13px', borderRadius: 12, background: 'rgba(255,255,255,0.04)', borderLeft: `3px solid ${ac.color}` }}>
+        <div style={{ padding: '11px 13px', borderRadius: 12, background: 'rgba(255,255,255,0.04)' }}>
           <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>
             {data.text}
           </p>
@@ -864,7 +864,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
             ))}
           </div>
           <div style={{ paddingTop: 10 }}>
-            <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.04)', borderLeft: `3px solid ${ac.color}`, marginBottom: 10 }}>
+            <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.04)', marginBottom: 10 }}>
               <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>{text}</p>
             </div>
             {qBtn && (
