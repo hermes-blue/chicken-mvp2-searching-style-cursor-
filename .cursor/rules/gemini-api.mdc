@@ -1,0 +1,38 @@
+# Gemini API 설정
+
+## 기본 정보
+- API 키 위치: `chicken-mvp/.env` → `VITE_GEMINI_API_KEY`
+- 사용 모델: `gemini-2.5-flash`
+- API 버전: `v1beta`
+- `gemini-2.0-flash`는 generateContent 미지원 → 사용 금지
+
+## 호출 엔드포인트
+```
+POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}
+```
+
+## 요청 body 형식
+```json
+{
+  "contents": [
+    {
+      "parts": [
+        { "text": "프롬프트 내용" }
+      ]
+    }
+  ]
+}
+```
+
+## 사용 가능한 모델 (2026-04-23 테스트 완료)
+- `gemini-2.5-flash` ✅ 정식
+- `gemini-2.5-pro` ✅ 정식
+- `gemini-3-flash-preview` ✅ 베타
+- `gemini-3-pro-preview` ✅ 베타
+- `gemini-3.1-pro-preview` ✅ 베타
+- `gemini-3.1-flash-lite-preview` ✅ 베타
+- `gemini-2.0-flash` ❌ generateContent 미지원
+
+## 주의사항
+- API 키는 절대 코드에 직접 쓰지 않는다 → 반드시 `import.meta.env.VITE_GEMINI_API_KEY` 로 참조
+- `.env`는 `.gitignore`에 등록되어 있음
