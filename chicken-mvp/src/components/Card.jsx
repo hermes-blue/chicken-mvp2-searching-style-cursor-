@@ -709,7 +709,7 @@ function FlatCard({ data, onToggle, visible, ac }) {
 }
 
 // ── 포커스 모드: 확장된 큰 카드 ──────────────────────────────
-function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
+function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = null, apiLoading = false }) {
   const [headerPressed, setHeaderPressed] = useState(false)
   const [btnPressed, setBtnPressed] = useState(false)
 
@@ -751,11 +751,11 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
 
         {/* 큰 수치 */}
         <div style={{ marginBottom: 6 }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'var(--color-text-primary)', letterSpacing: '-1px' }}>
-            {data.row1Val}
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px' }}>
+            {apiLoading ? '불러오는 중...' : apiCost ?? data.row1Val}
           </div>
           <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8 }}>
-            {data.row1Label}
+            {apiCost ? 'Gemini AI 응답 · 실시간' : data.row1Label}
           </div>
         </div>
       </div>
@@ -811,7 +811,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac }) {
 }
 
 // ── 메인 Card ─────────────────────────────────────────────────
-export default function Card({ data, index = 0, selected, anySelected, focusMode = false, onToggle, onNavigate }) {
+export default function Card({ data, index = 0, selected, anySelected, focusMode = false, onToggle, onNavigate, apiCost = null, apiLoading = false }) {
   const { title, hint, val, valColor, row1Val, row1Label, tags, text, qBtn } = data
   const [pressed, setPressed] = useState(false)
   const [btnPressed, setBtnPressed] = useState(false)
@@ -826,7 +826,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
 
   // 포커스 모드 분기
   if (focusMode) {
-    if (selected) return <ExpandedFocusCard data={data} onToggle={onToggle} onNavigate={onNavigate} visible={visible} ac={ac} />
+    if (selected) return <ExpandedFocusCard data={data} onToggle={onToggle} onNavigate={onNavigate} visible={visible} ac={ac} apiCost={apiCost} apiLoading={apiLoading} />
     if (anySelected) return <FlatCard data={data} onToggle={onToggle} visible={visible} ac={ac} />
   }
 

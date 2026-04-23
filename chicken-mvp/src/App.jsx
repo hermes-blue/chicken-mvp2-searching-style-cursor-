@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { screens } from './data'
 import Card from './components/Card'
 
@@ -22,8 +22,42 @@ export default function App() {
     setSelectedCard(null)
   }
 
+  // 브랜드별 '얼마 드나?' API 연결 대상 화면
+  const BRAND_SCREENS = {
+    sgyo0:  '교촌치킨',
+    sbhc0:  'BHC치킨',
+    sbbq0:  '비비큐(BBQ)',
+    spura0: '푸라닭치킨',
+  }
+
+  const [apiCosts, setApiCosts] = useState({})
+  const [apiLoadings, setApiLoadings] = useState({})
+
   const toggleCard = (idx) => {
+    const opening = selectedCard !== idx
     setSelectedCard(prev => prev === idx ? null : idx)
+
+    // '얼마 드나?' 카드(index 1)를 열 때 해당 브랜드 API 호출
+    if (opening && idx === 1 && BRAND_SCREENS[currentScreen] && !apiCosts[currentScreen]) {
+      fetchBrandCost(currentScreen, BRAND_SCREENS[currentScreen])
+    }
+  }
+
+  const fetchBrandCost = async (screenKey, brandName) => {
+    setApiLoadings(prev => ({ ...prev, [screenKey]: true }))
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`
+    const body = {
+      contents: [{
+        parts: [{ text: `${brandName} 창업비용을 딱 하나의 숫자로만 답해줘. 단위는 억원으로. 예: 2.2억. 범위 말고 대표값 하나만.` }]
+      }]
+    }
+    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    const data = await res.json()
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
+    console.log(`🐔 ${brandName} 창업비용 (API):`, text)
+    setApiCosts(prev => ({ ...prev, [screenKey]: text }))
+    setApiLoadings(prev => ({ ...prev, [screenKey]: false }))
   }
 
   const screen = screens[currentScreen]
@@ -174,6 +208,8 @@ export default function App() {
               focusMode={true}
               onToggle={() => toggleCard(i)}
               onNavigate={navigate}
+              apiCost={BRAND_SCREENS[currentScreen] && i === 1 ? apiCosts[currentScreen] ?? null : null}
+              apiLoading={BRAND_SCREENS[currentScreen] && i === 1 ? apiLoadings[currentScreen] ?? false : false}
             />
           ))}
         </div>
