@@ -73,7 +73,31 @@ export default function App() {
       color: 'var(--color-text-primary)',
       overflowY: 'auto',
     }}>
-      <div style={{ padding: '56px 20px 40px' }}>
+      {/* 하단 고정 푸터 */}
+      <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '100%',
+        maxWidth: 390,
+        height: 32,
+        background: 'rgba(10,9,7,0.92)',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 10,
+        zIndex: 999,
+        backdropFilter: 'blur(8px)',
+      }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>Data Source</span>
+        <span style={{ width: 1, height: 10, background: 'rgba(255,255,255,0.1)' }} />
+        <span style={{ fontFamily: 'var(--font-korean)', fontSize: 9, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>공정거래위원회 · 통계청</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'rgba(255,255,255,0.18)', letterSpacing: '0.1em', marginLeft: 4 }}>정보공개서 2025</span>
+      </div>
+
+      <div style={{ padding: '56px 20px 60px' }}>
         {/* 뒤로가기 + 단계 표시 */}
         {stack.length > 0 && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>

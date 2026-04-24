@@ -751,8 +751,15 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
 
         {/* 큰 수치 */}
         <div style={{ marginBottom: 6 }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
-            {apiLoading ? '불러오는 중...' : apiCost ?? data.row1Val}
+          <div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
+              {apiLoading ? '불러오는 중...' : apiCost ?? data.row1Val}
+            </div>
+            {!apiCost && /\d[\d,]*(만원|억|개)/.test(data.row1Val) && !data.row1Val.includes('%') && (
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
+                <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
+              </div>
+            )}
           </div>
           <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
             {apiCost ? 'Gemini AI 응답 · 실시간' : data.row1Label}
@@ -797,7 +804,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
       </div>
 
       {/* CTA */}
-      <div style={{ padding: '16px 20px 20px', marginTop: 'auto' }}>
+      <div style={{ padding: '16px 20px 52px', marginTop: 'auto' }}>
         {data.qBtn && (
           <button
             onPointerDown={(e) => { e.stopPropagation(); setBtnPressed(true) }}
@@ -882,7 +889,14 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
       <div style={{ maxHeight: selected ? 340 : 0, overflow: 'hidden', transition: 'max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1)' }}>
         <div style={{ padding: '0 18px 18px', borderTop: '1px solid var(--color-border-default)' }}>
           <div style={{ padding: '14px 0 12px', borderBottom: '1px solid var(--color-border-default)' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--color-text-primary)', lineHeight: 0.95, letterSpacing: '-0.5px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{row1Val}</div>
+            <div>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--color-text-primary)', lineHeight: 0.95, letterSpacing: '-0.5px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{row1Val}</div>
+              {/\d[\d,]*(만원|억|개)/.test(row1Val) && !row1Val.includes('%') && (
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
+                  <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
+                </div>
+              )}
+            </div>
             <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 6, wordBreak: 'keep-all' }}>{row1Label}</div>
           </div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', padding: '10px 0', borderBottom: '1px solid var(--color-border-default)' }}>
