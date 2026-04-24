@@ -1,0 +1,271 @@
+{
+  "brand": "BBQ",
+  "cards": {
+    "해볼만한가": {
+      "items": [
+        {
+          "label": "전국 가맹점 수 (2024년 말)",
+          "value": 2316,
+          "unit": "개",
+          "displayValue": "전국 2,316개 운영 중 (직영점 71개 별도)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 12월 31일 기준 가맹점 2,316개 + 직영점 71개. 3사 중 직영점 가장 많음"
+        },
+        {
+          "label": "가맹점 수 증감 (2022→2024)",
+          "value": 189,
+          "unit": "개",
+          "displayValue": "2년간 189개 순증 (2022: 2,127 → 2024: 2,316)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2022년 2,127 → 2023년 2,249 → 2024년 2,316. 3사 중 유일하게 뚜렷한 성장세"
+        },
+        {
+          "label": "2024년 가맹점 신규 vs 종료",
+          "value": 67,
+          "unit": "개",
+          "displayValue": "2024년 신규 216개, 종료 149개 — 순증 67개",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규 216 > 계약종료 149. 계약해지는 별도 기재 없음. BHC·교촌과 달리 순증 유지 중"
+        },
+        {
+          "label": "가맹점 연간 평균 매출액 (2024)",
+          "value": 508791,
+          "unit": "천원",
+          "displayValue": "가맹점 평균 연매출 약 5.1억 (추정치)",
+          "sourceType": "official",
+          "isEstimated": true,
+          "confidence": "medium",
+          "note": "물류공급액 역산 추정치. 전체 2,316개 중 571개(계절영업·6개월 미만·특화점 등) 제외, 1,745곳 기준"
+        },
+        {
+          "label": "가맹점 평균 영업기간 (2024년 말)",
+          "value": 76,
+          "unit": "개월",
+          "displayValue": "평균 영업기간 약 6년 4개월",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 말 기준 영업 중인 2,316개 가맹점 평균. BHC(4년 9개월)보다 길고 교촌(7년 2개월)보다 짧음"
+        }
+      ]
+    },
+    "얼마드나": {
+      "items": [
+        {
+          "label": "가입비 (올리브치킨 기준)",
+          "value": 11000,
+          "unit": "천원",
+          "displayValue": "올리브치킨 가입비 1,100만원 (VAT 포함)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BSK(소형 8평) 550만원, 올리브치킨/카페/치킨&비어/프리미엄카페/빌리지 모두 1,100만원"
+        },
+        {
+          "label": "교육비 (전 타입 동일)",
+          "value": 4180,
+          "unit": "천원",
+          "displayValue": "교육비 418만원 (VAT 포함, 전 타입 동일)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BSK부터 빌리지까지 타입에 상관없이 4,180천원으로 동일"
+        },
+        {
+          "label": "계약이행보증금 (전 타입 동일)",
+          "value": 5000,
+          "unit": "천원",
+          "displayValue": "보증금 500만원 (전 타입 동일, 계약종료 시 반환)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BSK~빌리지 전 타입 500만원으로 동일. 교촌(표준형 1,000만원)·BHC(딜리버리 1,000만원)의 절반"
+        },
+        {
+          "label": "인테리어비 (올리브치킨 15평 기준)",
+          "value": 31350,
+          "unit": "천원",
+          "displayValue": "올리브치킨 인테리어 3,135만원 (15평, 3.3㎡당 209만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "BSK(8평) 1,408만원, 카페(20평) 4,180만원, 치킨&비어(30평) 6,600만원, 빌리지(100평) 3억3,000만원"
+        },
+        {
+          "label": "주방기기 (올리브치킨 기준)",
+          "value": 24200,
+          "unit": "천원",
+          "displayValue": "올리브치킨 주방기기·집기 2,420만원",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "BSK 2,020만원, 카페 2,640만원, 치킨&비어 2,970만원, 빌리지 1억1,000만원"
+        },
+        {
+          "label": "초도상품비 (전 타입 동일)",
+          "value": 4400,
+          "unit": "천원",
+          "displayValue": "초도상품비 440만원 (전 타입 동일)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BSK~빌리지 전 타입 4,400천원으로 동일. BHC 550만원과 유사"
+        },
+        {
+          "label": "총투자비 추정 (올리브치킨 15평, 임대비 제외)",
+          "value": 75754,
+          "unit": "천원",
+          "displayValue": "올리브치킨 총투자비 약 7,575만원 (임대비 제외)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "가입비 1,100+교육비 418+보증금 500+인테리어 3,135+외부간판 330+주방기기 2,420+POS 92+초도상품 440 합산(정보공개서 총계 66,374+가맹금). 전기·가스·냉난방 등 별도"
+        }
+      ]
+    },
+    "얼마남나": {
+      "items": [
+        {
+          "label": "로열티",
+          "value": 0,
+          "unit": "",
+          "displayValue": "별도 로열티 없음 — 명시적으로 '로열티 없음' 기재",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "정보공개서 영업 중 부담 항목에 '로열티 없음' 명시. 3사 중 유일하게 로열티 없음을 명문화"
+        },
+        {
+          "label": "광고비 (원재료 단위당)",
+          "value": 350,
+          "unit": "원",
+          "displayValue": "광고비: 1~6월 1마리당 300원, 7~12월 400원",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "원재료 단위 기준. 제품별 1마리 또는 1마리에 해당하는 원재료 단위당 부과. 광고비 총계 1,069만천원(2024), 본사·패밀리 분담 세부는 비공개"
+        },
+        {
+          "label": "광고·판촉 총 지출 (2024)",
+          "value": 46375786,
+          "unit": "천원",
+          "displayValue": "2024년 광고·판촉 총 지출 약 464억원 (본사 72.8%, 가맹점 27.2%)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "광고선전비 10,694,753 + 판매판촉비 35,681,034 = 46,375,786천원. 본사 72.8%, 패밀리(가맹점) 27.2% 분담"
+        },
+        {
+          "label": "POS 사용료 (월)",
+          "value": 17250,
+          "unit": "원",
+          "displayValue": "POS 사용료 월 18,000원(~4월) / 16,500원(5월~)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "매월 5·15·25일 중 선택. 매장 자율 선택. 교촌(9,900원)보다 높음"
+        },
+        {
+          "label": "지연이자율",
+          "value": 12,
+          "unit": "%",
+          "displayValue": "물품대금·공사대금 연체 시 연 12% 지연이자",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BHC 연 6%, 교촌 연 12%와 동일. 지급기일 다음날부터 지급일까지"
+        },
+        {
+          "label": "추정 순이익 (올리브치킨, 월 매출 4,200만 기준)",
+          "value": 350,
+          "unit": "만원",
+          "displayValue": "월 순이익 추정 약 250~450만원 (재료비·인건비·임대료 공제 후)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 연 평균매출 5.1억(월 4,200만) 기준. 재료비 약 45~50%+인건비 15~20%+임대료 5~10%+광고비·기타 제하면 순이익 약 7~10%. 타입별 원가구조 편차 큼"
+        }
+      ]
+    },
+    "어디서망하나": {
+      "items": [
+        {
+          "label": "공정위 시정조치 (최근 3년)",
+          "value": 0,
+          "unit": "건",
+          "displayValue": "최근 3년 공정위 시정조치 없음 — 교촌과 함께 법적 이력 없음",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "정보공개서 명시: 최근 3년 공정위 시정조치, 민사소송 패소, 형사처벌 모두 해당사항 없음. BHC(2건)와 대비"
+        },
+        {
+          "label": "즉시 해지 가능 사유",
+          "value": 9,
+          "unit": "개",
+          "displayValue": "파산·부도·7일 이상 무단폐업 등 9가지 즉시 해지 사유",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "파산·부도·천재지변·행정처분(명성훼손)·영업정지·1년 내 재위반·형사처벌·건강안전 급박위해·7일 이상 무단폐업"
+        },
+        {
+          "label": "위약금 기준",
+          "value": 0,
+          "unit": "",
+          "displayValue": "위약금 구체 산정공식 미공개 — 손해배상액 예정 방식",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "계약위반·불법행위로 인한 손해에 대해 위약금 청구 또는 별도 손해배상 청구 가능. BHC처럼 '월 평균매출 × %' 공식은 명시 없음"
+        },
+        {
+          "label": "계약기간 및 갱신 조건",
+          "value": 2,
+          "unit": "년",
+          "displayValue": "최초 계약 2년, 갱신도 2년 단위 (최장 10년 갱신청구권)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BHC와 동일하게 2년 계약. 교촌은 최초 3년. 갱신도 2년으로 3사 중 갱신 기간 가장 긺"
+        },
+        {
+          "label": "2024년 계약종료 건수",
+          "value": 149,
+          "unit": "개",
+          "displayValue": "2024년 계약종료 149건 (신규 216건 대비 순증 유지)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규 216 > 종료 149. 3사 중 유일하게 신규가 종료를 웃돌아 순증 중. 2022년엔 종료 180건으로 역전된 바 있음"
+        },
+        {
+          "label": "광고비 강제 여부",
+          "value": 1,
+          "unit": "",
+          "displayValue": "광고 50%·판촉 70% 이상 사전 동의 시 진행 — 법 개정 반영",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2022년 7월 개정 광고·판촉 행사 사전동의제 명시. 가맹점 분담 27.2%(2024년 총 약 126억원 추정). 광고 단위당 300~400원 별도 부과"
+        },
+        {
+          "label": "타입 다양성 리스크",
+          "value": 6,
+          "unit": "개",
+          "displayValue": "BSK/올리브치킨/카페/치킨&비어/프리미엄카페/빌리지 — 6개 타입으로 투자비 편차 큼",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "타입별 총투자비 범위: BSK 4,400만원 ~ 빌리지 4억7,472만원. 창업 전 타입 선택이 수익성에 결정적 영향. BHC·교촌보다 타입 복잡"
+        }
+      ]
+    }
+  }
+}

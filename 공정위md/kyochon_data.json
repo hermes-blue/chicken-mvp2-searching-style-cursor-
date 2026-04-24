@@ -1,0 +1,281 @@
+{
+  "brand": "교촌치킨",
+  "cards": {
+    "해볼만한가": {
+      "items": [
+        {
+          "label": "전국 가맹점 수 (2024년 말)",
+          "value": 1361,
+          "unit": "개",
+          "displayValue": "전국 1,361개 운영 중",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 12월 31일 기준 가맹점 1,361개 + 직영점 1개"
+        },
+        {
+          "label": "가맹점 수 증감 (2022→2024)",
+          "value": -4,
+          "unit": "개",
+          "displayValue": "2년간 4개 순감 (2022: 1,365 → 2024: 1,361)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2022년 말 1,365 → 2023년 말 1,377 → 2024년 말 1,361. 3년 신규 합계 64개, 해지 40개"
+        },
+        {
+          "label": "2024년 가맹점 신규 vs 해지",
+          "value": -16,
+          "unit": "개",
+          "displayValue": "2024년 신규 12개, 해지 28개 — 순감 16개",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규개점 12, 계약종료 0, 계약해지 28. 명의변경 124건 별도. 성장 정체 뚜렷"
+        },
+        {
+          "label": "가맹점 연간 평균 매출액 (2024)",
+          "value": 727264,
+          "unit": "천원",
+          "displayValue": "가맹점 평균 연매출 약 7.3억 (추정치)",
+          "sourceType": "official",
+          "isEstimated": true,
+          "confidence": "medium",
+          "note": "제품 평균판매가 24,017원 × 공급물량 역산 추정. 6개월 미만 10개 가맹점 제외(실제 1,351곳 기준)"
+        },
+        {
+          "label": "가맹점 평균 영업기간 (2024년 말)",
+          "value": 2632,
+          "unit": "일",
+          "displayValue": "평균 영업기간 약 7년 2개월 (2,632일)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 말 기준 영업 중인 1,361개 가맹점의 평균 영업일수. BHC(1,732일)보다 약 2년 더 긴 장수 브랜드"
+        }
+      ]
+    },
+    "얼마드나": {
+      "items": [
+        {
+          "label": "가맹비 (표준형매장)",
+          "value": 660,
+          "unit": "만원",
+          "displayValue": "표준형 가맹비 660만원 (VAT 포함)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "배달/포장 전문 특수형 330만원. 계약 귀책 해지 시 잔여일수 일할 계산 반환"
+        },
+        {
+          "label": "교육비 (표준형, 2인 기준)",
+          "value": 355,
+          "unit": "만원",
+          "displayValue": "표준형 교육비 355만원 (10일 121시간, 2인 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "1인 기준 257만원, 3인 452만원. 배달/포장형 특수형도 257만원(1인). 교육시작 1주일 전까지 해지 시 반환"
+        },
+        {
+          "label": "계약이행보증금 (표준형)",
+          "value": 1000,
+          "unit": "만원",
+          "displayValue": "보증금 1,000만원 (계약종료 시 반환)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "배달/포장형 500만원, 특수영업환경형 1,500만원. 귀책사유 있으면 채무액 상계 후 잔액 반환"
+        },
+        {
+          "label": "인테리어비 (표준형 66㎡ 기준)",
+          "value": 5888,
+          "unit": "만원",
+          "displayValue": "표준형 인테리어 5,888~6,900만원 (66㎡, 3.3㎡당 294~345만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "배달/포장형(33㎡) 3,597~4,037만원. 도서지역은 약 35% 추가. 가맹점사업자가 시공업체와 직접 계약"
+        },
+        {
+          "label": "간판/사인물 (표준형)",
+          "value": 1923,
+          "unit": "만원",
+          "displayValue": "표준형 간판·사인물 1,923~2,910만원 (전면 5~8M 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "배달/포장형 1,277~2,228만원. 가맹점사업자 시공업체 직접 계약"
+        },
+        {
+          "label": "주방기기 (튀김기+주방용품, 표준형)",
+          "value": 5336,
+          "unit": "만원",
+          "displayValue": "튀김기 397만원 + 주방용품 536만원 = 약 933만원 (표준형)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "튀김기 397.5만원(1구 5대), 주방용품 536.2만원. 별도 냉장고·온수기 등 평균 1,370~1,560만원 추가"
+        },
+        {
+          "label": "공간기획비",
+          "value": 726,
+          "unit": "만원",
+          "displayValue": "공간기획비 726만원 ~ 최대 1,000만원 (표준형, 1㎡당 11만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "BI 반영 설계·공간기획 대가. 인테리어 완료 후 반환 불가. 최대 1,000만원 상한"
+        },
+        {
+          "label": "총투자비 추정 (표준형, 임대비 제외)",
+          "value": 110000,
+          "unit": "만원",
+          "displayValue": "표준형 총투자비 최소 약 1억~1억3천만원 추정 (임대비·권리금 제외)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 가맹비 660+교육비 355+보증금 1,000+인테리어 5,888+간판 1,923+기기 933+기획비 726+냉장고류 1,370+기타 500 합산. 임대보증금·권리금·초도상품비 별도"
+        }
+      ]
+    },
+    "얼마남나": {
+      "items": [
+        {
+          "label": "상표사용료 (로열티)",
+          "value": 0,
+          "unit": "",
+          "displayValue": "별도 로열티 없음 — 원·부자재 대금에 포함",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "정보공개서 명시: '상표사용료 = 원·부자재 대금에 포함'. 차액가맹금 구체 금액은 비공개"
+        },
+        {
+          "label": "광고비 분담 구조",
+          "value": 50,
+          "unit": "%",
+          "displayValue": "광고비 50%는 본사·50%는 가맹점 분담 (전체행사 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "전체행사: 본사 50%, 가맹점 40%, 지사 10%. 상품광고+모집광고 포함 행사는 본사 30%·가맹점 70%"
+        },
+        {
+          "label": "광고·판촉 총 지출 (2024)",
+          "value": 19292862,
+          "unit": "천원",
+          "displayValue": "2024년 광고·판촉 총 지출 약 193억원 (가맹점 분담분 비공개)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "합계 19,292,862천원. 가맹점 분담 세부 금액은 비공개. 점포당 연 평균 분담액 별도 계산 불가"
+        },
+        {
+          "label": "POS 유지보수료 (월)",
+          "value": 9900,
+          "unit": "원",
+          "displayValue": "POS 유지보수료 월 9,900원",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "콜수수료 별도: 주문수취 성공콜 1건당 약 1,120원, 호전환 성공콜 1건당 약 700원, 온라인주문 약 300원"
+        },
+        {
+          "label": "지연이자율",
+          "value": 12,
+          "unit": "%",
+          "displayValue": "원·부재료 대금 연체 시 연 12% 지연이자",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "지급기한 다음날부터 지급일까지 연 12% 적용"
+        },
+        {
+          "label": "추정 순이익 (표준형, 월 매출 6,000만 기준)",
+          "value": 500,
+          "unit": "만원",
+          "displayValue": "월 순이익 추정 약 400~600만원 (재료비·인건비·임대료 공제 후)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 연 평균매출 7.3억(월 6,000만) 기준. 재료비 약 45~50%+인건비 15~20%+임대료 5~10%+기타 제하면 순이익 약 7~10%. 홀매장 인건비 부담 더 높음"
+        }
+      ]
+    },
+    "어디서망하나": {
+      "items": [
+        {
+          "label": "공정위 시정조치 (최근 3년)",
+          "value": 0,
+          "unit": "건",
+          "displayValue": "최근 3년 공정위 시정조치 없음 — BHC 대비 법적 리스크 낮음",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "정보공개서 명시: 최근 3년 공정위 시정조치, 민사소송 패소, 형사처벌 모두 해당사항 없음"
+        },
+        {
+          "label": "즉시 해지 가능 사유",
+          "value": 8,
+          "unit": "개",
+          "displayValue": "파산·부도·7일 이상 무단폐업 등 8가지 사유 해당 시 즉시 해지 가능",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "파산, 어음부도, 천재지변, 행정처분(명성훼손), 영업정지, 시정 후 1년 내 재위반, 형사처벌, 건강·안전 급박위해, 7일 이상 무단폐업"
+        },
+        {
+          "label": "위약금 기준",
+          "value": 0,
+          "unit": "",
+          "displayValue": "위약금 구체 산정기준 미공개 — 손해배상액 예정 방식 적용",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "정보공개서 제11조: 위약금 청구 또는 별도 손해배상 청구 가능. BHC처럼 '월 평균매출 10% × 잔여개월' 공식은 명시되지 않음"
+        },
+        {
+          "label": "계약기간 및 갱신 조건",
+          "value": 3,
+          "unit": "년",
+          "displayValue": "최초 계약 3년, 이후 1년 단위 갱신 (최장 10년 갱신청구권)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BHC 최초 2년 대비 1년 더 긴 초기 계약. 특수형매장은 1~3년. 10년 초과 시 갱신 거절 가능"
+        },
+        {
+          "label": "2024년 계약해지 건수",
+          "value": 28,
+          "unit": "개",
+          "displayValue": "2024년 계약해지 28건 (신규 12건보다 2.3배 많음)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규 12건 < 해지 28건. 3년 누적 해지 40건, 신규 64건. 성장세 완전 정체 구간"
+        },
+        {
+          "label": "광고비 강제 여부",
+          "value": 1,
+          "unit": "",
+          "displayValue": "전국 단위 공동마케팅비 가맹점 강제 분담 — 매출 비율 기준 배분",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "전국단위 공동마케팅비는 가맹점별 총 매출액 비율에 따라 분담. 불참 시 계약갱신 거절 사유 명시됨"
+        },
+        {
+          "label": "영업지역 기준",
+          "value": 17000,
+          "unit": "명",
+          "displayValue": "영업지역 1개당 인구 17,000~25,000명 — BHC 5,000세대보다 넓은 상권 보호",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BHC 약 5,000세대(약 10,000~12,000명) 대비 교촌은 명시적으로 17,000~25,000명. 상권 보호가 상대적으로 강함"
+        }
+      ]
+    }
+  }
+}

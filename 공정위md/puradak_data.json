@@ -1,0 +1,271 @@
+{
+  "brand": "푸라닭",
+  "cards": {
+    "해볼만한가": {
+      "items": [
+        {
+          "label": "전국 가맹점 수 (2024년 말)",
+          "value": 715,
+          "unit": "개",
+          "displayValue": "전국 715개 운영 중 (직영점 없음)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 12월 31일 기준 가맹점 715개. 직영점 0개 — 4사 중 유일하게 직영점 없음"
+        },
+        {
+          "label": "가맹점 수 증감 (2022→2024)",
+          "value": -13,
+          "unit": "개",
+          "displayValue": "2년간 13개 순감 (2022: 728 → 2024: 715)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2022년 728 → 2023년 714 → 2024년 715. 사실상 정체. 3년 신규 합계 74개, 종료·해지 합계 63개"
+        },
+        {
+          "label": "2024년 가맹점 신규 vs 종료·해지",
+          "value": 1,
+          "unit": "개",
+          "displayValue": "2024년 신규 28개, 종료 10개·해지 17개 — 순증 1개로 간신히 유지",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규 28 vs 종료 10 + 해지 17 = 27. 사실상 제자리. 2023년은 해지 25건으로 악화된 바 있음"
+        },
+        {
+          "label": "가맹점 연간 평균 매출액 (2024)",
+          "value": 450859,
+          "unit": "천원",
+          "displayValue": "가맹점 평균 연매출 약 4.5억 (POS 데이터 기반)",
+          "sourceType": "official",
+          "isEstimated": true,
+          "confidence": "medium",
+          "note": "POS 데이터 기반. 6개월 미만 가맹점 제외, 703곳 기준. 4사 중 최저 수준"
+        },
+        {
+          "label": "가맹점 평균 영업기간 (2024년 말)",
+          "value": 44.6,
+          "unit": "개월",
+          "displayValue": "평균 영업기간 약 3년 9개월 (44.6개월)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 말 기준. BHC(57개월)·BBQ(76개월)·교촌(87개월)보다 짧음. 브랜드 연차가 가장 짧은 영향"
+        }
+      ]
+    },
+    "얼마드나": {
+      "items": [
+        {
+          "label": "가맹비",
+          "value": 1100,
+          "unit": "만원",
+          "displayValue": "가맹비 1,100만원 (VAT 포함)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "계약기간 내 본사 귀책 해지 시 가입비(가맹비 20%) 잔여기간 일할 계산 반환. 개점지원비(80%)는 반환 안됨"
+        },
+        {
+          "label": "교육비",
+          "value": 550,
+          "unit": "만원",
+          "displayValue": "교육비 550만원 (VAT 포함, 2인 기준 5일 과정)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "사전 온라인(2.5h) + 본사 오프라인(42h) 합산. 교육 시작 후 반환 불가"
+        },
+        {
+          "label": "보증금",
+          "value": 0,
+          "unit": "",
+          "displayValue": "보증금 없음 — 4사 중 유일하게 보증금 미징수",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "정보공개서 명시: '해당 없음 - 보증금, 담보목적물 등을 받지 않습니다.' 대신 서울보증보험 피해보상보험으로 대체"
+        },
+        {
+          "label": "인테리어비 (33㎡ 기준)",
+          "value": 1880,
+          "unit": "만원",
+          "displayValue": "인테리어 1,880만원 (33㎡, 3.3㎡당 188만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "33㎡ 기준 추정치. BHC 딜리버리(1,760만)·교촌 배달형(3,597만~)·BBQ 올리브치킨(3,135만)보다 낮음"
+        },
+        {
+          "label": "간판비",
+          "value": 880,
+          "unit": "만원",
+          "displayValue": "간판 880만원 (기본 6m 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "매장 전면 크기·구조에 따라 달라질 수 있음"
+        },
+        {
+          "label": "주방설비 + 오븐",
+          "value": 3234,
+          "unit": "만원",
+          "displayValue": "주방설비 1,210만원 + 콤비오븐 2,024만원 = 약 3,234만원",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "주방설비 1,210만 + 주방·홀 집기 220만 + 오븐(10단 콤비오븐) 2,024만. 일반 치킨집 대비 오븐 비용이 특이"
+        },
+        {
+          "label": "관리감독비 (일반매장 기준)",
+          "value": 440,
+          "unit": "만원",
+          "displayValue": "관리감독비 440만원 (15평 이상 일반매장, 제주·강원 제외)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "배달 EXPRESS(15평 미만) 330만원. 제주·강원 지역은 10만원 추가. 타 브랜드에 없는 항목"
+        },
+        {
+          "label": "총투자비 추정 (33㎡, 임대비 제외)",
+          "value": 9005,
+          "unit": "만원",
+          "displayValue": "총투자비 약 9,000만원 (가맹금+기타비용, 임대비 제외)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "가맹비 1,100+교육비 550+인테리어 1,880+간판 880+주방 1,210+집기 220+오븐 2,024+POS 154+초도물품 330+관리감독비 440+테이블 110+기타. 정보공개서 합계 68,080,000원(6,808만)+가맹금 1,650만"
+        }
+      ]
+    },
+    "얼마남나": {
+      "items": [
+        {
+          "label": "상표사용료 (로열티)",
+          "value": 0,
+          "unit": "",
+          "displayValue": "로열티 없음 — '해당 없음' 명시",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BBQ와 마찬가지로 별도 로열티 없음 명시. 차액가맹금 방식으로 실질 수익 구조"
+        },
+        {
+          "label": "POS 프로그램 사용료 (월)",
+          "value": 22000,
+          "unit": "원",
+          "displayValue": "POS 월 22,000원 + 대표번호 사용료 월 22,000원",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "POS 22,000원 + 대표번호 22,000원 = 월 44,000원. 명세서 기재일까지 납부"
+        },
+        {
+          "label": "광고·판촉 총 지출 (2024)",
+          "value": 17601524,
+          "unit": "천원",
+          "displayValue": "2024년 광고·판촉 총 지출 약 176억원 (가맹점 분담분 비공개)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "광고선전비 17,189,668천원 + 판매촉진비 411,856천원. 본사·가맹점 분담 세부는 비공개"
+        },
+        {
+          "label": "지연이자율",
+          "value": 12,
+          "unit": "%",
+          "displayValue": "물품대금 연체 시 연 12% 지연이자",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "교촌·BBQ와 동일. 지급기일 다음날부터 지급일까지"
+        },
+        {
+          "label": "추정 순이익 (월 매출 3,750만 기준)",
+          "value": 280,
+          "unit": "만원",
+          "displayValue": "월 순이익 추정 약 200~350만원 (4사 중 최저 수준)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 연 평균매출 4.5억(월 3,750만) 기준. 재료비·인건비·임대료·기타 공제 후 순이익 약 7~10%. 오븐 중심 운영으로 전기요금 부담 높을 수 있음"
+        }
+      ]
+    },
+    "어디서망하나": {
+      "items": [
+        {
+          "label": "공정위 시정조치 (최근 3년)",
+          "value": 1,
+          "unit": "건",
+          "displayValue": "최근 3년 공정위 시정조치 1건 — 부당한 거래상대방 구속 (2025.5.7)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "의결 제2025-90호. 가맹사업법 제12조제1항제2호 위반 — 시정명령 및 모든 가맹점사업자에게 통지. 단, 당사는 재결 진행 중으로 아직 확정 아님을 주석에 명시"
+        },
+        {
+          "label": "즉시 해지 가능 사유",
+          "value": 9,
+          "unit": "개",
+          "displayValue": "파산·부도·7일 이상 무단폐업 등 9가지 즉시 해지 사유",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "타 3사와 동일 구조. 파산·부도·천재지변·행정처분·영업정지·1년 내 재위반·형사처벌·건강안전 위해·7일 이상 무단폐업"
+        },
+        {
+          "label": "위약금 기준",
+          "value": 10,
+          "unit": "%",
+          "displayValue": "위약금 = 직전 3개월 월평균 매입액 × 10% × 잔여기간(월) + 광고비·대표번호 잔여분",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "BHC와 동일한 매입액 기준 공식. 단, 매출액이 아닌 '매입액' 기준. 광고비·대표번호 이용료 잔여분도 추가됨"
+        },
+        {
+          "label": "핵심 원재료 사입 위약벌",
+          "value": 5,
+          "unit": "%",
+          "displayValue": "계육·소스 등 무단 사입 적발 시 전월 매출의 5% 위약벌",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "브랜드 이미지 훼손·원산지 위반 언론 보도·POS 허위입력도 전월 매출 5%. BHC(20%)보다 낮지만 오븐 특성상 사입 유혹 있을 수 있음"
+        },
+        {
+          "label": "계약기간 및 갱신 조건",
+          "value": 3,
+          "unit": "년",
+          "displayValue": "최초 계약 3년, 갱신은 2년 단위 (최장 10년 갱신청구권)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "교촌과 동일한 최초 3년. 갱신은 2년(BBQ와 동일). 갱신 시 매장 노후설비 교체·채무 완전 변제 필수"
+        },
+        {
+          "label": "2024년 계약 해지 건수",
+          "value": 17,
+          "unit": "개",
+          "displayValue": "2024년 계약해지 17건 + 종료 10건 = 총 27건 탈락",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2023년 해지 25건으로 급증 후 2024년 17건으로 개선. 규모 대비 해지율은 3.8%(715개 기준)으로 BHC(6.3%)보다 낮음"
+        },
+        {
+          "label": "직영점 유무",
+          "value": 0,
+          "unit": "개",
+          "displayValue": "직영점 없음 — 품질·운영 기준 검증 체계 취약 가능성",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "4사 중 유일하게 직영점 0. 본사가 실제 운영 현장 경험 없이 관리하는 구조. 직원 수도 109명으로 4사 중 최소"
+        }
+      ]
+    }
+  }
+}

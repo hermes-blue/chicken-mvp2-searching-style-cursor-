@@ -782,6 +782,18 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
         <div style={{ padding: '11px 13px', borderRadius: 12, background: 'rgba(255,255,255,0.04)' }}>
           <InsightList insights={data.insights} text={data.text} />
         </div>
+
+        {/* 공정위 표시 */}
+        {data.official && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7.5" stroke="rgba(61,191,184,0.4)" strokeWidth="1"/>
+              <circle cx="8" cy="8" r="5" stroke="rgba(61,191,184,0.3)" strokeWidth="0.5"/>
+              <text x="8" y="10.5" textAnchor="middle" fontSize="5" fill="rgba(61,191,184,0.6)" fontFamily="sans-serif" fontWeight="700">공정위</text>
+            </svg>
+            <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
+          </div>
+        )}
       </div>
 
       {/* CTA */}
@@ -884,6 +896,16 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
             <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.04)', marginBottom: 10 }}>
               <InsightList insights={data.insights} text={text} />
             </div>
+            {data.official && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="8" cy="8" r="7.5" stroke="rgba(61,191,184,0.4)" strokeWidth="1"/>
+                  <circle cx="8" cy="8" r="5" stroke="rgba(61,191,184,0.3)" strokeWidth="0.5"/>
+                  <text x="8" y="10.5" textAnchor="middle" fontSize="5" fill="rgba(61,191,184,0.6)" fontFamily="sans-serif" fontWeight="700">공정위</text>
+                </svg>
+                <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
+              </div>
+            )}
             {qBtn && (
               <button
                 onPointerDown={(e) => { e.stopPropagation(); setBtnPressed(true) }}
