@@ -1,0 +1,281 @@
+{
+  "brand": "BHC",
+  "cards": {
+    "해볼만한가": {
+      "items": [
+        {
+          "label": "전국 가맹점 수 (2024년 말)",
+          "value": 2228,
+          "unit": "개",
+          "displayValue": "전국 2,228개 운영 중",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 12월 31일 기준 가맹점 2,228개 + 직영점 2개"
+        },
+        {
+          "label": "가맹점 수 증감 (2022→2024)",
+          "value": 252,
+          "unit": "개",
+          "displayValue": "2년간 252개 증가 (2022: 1,976 → 2024: 2,228)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2022년 말 1,976개 → 2023년 말 2,276개 → 2024년 말 2,228개. 2024년은 92개 신규 vs 136개 종료로 순감"
+        },
+        {
+          "label": "2024년 가맹점 신규 vs 종료",
+          "value": -48,
+          "unit": "개",
+          "displayValue": "2024년은 신규 92개, 종료 140개 — 순감 48개",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 신규개점 92, 계약종료 136, 계약해지 4. 명의변경 308건은 폐업 아님"
+        },
+        {
+          "label": "가맹점 연간 평균 매출액 (2024)",
+          "value": 529724,
+          "unit": "천원",
+          "displayValue": "가맹점 평균 연매출 약 5.3억 (추정치)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "medium",
+          "note": "추정값. 본사 물품공급액 역산 추정값. 딜리버리 원가율 약 47.6% 기준. 직영점 매출 제외"
+        },
+        {
+          "label": "가맹점 평균 영업기간 (2024년 말)",
+          "value": 1732,
+          "unit": "일",
+          "displayValue": "평균 영업기간 약 4년 9개월 (1,732일)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2024년 말 기준 영업 중인 가맹점 2,228개의 평균 영업일수"
+        }
+      ]
+    },
+    "얼마드나": {
+      "items": [
+        {
+          "label": "가입비 (딜리버리형)",
+          "value": 7700,
+          "unit": "천원",
+          "displayValue": "딜리버리 가입비 770만원 (VAT 포함)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "비어존 1,100만원, 특화1(면) 110만원, 특화2(특수) 330만원"
+        },
+        {
+          "label": "교육비 (딜리버리형, 2인 기준)",
+          "value": 2200,
+          "unit": "천원",
+          "displayValue": "딜리버리 교육비 220만원 (4박5일 합숙, 2인 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "비어존 242만원. 필수교육자 2인 기준. 만19세~60세 이하"
+        },
+        {
+          "label": "계약이행보증금 (딜리버리/비어존)",
+          "value": 10000,
+          "unit": "천원",
+          "displayValue": "보증금 1,000만원 (계약종료 시 반환)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "딜리버리·비어존 1,000만원, 특화1·2는 300만원. 귀책사유 없으면 전액 반환"
+        },
+        {
+          "label": "인테리어비 (딜리버리 33㎡ 기준)",
+          "value": 17600,
+          "unit": "천원",
+          "displayValue": "딜리버리 인테리어 1,760만원 (33㎡, 3.3㎡당 160만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "비어존(66㎡) 4,620만원. 시세 반영치이며 시장가 변동 시 변경 가능"
+        },
+        {
+          "label": "간판비 (딜리버리 기준)",
+          "value": 3300,
+          "unit": "천원",
+          "displayValue": "간판비 330만원 (딜리버리, 6m 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "비어존 770만원 (8m 기준)"
+        },
+        {
+          "label": "주방기기/집기 (딜리버리)",
+          "value": 8615,
+          "unit": "천원",
+          "displayValue": "주방기기 약 861만원 (딜리버리, 후라이어 11구 기준)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "주방집기는 주문량에 따라 별도. 특화1(면)은 389만원"
+        },
+        {
+          "label": "기타비용 합계 (딜리버리 33㎡)",
+          "value": 29955,
+          "unit": "천원",
+          "displayValue": "인테리어·간판·기기 등 기타비용 합계 약 3,000만원 (딜리버리)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "임대비·초도상품비·전기가스공사 등 별도. 실제 총투자비는 훨씬 높을 수 있음"
+        },
+        {
+          "label": "총투자비 추정 (딜리버리, 보증금 포함)",
+          "value": 51855,
+          "unit": "천원",
+          "displayValue": "딜리버리 총투자비 최소 약 5,200만원 (임대비·초도상품비 제외)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 가입비 770+교육비 220+보증금 1,000+기타비용 2,996 합산. 임대보증금·권리금·초도상품비·공사비 추가 발생"
+        }
+      ]
+    },
+    "얼마남나": {
+      "items": [
+        {
+          "label": "재료비율 (딜리버리형)",
+          "value": 47.6,
+          "unit": "%",
+          "displayValue": "딜리버리 재료비율 약 47.6% (원가율 50%, 본사공급율 99%)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "비어존 43.5%(원가율 45%), 특화 45%. 본사 물품공급액이 매출의 해당 비율"
+        },
+        {
+          "label": "로열티",
+          "value": 0,
+          "unit": "",
+          "displayValue": "별도 로열티 없음 — 차액가맹금 방식으로 대체",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "공개된 별도 로열티 항목 없음. 대신 본사 공급가와 시장도매가의 차액(차액가맹금)이 실질 로열티 역할. 차액가맹금 구체 금액은 비공개"
+        },
+        {
+          "label": "광고·판촉비 (가맹점 부담분)",
+          "value": 26473912,
+          "unit": "천원",
+          "displayValue": "2024년 가맹점 광고·판촉 부담 총액 약 265억원 (점포당 평균 약 119만원)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "가맹점 전체 부담분 26,473,912천원 / 점포수 2,228 ≈ 점포당 연 약 1,188만원 추정"
+        },
+        {
+          "label": "POS 사용료 (월, 제휴업체 기준)",
+          "value": 78,
+          "unit": "천원",
+          "displayValue": "POS 월 사용료 약 6~8만원 (옵션에 따라 상이)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "medium",
+          "note": "제휴업체 기준 약 월 6~8만원. POS 프로그램 추가 시 1대당 9,900원 별도"
+        },
+        {
+          "label": "온라인 주문 수수료 (가맹점 부담)",
+          "value": 75,
+          "unit": "%",
+          "displayValue": "온라인 주문 수수료 중 75%는 가맹점 부담, 25%는 본사 부담",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "지도맵핑·콜센터 전화주문도 동일 비율 적용. 배달플랫폼 수수료는 업체별 별도 계약"
+        },
+        {
+          "label": "추정 순이익 (딜리버리, 월 매출 4,400만원 기준)",
+          "value": 400,
+          "unit": "만원",
+          "displayValue": "월 순이익 추정 약 300~500만원 (재료비·인건비·임대료 공제 후)",
+          "sourceType": "estimate",
+          "isEstimated": true,
+          "confidence": "low",
+          "note": "추정값. 연 평균매출 5.3억(월 4,400만) 기준. 재료비 47.6% + 인건비 15~20% + 임대료 5~10% + 기타 제하면 순이익 약 7~12%. 개인 상황에 따라 큰 편차"
+        }
+      ]
+    },
+    "어디서망하나": {
+      "items": [
+        {
+          "label": "즉시 해지 가능 사유",
+          "value": 9,
+          "unit": "개",
+          "displayValue": "파산·부도·영업정지 등 9가지 사유 해당 시 예고 없이 즉시 해지 가능",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "파산·부도·7일 이상 무단폐업·행정처분·형사처벌·건강안전 급박위해 등 포함"
+        },
+        {
+          "label": "위약금 기준",
+          "value": 10,
+          "unit": "%",
+          "displayValue": "위약금 = 직전 12개월 월 평균 매출의 10% × 잔여계약 개월수",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "예: 월매출 4,400만원, 잔여기간 12개월 시 위약금 약 5,280만원. 양 방향(본사·가맹점) 모두 적용"
+        },
+        {
+          "label": "위약벌 (외부 원재료 사용 등)",
+          "value": 20,
+          "unit": "%",
+          "displayValue": "무단 외부 원재료 사용 시 전월 매출의 20% 위약벌",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "본사 직원 출입 거부·폭행도 전월 매출 20%. 언론 보도·POS 허위입력은 10%. 영업비밀·경업금지 위반은 가입비의 2배"
+        },
+        {
+          "label": "광고비 강제 여부",
+          "value": 1,
+          "unit": "",
+          "displayValue": "전국 단위 광고비 가맹점 강제 분담 — 계약상 규정 비율 동의 시 진행",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "가맹사업법 제12조의6에 따라 가맹점 사전 동의 절차 있음. 2024년 가맹점 부담 총액 265억원"
+        },
+        {
+          "label": "공정거래위원회 시정조치 (최근 3년)",
+          "value": 2,
+          "unit": "건",
+          "displayValue": "최근 3년 공정위 시정조치 2건 — 불공정거래행위 시정명령·과징금 포함",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "2023.12.26 의결 2023-237: (주)비에이치씨 가맹사업법 제12조제1항제1호 위반 — 시정명령 및 과징금. 민사 패소도 2건(2024년)"
+        },
+        {
+          "label": "계약기간 및 갱신 조건",
+          "value": 2,
+          "unit": "년",
+          "displayValue": "최초 계약 2년, 이후 1년 단위 갱신 (최장 10년 갱신청구권)",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "계약 만료 180~90일 전 갱신 절차 시작. 10년 초과 시 본사 평가기준 미달 시 갱신 거절 가능"
+        },
+        {
+          "label": "2024년 계약해지·종료 건수",
+          "value": 140,
+          "unit": "개",
+          "displayValue": "2024년 계약종료 136건 + 해지 4건 = 140개 점포 탈락",
+          "sourceType": "official",
+          "isEstimated": false,
+          "confidence": "high",
+          "note": "신규 92건보다 종료·해지(140건)가 많아 2024년은 순감. 명의변경 308건은 별도"
+        }
+      ]
+    }
+  }
+}

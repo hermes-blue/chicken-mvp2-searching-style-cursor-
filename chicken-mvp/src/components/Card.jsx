@@ -22,10 +22,10 @@ const BRAND_COSTS = {
     { label: '가맹비',    amt: '1,500만', pct: 17 },
   ],
   'BHC치킨': [
-    { label: '인테리어',   amt: '6,500만', pct: 72 },
-    { label: '숨겨진 비용', amt: '5,500만', pct: 61 },
+    { label: '인테리어',   amt: '4,620만', pct: 51 },
+    { label: '숨겨진 비용', amt: '3,000만+', pct: 33 },
     { label: '장비·설비',  amt: '4,800만', pct: 53 },
-    { label: '가맹비',    amt: '900만',   pct: 10 },
+    { label: '가맹비',    amt: '770만',   pct: 9 },
   ],
   '푸라닭치킨': [
     { label: '인테리어',   amt: '5,000만', pct: 56 },
@@ -40,13 +40,13 @@ const COST_COMPARE = {
   '가맹비': [
     { name: '교촌', val: 1000, label: '1,000만' },
     { name: 'BBQ',  val: 1500, label: '1,500만' },
-    { name: 'BHC',  val: 900,  label: '900만'   },
+    { name: 'BHC',  val: 770,  label: '770만'   },
     { name: '푸라닭', val: 500, label: '500만'  },
   ],
   '인테리어': [
     { name: '교촌', val: 7000, label: '7,000만' },
     { name: 'BBQ',  val: 9000, label: '9,000만' },
-    { name: 'BHC',  val: 6500, label: '6,500만' },
+    { name: 'BHC',  val: 4620, label: '4,620만' },
     { name: '푸라닭', val: 5000, label: '5,000만' },
   ],
   '장비/설비': [
@@ -111,13 +111,13 @@ function InsightList({ insights, text }) {
         {insights.map((item, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: INSIGHT_DOT[item.dot] ?? '#9B7FE8', flexShrink: 0, marginTop: 4 }} />
-            <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{item.text}</span>
+            <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, wordBreak: 'keep-all' }}>{item.text}</span>
           </div>
         ))}
       </div>
     )
   }
-  return <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0 }}>{text}</p>
+  return <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0, wordBreak: 'keep-all' }}>{text}</p>
 }
 
 // ── 바 공통 ───────────────────────────────────────────────────
@@ -180,7 +180,7 @@ function ProfitChart({ data, color }) {
       <ChartLabel>{isProfit ? '순이익 비중' : '비용 비중'}</ChartLabel>
       <BigStat val={pct} unit="%" color={barColor} sub="of 월매출" />
       <Bar pct={pct} color={barColor} ready={ready} height={6} />
-      <div style={{ fontSize: 11, color: 'var(--color-text-muted)', fontWeight: 300, marginTop: 6 }}>
+      <div style={{ fontSize: 11, color: 'var(--color-text-muted)', fontWeight: 300, marginTop: 6, wordBreak: 'keep-all' }}>
         {data.row1Label}
       </div>
     </div>
@@ -293,12 +293,12 @@ const HUB_PROFIT_DATA = {
   'BHC치킨': {
     revenue: 1200,
     items: [
-      { label: '재료비 (38%)', amt: 456, pct: 38 },
-      { label: '인건비',       amt: 250, pct: 21 },
-      { label: '임대료',       amt: 150, pct: 13 },
-      { label: '기타 (로열티·관리비)', amt: 64, pct: 5 },
+      { label: '재료비 (47.6%)', amt: 571, pct: 48 },
+      { label: '인건비',         amt: 250, pct: 21 },
+      { label: '임대료',         amt: 150, pct: 13 },
+      { label: '기타 (광고·관리비)', amt: 64, pct: 5 },
     ],
-    profit: 280,
+    profit: 165,
   },
   '비비큐(BBQ)': {
     revenue: 1400,
@@ -751,10 +751,10 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
 
         {/* 큰 수치 */}
         <div style={{ marginBottom: 6 }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px' }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
             {apiLoading ? '불러오는 중...' : apiCost ?? data.row1Val}
           </div>
-          <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8 }}>
+          <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
             {apiCost ? 'Gemini AI 응답 · 실시간' : data.row1Label}
           </div>
         </div>
@@ -870,8 +870,8 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
       <div style={{ maxHeight: selected ? 340 : 0, overflow: 'hidden', transition: 'max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1)' }}>
         <div style={{ padding: '0 18px 18px', borderTop: '1px solid var(--color-border-default)' }}>
           <div style={{ padding: '14px 0 12px', borderBottom: '1px solid var(--color-border-default)' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--color-text-primary)', lineHeight: 0.95, letterSpacing: '-0.5px' }}>{row1Val}</div>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 6 }}>{row1Label}</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--color-text-primary)', lineHeight: 0.95, letterSpacing: '-0.5px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{row1Val}</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 6, wordBreak: 'keep-all' }}>{row1Label}</div>
           </div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', padding: '10px 0', borderBottom: '1px solid var(--color-border-default)' }}>
             {tags?.map((tag, i) => (

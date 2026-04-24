@@ -4,16 +4,13 @@
 
 ```bash
 # 개발 서버 실행
-cd chicken-mvp && npm run dev
-
+d chicken-mvp ; npm run dev
 # 패키지 설치
 npm install
 
 # 빌드
 npm run build
 ```
-
----
 
 ## 메모
 
@@ -42,7 +39,7 @@ npm run build
 
 5.명령어
 
-git add .; git commit -m " 간단오류수정"; git push
+git add .; git commit -m " 문구전체수정정"; git push
 git checkout .     git pull
 npm install, npm run dev
 Simple Browser: Show
