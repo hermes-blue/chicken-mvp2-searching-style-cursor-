@@ -111,7 +111,14 @@ function InsightList({ insights, text }) {
         {insights.map((item, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: INSIGHT_DOT[item.dot] ?? '#9B7FE8', flexShrink: 0, marginTop: 4 }} />
-            <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, wordBreak: 'keep-all' }}>{item.text}</span>
+            <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
+              <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, wordBreak: 'keep-all' }}>{item.text}</span>
+              {item.source && (
+                <span style={{ flexShrink: 0, fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(255,180,80,0.8)', border: '1px solid rgba(255,180,80,0.35)', borderRadius: 4, padding: '2px 6px', letterSpacing: '0.04em', whiteSpace: 'nowrap', marginTop: 2 }}>
+                  📰 {item.source}
+                </span>
+              )}
+            </div>
           </div>
         ))}
       </div>

@@ -181,7 +181,7 @@ export const screens = {
           { label: '로열티 2~3%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: 'TV에 자주 나와서 이름을 알아요.' },
+          { dot: 'teal', text: '배달 쿠폰에 자주 뜨는 브랜드예요.', source: '이코노뉴스' },
           { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
         ],
         qBtn: { label: '브랜드 좋은데 왜 30%가 망해? →', target: 's13' },
@@ -386,7 +386,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '매출 200만 올리면 순이익 50% 올라요.' },
-          { dot: 'gold', text: '직원 한 명 더 쓰면 100만대로 줄어요.' },
+          { dot: 'gold', text: '할인 행사 때 매출 올라도 마진 먼저 봐야 해요.', source: '스포츠한국' },
         ],
         qBtn: { label: '직원 한 명 더 쓰면 남는 게 없다고? →', target: 's13' },
       },
@@ -570,7 +570,7 @@ export const screens = {
           { label: '로열티 2%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '인지도 99%, 간장치킨 하면 교촌이에요.' },
+          { dot: 'teal', text: '간장치킨 이미지, 과자로도 팔려요.', source: '뉴스1' },
           { dot: 'gold', text: '로열티가 매달 2% 빠져나가요.' },
         ],
         qBtn: { label: '브랜드 최강인데 왜 비용도 최강이야? →', target: 'sgyo5' },
@@ -724,7 +724,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '매출의 40%, 본사에서 90% 사야 해요.' },
-          { dot: 'gold', text: '닭값 올라도 내가 그대로 써야 해요.' },
+          { dot: 'gold', text: '원가 올라도 가격 못 올리는 구조예요.', source: '스포츠한국' },
         ],
         qBtn: { label: '본사 공급 90%면 내 마음대로 못 해? →', target: 'sgyo13' },
       },
@@ -1043,7 +1043,7 @@ export const screens = {
           { label: '로열티 2~3%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '황금올리브로 고급 이미지 만들었어요.' },
+          { dot: 'teal', text: '원가 올라도 본사가 직접 부담해줘요.', source: '중앙일보' },
           { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
         ],
         qBtn: { label: '프리미엄 브랜드인데 왜 30%가 망해? →', target: 'sbbq13' },
@@ -1094,7 +1094,7 @@ export const screens = {
           { label: '자금 소진 2위', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '소득 높은 상권에서는 잘 버텨요.' },
+          { dot: 'teal', text: '가격 올리면 소비자 반발 제일 먼저 와요.', source: '한국일보' },
           { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
         ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'sbbq13' },
@@ -1347,8 +1347,8 @@ export const screens = {
           { label: '자연 집객 약함', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '허브치킨 좋아하는 단골이 있어요.' },
-          { dot: 'gold', text: '이름이 약해서 광고를 직접 해야 해요.' },
+          { dot: 'teal', text: '안성재 셰프 광고로 프리미엄 이미지 입혔어요.', source: '베이비뉴스' },
+          { dot: 'gold', text: '과거 두 차례 가격 올려 소비자 원망 받았어요.', source: '한국일보' },
         ],
         qBtn: { label: '인지도 낮으면 오픈 초기 어때? →', target: 'spura13' },
       },
