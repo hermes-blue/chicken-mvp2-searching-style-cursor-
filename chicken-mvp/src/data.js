@@ -73,7 +73,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '1억 미만으로 시작할 수 있어요.' },
-          { dot: 'gold', text: '이름이 약해서 손님을 직접 모아야 해요.' },
+          { dot: 'gold', text: '이미지는 뚜렷해요. 하지만 손님을 계속 불러오는 힘은 따로 봐야 해요.', source: '베이비뉴스' },
         ],
         qBtn: { label: '1억으로 치킨집, 진짜 될까?', target: 'spura0' },
       },
@@ -99,7 +99,7 @@ export const screens = {
           { label: '브랜드 3위', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '초보도 배워서 할 수 있는 구조예요.' },
+          { dot: 'teal', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: 'KFE뉴스' },
           { dot: 'gold', text: '2억 못 채우면 3개월이 고비예요.' },
         ],
         qBtn: { label: '3개월 안에 위기 온다는데, 진짜야? →', target: 's1' },
@@ -181,7 +181,7 @@ export const screens = {
           { label: '로열티 2~3%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '배달 쿠폰에 자주 뜨는 브랜드예요.', source: '이코노뉴스' },
+          { dot: 'teal', text: '이름은 잘 알려져 있어요. 알려진 만큼 비교도 많이 당해요.', source: '뉴데일리' },
           { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
         ],
         qBtn: { label: '브랜드 좋은데 왜 30%가 망해? →', target: 's13' },
@@ -199,7 +199,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '3주 교육 받으면 혼자 돌려요.' },
-          { dot: 'gold', text: '사람 없이 혼자는 못 해요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '신아일보' },
         ],
         qBtn: { label: '쉽다더니 왜 혼자는 못 하나? →', target: 's9' },
       },
@@ -216,7 +216,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '같은 BHC는 500m 안에 못 열어요.' },
-          { dot: 'gold', text: '교촌·BBQ는 바로 옆도 가능해요.' },
+          { dot: 'gold', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '미디어펜' },
         ],
         qBtn: { label: '치킨집이 편의점보다 많다고? →', target: 's13' },
       },
@@ -232,7 +232,7 @@ export const screens = {
           { label: '자금 소진 2위', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '사전 준비가 생존을 결정해요.' },
+          { dot: 'teal', text: '분쟁 신호가 보여요. 장사보다 계약이 먼저 발목 잡을 수 있어요.', source: '뉴스웍스' },
           { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
         ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 's13' },
@@ -259,7 +259,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '딜리버리 770만, 비어존 1,100만 원이에요.' },
-          { dot: 'gold', text: '한 달 안에만 일부 돌려받아요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '비즈트리뷴' },
         ],
         qBtn: { label: '계약 취소하면 돈 돌려받을 수 있어? →', target: 's13' },
       },
@@ -310,7 +310,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '보증금 1,000만은 계약 종료 시 돌려받아요.' },
-          { dot: 'gold', text: '임대보증금·초도상품비는 별도로 필요해요.' },
+          { dot: 'gold', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '대일경제' },
         ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 's13' },
       },
@@ -352,7 +352,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
-          { dot: 'gold', text: '최저임금 오를 때마다 같이 올라요.' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '뉴스TNT' },
         ],
         qBtn: { label: '혼자 다 하면 1~2년 안에 번아웃 온다고? →', target: 's13' },
       },
@@ -386,7 +386,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '매출 200만 올리면 순이익 50% 올라요.' },
-          { dot: 'gold', text: '할인 행사 때 매출 올라도 마진 먼저 봐야 해요.', source: '스포츠한국' },
+          { dot: 'gold', text: '할인은 손님을 부릅니다. 대신 남는 돈도 같이 깎일 수 있어요.', source: '이코노뉴스' },
         ],
         qBtn: { label: '직원 한 명 더 쓰면 남는 게 없다고? →', target: 's13' },
       },
@@ -411,7 +411,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '망하는 이유 1위, 자리 잘못 잡은 거예요.' },
-          { dot: 'gold', text: '배달 상권에 홀 인테리어하면 망해요.' },
+          { dot: 'gold', text: '분쟁 신호가 보여요. 장사보다 계약이 먼저 발목 잡을 수 있어요.', source: 'KFE뉴스' },
         ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 's1' },
       },
@@ -508,7 +508,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '총 1억~1.3억, BBQ보다 저렴해요.' },
-          { dot: 'gold', text: '공개 금액 외 임대보증금·권리금 별도예요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '교촌 창업 비용이 진짜 얼마야? →', target: 'sgyo5' },
       },
@@ -527,7 +527,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '잘 되면 한 달에 400~600만 남아요.' },
-          { dot: 'gold', text: '재료비·인건비·임대료 제하고 남는 금액이에요.' },
+          { dot: 'gold', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '스포츠한국' },
         ],
         qBtn: { label: '평균 7.3억 팔아도 순이익이 500만뿐이야? →', target: 'sgyo9' },
       },
@@ -570,7 +570,7 @@ export const screens = {
           { label: '로열티 2%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '간장치킨 이미지, 과자로도 팔려요.', source: '뉴스1' },
+          { dot: 'teal', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: '비즈니스포스트' },
           { dot: 'gold', text: '로열티가 매달 2% 빠져나가요.' },
         ],
         qBtn: { label: '브랜드 최강인데 왜 비용도 최강이야? →', target: 'sgyo5' },
@@ -589,7 +589,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '4주 교육 받으면 혼자 돌려요.' },
-          { dot: 'gold', text: '메뉴가 많아서 BHC보다 배울 게 많아요.' },
+          { dot: 'gold', text: '이미지는 좋아져요. 그래도 점주에게 중요한 건 결국 하루 매출이에요.', source: '뉴스퀘스트' },
         ],
         qBtn: { label: '메뉴 많으면 운영이 얼마나 힘들어? →', target: 'sgyo9' },
       },
@@ -606,7 +606,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '같은 교촌은 500m 안에 못 열어요.' },
-          { dot: 'gold', text: 'BBQ·BHC는 바로 옆도 가능해요.' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '서울와이어' },
         ],
         qBtn: { label: '보호구역 있어도 경쟁 심하다고? →', target: 'sgyo13' },
       },
@@ -622,7 +622,7 @@ export const screens = {
           { label: '입지 실패 2위', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '사전 준비가 생존을 결정해요.' },
+          { dot: 'teal', text: '분쟁 신호가 보여요. 장사보다 계약이 먼저 발목 잡을 수 있어요.', source: '서울타임스' },
           { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
         ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'sgyo13' },
@@ -665,7 +665,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '66㎡(약 20평) 기준 최소 5,888만 원이에요.' },
-          { dot: 'gold', text: '가맹점이 직접 시공업체와 계약해요.' },
+          { dot: 'gold', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '뉴스워커' },
         ],
         qBtn: { label: '인테리어 비용이 왜 이렇게 달라? →', target: 'sgyo13' },
       },
@@ -699,7 +699,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '보증금 1,000만은 계약 종료 시 돌려받아요.' },
-          { dot: 'gold', text: '임대보증금·권리금은 별도로 필요해요.' },
+          { dot: 'gold', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '스포츠한국' },
         ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 'sgyo13' },
       },
@@ -724,7 +724,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '매출의 40%, 본사에서 90% 사야 해요.' },
-          { dot: 'gold', text: '원가 올라도 가격 못 올리는 구조예요.', source: '스포츠한국' },
+          { dot: 'gold', text: '대표 맛은 강해요. 대신 가격과 원가 이슈도 같이 따라옵니다.', source: '로이슈' },
         ],
         qBtn: { label: '본사 공급 90%면 내 마음대로 못 해? →', target: 'sgyo13' },
       },
@@ -741,7 +741,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
-          { dot: 'gold', text: '메뉴 복잡해서 숙련된 직원이 필요해요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '메뉴 복잡해서 알바 구하기 어렵다고? →', target: 'sgyo13' },
       },
@@ -757,8 +757,8 @@ export const screens = {
           { label: '권리금 별도', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: 'A급 상권 들어가고 싶은 브랜드예요.' },
-          { dot: 'gold', text: '임대료 오르면 순이익이 바로 줄어요.' },
+          { dot: 'teal', text: '이미지는 좋아져요. 그래도 점주에게 중요한 건 결국 하루 매출이에요.', source: '뉴스퀘스트' },
+          { dot: 'gold', text: '할인은 손님을 부릅니다. 대신 남는 돈도 같이 깎일 수 있어요.', source: '경향뉴스' },
         ],
         qBtn: { label: '좋은 상권 들어가면 임대료가 얼마야? →', target: 'sgyo13' },
       },
@@ -775,7 +775,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '평균 가맹점 기준 월 400~600만 남아요.' },
-          { dot: 'gold', text: '홀 매장 인건비 부담이 더 높아요.' },
+          { dot: 'gold', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: '비즈니스포스트' },
         ],
         qBtn: { label: '월 500이면 투자금 회수에 몇 년 걸려? →', target: 'sgyo5' },
       },
@@ -816,8 +816,8 @@ export const screens = {
           { label: '조사 최소 3회', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '홀 손님 비중이 높은 브랜드예요.' },
-          { dot: 'gold', text: '배달 상권에 홀 인테리어하면 망해요.' },
+          { dot: 'teal', text: '이미지는 좋아져요. 그래도 점주에게 중요한 건 결국 하루 매출이에요.', source: '뉴스퀘스트' },
+          { dot: 'gold', text: '분쟁 신호가 보여요. 장사보다 계약이 먼저 발목 잡을 수 있어요.', source: '서울타임스' },
         ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'sgyo1' },
       },
@@ -834,7 +834,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '3사 중 본사 규정이 가장 빡빡해요.' },
-          { dot: 'gold', text: '나가고 싶어도 위약금이 수천만이에요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '그만두고 싶어도 못 나온다고? →', target: 'sgyo5' },
       },
@@ -850,7 +850,7 @@ export const screens = {
           { label: '1~2년 내 한계', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '메뉴 많아서 BHC보다 몸이 더 힘들어요.' },
+          { dot: 'teal', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '뉴스워커' },
           { dot: 'gold', text: '1~2년차에 체력 한계 오는 경우 많아요.' },
         ],
         qBtn: { label: '월 320 벌려고 주 7일 일하는 거 맞아? →', target: 'sgyo9' },
@@ -877,8 +877,8 @@ export const screens = {
           { label: '객단가 높음', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '해외까지 나간 이름, 브랜드가 불러요.' },
-          { dot: 'gold', text: '초기비용 높고 로열티 부담도 있어요.' },
+          { dot: 'teal', text: '브랜드 힘은 있어요. 비싼 이미지를 버틸 상권인지가 문제예요.', source: '파이낸셜투데이' },
+          { dot: 'gold', text: '가맹은 시작보다 유지가 중요해요. 처음 돈보다 매달 나가는 돈을 봐야 해요.', source: '한국외식신문' },
         ],
         qBtn: { label: '프리미엄인데 왜 로열티가 부담이야? →', target: 'sbbq1' },
       },
@@ -916,7 +916,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
-          { dot: 'gold', text: '재료비·로열티 합치면 실속이 적어요.' },
+          { dot: 'gold', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '위키트리' },
         ],
         qBtn: { label: '매출 1,400인데 순이익이 340뿐이야? →', target: 'sbbq9' },
       },
@@ -934,8 +934,8 @@ export const screens = {
           { label: '자금소진 25%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '비싼 상품이라 경기에 민감해요.' },
-          { dot: 'gold', text: '불황 오면 BBQ부터 안 시켜요.' },
+          { dot: 'teal', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '머니투데이' },
+          { dot: 'gold', text: '이미지는 좋아져요. 그래도 점주에게 중요한 건 결국 하루 매출이에요.', source: '반론보도' },
         ],
         qBtn: { label: '비싼 치킨 안 팔리면 어떻게 돼? →', target: 'sbbq13' },
       },
@@ -962,7 +962,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '1억 미만으로 시작할 수 있어요.' },
-          { dot: 'gold', text: '이름이 약해서 손님을 직접 모아야 해요.' },
+          { dot: 'gold', text: '이미지는 뚜렷해요. 하지만 손님을 계속 불러오는 힘은 따로 봐야 해요.', source: '베이비뉴스' },
         ],
         qBtn: { label: '인지도 낮으면 손님이 올까? →', target: 'spura1' },
       },
@@ -981,7 +981,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '총 9천~1.2억, 3사보다 훨씬 싸요.' },
-          { dot: 'gold', text: '싸게 시작해도 예비금은 꼭 있어야 해요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '싸게 시작하면 나중에 더 드는 거 아냐? →', target: 'spura5' },
       },
@@ -1000,7 +1000,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '투자금 회수는 3사보다 빠를 수 있어요.' },
-          { dot: 'gold', text: '4사 중 최저 수준, 절대 금액은 낮아요.' },
+          { dot: 'gold', text: '이름은 잘 알려져 있어요. 알려진 만큼 비교도 많이 당해요.', source: '세계일보' },
         ],
         qBtn: { label: '월 280만이면 너무 적은 거 아냐? →', target: 'spura9' },
       },
@@ -1019,7 +1019,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '손님 모으는 게 가장 큰 숙제예요.' },
-          { dot: 'gold', text: 'SNS·배달앱 광고 안 하면 빨리 망해요.' },
+          { dot: 'gold', text: '할인은 손님을 부릅니다. 대신 남는 돈도 같이 깎일 수 있어요.', source: '이뉴스투데이' },
         ],
         qBtn: { label: '브랜드 힘 없이 어떻게 손님을 모아? →', target: 'spura13' },
       },
@@ -1043,7 +1043,7 @@ export const screens = {
           { label: '로열티 2~3%', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '원가 올라도 본사가 직접 부담해줘요.', source: '중앙일보' },
+          { dot: 'teal', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '일요서울' },
           { dot: 'gold', text: '로열티가 매달 2~3% 빠져나가요.' },
         ],
         qBtn: { label: '프리미엄 브랜드인데 왜 30%가 망해? →', target: 'sbbq13' },
@@ -1061,7 +1061,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '3주 교육 받으면 혼자 돌려요.' },
-          { dot: 'gold', text: '혼자서는 못 해요, 사람이 필요해요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '한국청년일보' },
         ],
         qBtn: { label: '쉽다더니 왜 혼자는 못 하나? →', target: 'sbbq9' },
       },
@@ -1078,7 +1078,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '같은 BBQ는 500m 안에 못 열어요.' },
-          { dot: 'gold', text: '비싼데 옆에 싼 치킨집 생기면 힘들어요.' },
+          { dot: 'gold', text: '브랜드 힘은 있어요. 비싼 이미지를 버틸 상권인지가 문제예요.', source: '아주경제' },
         ],
         qBtn: { label: '비싼데 옆에 싼 치킨집 생기면? →', target: 'sbbq13' },
       },
@@ -1094,7 +1094,7 @@ export const screens = {
           { label: '자금 소진 2위', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '가격 올리면 소비자 반발 제일 먼저 와요.', source: '한국일보' },
+          { dot: 'teal', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '매일경제' },
           { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
         ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'sbbq13' },
@@ -1120,7 +1120,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '1,100만 원 (올리브치킨 기준)이에요.' },
-          { dot: 'gold', text: '계약 전 특약 조항 꼭 확인하세요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '법률타임스' },
         ],
         qBtn: { label: '계약 취소하면 돈 돌려받을 수 있어? →', target: 'sbbq13' },
       },
@@ -1137,7 +1137,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '15평(올리브치킨) 기준 3,135만 원이에요.' },
-          { dot: 'gold', text: '카페·치킨&비어 타입은 더 비쌀 수 있어요.' },
+          { dot: 'gold', text: '가맹은 시작보다 유지가 중요해요. 처음 돈보다 매달 나가는 돈을 봐야 해요.', source: '인사이트코리아' },
         ],
         qBtn: { label: '타입 고를 때 인테리어 비용이 결정적이야? →', target: 'sbbq13' },
       },
@@ -1154,7 +1154,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '올리브치킨 주방기기·집기 2,420만이에요.' },
-          { dot: 'gold', text: '타입 선택이 장비비에도 결정적이에요.' },
+          { dot: 'gold', text: '분쟁 키워드는 작게 봐도 됩니다. 대신 계약 전에는 크게 봐야 해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '3년마다 또 수천만이 나간다고? →', target: 'sbbq9' },
       },
@@ -1171,7 +1171,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '보증금은 3사 중 가장 낮은 500만이에요.' },
-          { dot: 'gold', text: '운영 예비금·임대보증금은 별도로 필요해요.' },
+          { dot: 'gold', text: '가격은 묶였어요. 대신 비용 부담은 어딘가에 남아요.', source: '디스커버리뉴스' },
         ],
         qBtn: { label: '돈 모자라면 정확히 어느 순간 망해? →', target: 'sbbq13' },
       },
@@ -1213,7 +1213,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '직원 1명 기준 250만 원이에요.' },
-          { dot: 'gold', text: '최저임금 오를 때마다 같이 올라요.' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '세계일보' },
         ],
         qBtn: { label: '혼자 다 하면 1~2년 안에 번아웃 온다고? →', target: 'sbbq13' },
       },
@@ -1229,7 +1229,7 @@ export const screens = {
           { label: '마리당 광고비만 부과', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '로열티 없음 — BBQ는 별도 로열티 없어요.' },
+          { dot: 'teal', text: '가맹은 시작보다 유지가 중요해요. 처음 돈보다 매달 나가는 돈을 봐야 해요.', source: '인사이트코리아' },
           { dot: 'gold', text: '마리당 광고비 300~400원만 부과돼요.' },
         ],
         qBtn: { label: '로열티 없으면 어디서 본사가 마진 가져가? →', target: 'sbbq5' },
@@ -1247,7 +1247,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
-          { dot: 'gold', text: '불황 오면 매출이 확 빠지는 구조예요.' },
+          { dot: 'gold', text: '브랜드 힘은 있어요. 비싼 이미지를 버틸 상권인지가 문제예요.', source: '아주경제' },
         ],
         qBtn: { label: '불황 오면 매출이 얼마나 빠져? →', target: 'sbbq13' },
       },
@@ -1271,7 +1271,7 @@ export const screens = {
           { label: '상권 선택 핵심', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '고급 상권에서는 잘 버텨요.' },
+          { dot: 'teal', text: '이미지는 좋아져요. 그래도 점주에게 중요한 건 결국 하루 매출이에요.', source: '반론보도' },
           { dot: 'gold', text: '불황 오면 3사 중 매출이 제일 빠져요.' },
         ],
         qBtn: { label: '어떤 상권이 BBQ에 맞아? →', target: 'sbbq1' },
@@ -1288,8 +1288,8 @@ export const screens = {
           { label: '조사 최소 3회', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '소득 높은 동네에서 해야 잘 돼요.' },
-          { dot: 'gold', text: '서민 상권에서는 비싸서 안 팔려요.' },
+          { dot: 'teal', text: '브랜드 힘은 있어요. 비싼 이미지를 버틸 상권인지가 문제예요.', source: '파이낸셜투데이' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '1코노미뉴스' },
         ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'sbbq1' },
       },
@@ -1322,8 +1322,8 @@ export const screens = {
           { label: '해지 조건 까다로움', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '메뉴·가격 다 본사가 정해요.' },
-          { dot: 'gold', text: '나가고 싶어도 위약금이 수천만이에요.' },
+          { dot: 'teal', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '한국청년일보' },
+          { dot: 'gold', text: '분쟁 키워드는 작게 봐도 됩니다. 대신 계약 전에는 크게 봐야 해요.', source: '포인트데일리' },
         ],
         qBtn: { label: '그만두고 싶어도 못 나온다고? →', target: 'sbbq5' },
       },
@@ -1347,8 +1347,8 @@ export const screens = {
           { label: '자연 집객 약함', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '안성재 셰프 광고로 프리미엄 이미지 입혔어요.', source: '베이비뉴스' },
-          { dot: 'gold', text: '과거 두 차례 가격 올려 소비자 원망 받았어요.', source: '한국일보' },
+          { dot: 'teal', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: '신아일보' },
+          { dot: 'gold', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '인더뉴스' },
         ],
         qBtn: { label: '인지도 낮으면 오픈 초기 어때? →', target: 'spura13' },
       },
@@ -1365,7 +1365,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '2~3주면 혼자 돌릴 수 있어요.' },
-          { dot: 'gold', text: '소규모라 혼자도 운영 가능해요.' },
+          { dot: 'gold', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '스트레이트뉴스' },
         ],
         qBtn: { label: '소규모로 혼자 운영할 수 있어? →', target: 'spura9' },
       },
@@ -1382,7 +1382,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '같은 푸라닭은 500m 안에 못 열어요.' },
-          { dot: 'gold', text: '3대 브랜드랑 싸워야 해서 더 힘들어요.' },
+          { dot: 'gold', text: '이름은 잘 알려져 있어요. 알려진 만큼 비교도 많이 당해요.', source: '세계일보' },
         ],
         qBtn: { label: '브랜드 약한데 경쟁에서 살아남으려면? →', target: 'spura13' },
       },
@@ -1398,7 +1398,7 @@ export const screens = {
           { label: '입지 실패 2위', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '초기비용 낮아서 손실이 작아요.' },
+          { dot: 'teal', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '서울경제TV' },
           { dot: 'gold', text: '3년 안에 10명 중 3명 문 닫아요.' },
         ],
         qBtn: { label: '어디서 가장 많이 걸려서 망하나? →', target: 'spura13' },
@@ -1457,7 +1457,7 @@ export const screens = {
           { label: 'POS 250만', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '소규모 매장이라 장비도 적어요.' },
+          { dot: 'teal', text: '이미지는 뚜렷해요. 하지만 손님을 계속 불러오는 힘은 따로 봐야 해요.', source: '베이비뉴스' },
           { dot: 'gold', text: '튀김기는 3년 되면 또 사야 해요.' },
         ],
         qBtn: { label: '장비 싸면 품질도 다른 거야? →', target: 'spura1' },
@@ -1474,8 +1474,8 @@ export const screens = {
           { label: '예비금 2,000만+', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '보증금 없음 — 대신 서울보증보험 가입 필수.' },
-          { dot: 'gold', text: '운영 예비금은 반드시 확보해야 해요.' },
+          { dot: 'teal', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '연합뉴스' },
+          { dot: 'gold', text: '할인은 손님을 부릅니다. 대신 남는 돈도 같이 깎일 수 있어요.', source: '테크M' },
         ],
         qBtn: { label: '보증금 없으면 진짜 1억으로 창업 가능해? →', target: 'spura13' },
       },
@@ -1499,8 +1499,8 @@ export const screens = {
           { label: '허브재료 단가 높음', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '본사 의존도 낮아 일부 직접 구매 가능해요.' },
-          { dot: 'gold', text: '허브 재료 비싸서 원가가 높은 편이에요.' },
+          { dot: 'teal', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '세계비즈' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '한국피아이뉴스' },
         ],
         qBtn: { label: '허브재료 비싸면 원가가 더 높아? →', target: 'spura13' },
       },
@@ -1516,7 +1516,7 @@ export const screens = {
           { label: '매년 상승', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '파트타임으로 돌릴 수 있어요.' },
+          { dot: 'teal', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: '더파워뉴스' },
           { dot: 'gold', text: '직원 1명 기준 200만 원이에요.' },
         ],
         qBtn: { label: '파트타임으로 운영하면 품질 유지돼? →', target: 'spura1' },
@@ -1533,8 +1533,8 @@ export const screens = {
           { label: '권리금 별도', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '소규모라 임대료가 낮아요.' },
-          { dot: 'gold', text: '상권 따라 매출 차이가 많이 나요.' },
+          { dot: 'teal', text: '이름은 잘 알려져 있어요. 알려진 만큼 비교도 많이 당해요.', source: '세계일보' },
+          { dot: 'gold', text: '이미지는 뚜렷해요. 하지만 손님을 계속 불러오는 힘은 따로 봐야 해요.', source: '베이비뉴스' },
         ],
         qBtn: { label: '주택가에서도 장사가 돼? →', target: 'spura1' },
       },
@@ -1551,7 +1551,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '평균 가맹점 기준 월 200~350만 남아요.' },
-          { dot: 'gold', text: '오븐 전기요금 등 추가 비용 주의해요.' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '포인트데일리' },
         ],
         qBtn: { label: '월 280인데 투자금 회수에 몇 년 걸려? →', target: 'spura5' },
       },
@@ -1575,8 +1575,8 @@ export const screens = {
           { label: '배달앱 광고비 부담', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '직접 마케팅하면 충성 손님이 생겨요.' },
-          { dot: 'gold', text: 'SNS·배달앱 안 하면 손님이 안 와요.' },
+          { dot: 'teal', text: '브랜드는 계속 새 이야기를 만듭니다. 점주는 그 이야기가 매출로 이어지는지 봐야 해요.', source: '신아일보' },
+          { dot: 'gold', text: '할인은 손님을 부릅니다. 대신 남는 돈도 같이 깎일 수 있어요.', source: '로이슈' },
         ],
         qBtn: { label: '마케팅 안 하면 얼마나 빨리 망해? →', target: 'spura9' },
       },
@@ -1592,8 +1592,8 @@ export const screens = {
           { label: '조사 최소 3회', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '배달 많이 시키는 동네가 맞아요.' },
-          { dot: 'gold', text: '브랜드 약하니까 자리가 더 중요해요.' },
+          { dot: 'teal', text: '이미지는 뚜렷해요. 하지만 손님을 계속 불러오는 힘은 따로 봐야 해요.', source: '베이비뉴스' },
+          { dot: 'gold', text: '이름은 잘 알려져 있어요. 알려진 만큼 비교도 많이 당해요.', source: '세계일보' },
         ],
         qBtn: { label: '오픈하고 나면 입지는 못 바꾼다고? →', target: 'spura1' },
       },
@@ -1610,7 +1610,7 @@ export const screens = {
         ],
         insights: [
           { dot: 'teal', text: '초기비용은 3사보다 적어요.' },
-          { dot: 'gold', text: '손님 안 오면 예비금이 빨리 없어져요.' },
+          { dot: 'gold', text: '가격 얘기가 나왔어요. 손님도 점주도 계산기를 두드리는 구간이에요.', source: '한국피아이뉴스' },
         ],
         qBtn: { label: '예비금 없으면 언제 망해? →', target: 'spura5' },
       },
@@ -1626,8 +1626,8 @@ export const screens = {
           { label: '운영+홍보 이중 소모', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '조리 자체는 단순해서 몸은 덜 힘들어요.' },
-          { dot: 'gold', text: 'SNS까지 혼자 하면 머리가 지쳐요.' },
+          { dot: 'teal', text: '가맹 이야기는 숫자로 봐야 해요. 말보다 계약서와 비용표가 중요해요.', source: '에코노빌' },
+          { dot: 'gold', text: '논란은 지나갈 수 있어요. 하지만 브랜드 신뢰는 한 번 흔들리면 오래 가요.', source: '인더뉴스' },
         ],
         qBtn: { label: '월 220 벌려고 이 고생을 해야 해? →', target: 'spura9' },
       },
