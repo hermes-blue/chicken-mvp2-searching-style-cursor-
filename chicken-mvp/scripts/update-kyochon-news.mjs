@@ -6,6 +6,15 @@ const clientSecret = process.env.NAVER_CLIENT_SECRET;
 const outputJsonPath = path.join(process.cwd(), 'src', 'auto-kyochon-news.json');
 const outputCsvPath = path.join(process.cwd(), 'src', 'auto-kyochon-news.csv');
 
+async function readPreviousNews() {
+  try {
+    const content = await fs.readFile(outputJsonPath, 'utf8');
+    return JSON.parse(content);
+  } catch {
+    return null;
+  }
+}
+
 function cleanText(value = '') {
   return String(value)
     .replace(/<[^>]+>/g, '')
@@ -49,7 +58,9 @@ if (!response.ok) {
 
 const data = await response.json();
 const items = data.items || [];
-const first = items[0] || {};
+const previousNews = await readPreviousNews();
+const previousLink = previousNews?.link || '';
+const first = items.find((item) => item.link && item.link !== previousLink) || items[0] || {};
 const updatedAt = new Date().toISOString();
 const updatedAtKst = new Intl.DateTimeFormat('ko-KR', {
   timeZone: 'Asia/Seoul',
