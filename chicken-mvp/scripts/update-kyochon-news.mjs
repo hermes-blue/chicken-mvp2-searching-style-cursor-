@@ -51,6 +51,12 @@ const data = await response.json();
 const items = data.items || [];
 const first = items[0] || {};
 const updatedAt = new Date().toISOString();
+const updatedAtKst = new Intl.DateTimeFormat('ko-KR', {
+  timeZone: 'Asia/Seoul',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+}).format(new Date());
 const title = cleanText(first.title || '교촌치킨 뉴스 없음');
 const summaryPreview = makeSummaryPreview(first.description || '뉴스 검색 결과가 없습니다.');
 
@@ -60,7 +66,7 @@ const output = {
   brand: '교촌치킨',
   title,
   summaryPreview,
-  displayLine: title + ' · ' + updatedAt.slice(11, 16) + ' 자동 갱신',
+  displayLine: title + ' · ' + updatedAtKst + ' 자동 갱신',
   link: first.link || '',
   pubDate: first.pubDate || '',
   itemCount: items.length,
