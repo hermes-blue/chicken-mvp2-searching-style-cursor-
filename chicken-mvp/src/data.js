@@ -1,3 +1,7 @@
+import autoKyochonNews from './auto-kyochon-news.json'
+
+const autoKyochonInsight = autoKyochonNews?.displayLine || '1위 브랜드, 간판이 손님 데려와요.'
+
 export const screens = {
   s0: {
     brand: null,
@@ -18,7 +22,7 @@ export const screens = {
           { label: '자금 2억+', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '1위 브랜드, 간판이 손님 데려와요.' },
+          { dot: 'teal', text: autoKyochonInsight },
           { dot: 'gold', text: '2억 넘게 써야 시작할 수 있어요.' },
         ],
         qBtn: { label: '브랜드 최강인데 왜 2억을 써야 해?', target: 'sgyo0' },

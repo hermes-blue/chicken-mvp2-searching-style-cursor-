@@ -1,0 +1,41 @@
+name: Update Kyochon News
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: chicken-mvp/package-lock.json
+
+      - name: Install dependencies
+        working-directory: chicken-mvp
+        run: npm ci
+
+      - name: Update Kyochon news
+        working-directory: chicken-mvp
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: node scripts/update-kyochon-news.mjs
+
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'auto: update kyochon news'
+          file_pattern: 'chicken-mvp/src/auto-kyochon-news.json chicken-mvp/src/auto-kyochon-news.csv'
