@@ -206,15 +206,15 @@ function BrandCostChart({ title, color }) {
   )
 }
 
-// ── 차트 2: 폐업 기여율 바 ────────────────────────────────────
+// ── 차트 2: 운영 리스크 신호 ────────────────────────────────────
 function FailureChart({ data, color }) {
-  const ready = useBarAnim()
-  const pct = extractPct(data.val) || extractPct(data.row1Val)
+  const level = data.riskLevel ?? (extractPct(data.val) || 60)
+  const tone = qualTone(level)
   return (
     <div>
-      <ChartLabel>폐업 기여율</ChartLabel>
-      <BigStat val={pct} unit="%" color={color} />
-      <Bar pct={pct} color={color} ready={ready} height={6} />
+      <ChartLabel>운영 리스크</ChartLabel>
+      <ChartNote>공개 지표와 비용 구조를 묶은 요약입니다</ChartNote>
+      <SignalRow label={data.row1Val || data.val} value={data.row1Label || data.val} tone={tone} color={color} />
     </div>
   )
 }
@@ -451,7 +451,7 @@ const HUB_PROFIT_DATA = {
       { label: '임대료',       amt: 120, pct: 12 },
       { label: '기타 (로열티·관리비)', amt: 80, pct: 8 },
     ],
-    profit: 220,
+    profit: 320,
   },
 }
 
@@ -479,44 +479,41 @@ function HubProfitChart({ data, color }) {
 // ── 차트 8: 허브 섹션 폐업 원인 (어디서 망하나?) ─────────────
 const HUB_FAILURE_DATA = {
   '교촌치킨': [
-    { label: '자금 소진',  pct: 35 },
-    { label: '입지 미스매치',  pct: 33 },
-    { label: '본사 갈등',  pct: 20 },
-    { label: '체력 고비', pct: 12 },
+    { label: '초기자금', pct: 86, val: '2억대 부담' },
+    { label: '상권 적합', pct: 72, val: '고단가 필요' },
+    { label: '계약 조건', pct: 68, val: '꼼꼼히 확인' },
+    { label: '운영 강도', pct: 58, val: '장시간 운영' },
   ],
   'BHC치킨': [
-    { label: '입지 미스매치',  pct: 38 },
-    { label: '자금 소진',  pct: 31 },
-    { label: '본사 갈등',  pct: 18 },
-    { label: '체력 고비', pct: 13 },
+    { label: '매출 방어', pct: 82, val: '수익 얇음' },
+    { label: '상권 적합', pct: 74, val: '배달권 중요' },
+    { label: '운영자금', pct: 66, val: '예비금 필요' },
+    { label: '계약 조건', pct: 56, val: '공급 구조 확인' },
   ],
   '비비큐(BBQ)': [
-    { label: '가격 저항',  pct: 32 },
-    { label: '입지 미스매치',  pct: 31 },
-    { label: '자금 소진',  pct: 25 },
-    { label: '본사 갈등',  pct: 12 },
+    { label: '가격 저항', pct: 84, val: '상권 민감' },
+    { label: '초기자금', pct: 80, val: '공식 부담 큼' },
+    { label: '상권 적합', pct: 72, val: '프리미엄 필요' },
+    { label: '계약 조건', pct: 58, val: '로열티 확인' },
   ],
   '푸라닭치킨': [
-    { label: '집객 부족',  pct: 40 },
-    { label: '입지 미스매치',  pct: 30 },
-    { label: '자금 소진',  pct: 20 },
-    { label: '체력 고비', pct: 10 },
+    { label: '초기 집객', pct: 78, val: '상권 의존' },
+    { label: '마케팅비', pct: 70, val: '초반 필요' },
+    { label: '상권 적합', pct: 66, val: '입지 중요' },
+    { label: '운영자금', pct: 54, val: '예비금 필요' },
   ],
 }
 
 function HubFailureChart({ data, color }) {
-  const ready = useBarAnim()
   const items = HUB_FAILURE_DATA[data.brandKey] ?? []
   if (!items.length) return null
   return (
     <div>
-      <ChartLabel>폐업 원인 분포</ChartLabel>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+      <ChartLabel>운영 리스크 체크</ChartLabel>
+      <ChartNote>브랜드별 확정 폐업 비율이 아닌 공개 지표 기반 요약입니다</ChartNote>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         {items.map((item, i) => (
-          <div key={item.label}>
-            <BarRow left={item.label} right={`${item.pct}%`} />
-            <Bar pct={item.pct} color={color} delay={i * 0.08} ready={ready} />
-          </div>
+          <SignalRow key={item.label} label={item.label} value={item.val} tone={qualTone(item.pct)} color={color} delay={i * 0.04} />
         ))}
       </div>
     </div>
@@ -527,12 +524,12 @@ function HubFailureChart({ data, color }) {
 const SUBCHART_DATA = {
   // s1계열 - 해볼 만할까? 세부
   '브랜드 파워': {
-    label: '인지도 지표',
+    label: '브랜드 체감도',
     items: [
-      { name: '브랜드 인지도',  pct: 95, val: '95%' },
-      { name: '재방문율',      pct: 62, val: '62%' },
-      { name: '배달앱 상위',    pct: 85, val: '상위 5%' },
-      { name: 'TV광고 점유',    pct: 70, val: '연 200억+' },
+      { name: '브랜드 노출',    pct: 85, val: '높음' },
+      { name: '가격 저항',      pct: 70, val: '주의' },
+      { name: '초기 집객',      pct: 80, val: '유리' },
+      { name: '상권 의존',      pct: 55, val: '보통' },
     ],
   },
   '초보자 난이도': {
@@ -554,12 +551,12 @@ const SUBCHART_DATA = {
     ],
   },
   '운영 고비': {
-    label: '3년 통계',
+    label: '외식업 리스크 요약',
     items: [
-      { name: '3년 내 폐업률',  pct: 30, val: '30%' },
-      { name: '6개월 위험',     pct: 75, val: '최대' },
-      { name: '2년차 안정률',   pct: 60, val: '60%' },
-      { name: '5년 생존율',     pct: 40, val: '40%' },
+      { name: '외식업 폐업률',  pct: 70, val: '주의' },
+      { name: '사업 부진',      pct: 85, val: '가장 큼' },
+      { name: '손익분기',       pct: 58, val: '확인' },
+      { name: '예비 운영자금',  pct: 76, val: '필요' },
     ],
   },
 
@@ -612,12 +609,12 @@ const SUBCHART_DATA = {
 
   // s13계열 - 어디서 망하나? 세부
   '입지 미스매치': {
-    label: '상권 타입별 3년 내 폐업률',
+    label: '상권 적합도',
     items: [
-      { name: '배달상권 + 홀', pct: 85, val: '65%' },
-      { name: '유동↓ 주택가',  pct: 70, val: '52%' },
-      { name: '포화 상권',     pct: 55, val: '40%' },
-      { name: '적합 상권',     pct: 18, val: '12%' },
+      { name: '배달권 확인',   pct: 85, val: '필수' },
+      { name: '홀 수요 확인',  pct: 68, val: '중요' },
+      { name: '포화 상권',     pct: 62, val: '주의' },
+      { name: '적합 상권',     pct: 35, val: '유리' },
     ],
   },
   '자금 소진': {
@@ -648,21 +645,21 @@ const SUBCHART_DATA = {
     ],
   },
   '가격 저항': {
-    label: '경기 민감도 (호황기 = 100%)',
+    label: '가격 민감도',
     items: [
-      { name: '호황기 매출',   pct: 95, val: '100%' },
-      { name: '보통',          pct: 72, val: '78%' },
-      { name: '불황 초기',     pct: 50, val: '55%' },
-      { name: '불황 지속',     pct: 30, val: '33%' },
+      { name: '프리미엄 가격', pct: 86, val: '주의' },
+      { name: '상권 소득',     pct: 74, val: '중요' },
+      { name: '배달 할인',     pct: 60, val: '부담' },
+      { name: '가격 민감 상권', pct: 48, val: '회피' },
     ],
   },
   '집객 부족': {
     label: '오픈 후 집객 추이',
     items: [
-      { name: '오픈 1개월',    pct: 42, val: '자연 40%' },
-      { name: '2~3개월',       pct: 25, val: '하락 25%' },
-      { name: '광고 투입 후',  pct: 60, val: '회복 60%' },
-      { name: '유지 성공률',   pct: 35, val: '35%' },
+      { name: '오픈 초반',     pct: 72, val: '홍보 필요' },
+      { name: '2~3개월차',     pct: 66, val: '반응 확인' },
+      { name: '배달앱 광고',   pct: 74, val: '예산 필요' },
+      { name: '단골 전환',     pct: 48, val: '상권 의존' },
     ],
   },
 }
