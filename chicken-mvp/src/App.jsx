@@ -33,6 +33,42 @@ export default function App() {
   const [apiCosts, setApiCosts] = useState({})
   const [apiLoadings, setApiLoadings] = useState({})
 
+  const parseCostToManwon = (text = '') => {
+    const normalized = String(text).replace(/,/g, '').replace(/\s+/g, '')
+    const rangeMatch = normalized.match(/(\d+(?:\.\d+)?)억~(\d+(?:\.\d+)?)억/)
+    if (rangeMatch) return Math.round(((Number(rangeMatch[1]) + Number(rangeMatch[2])) / 2) * 10000)
+    const eokMatch = normalized.match(/(\d+(?:\.\d+)?)억/)
+    const cheonMatch = normalized.match(/(\d+(?:\.\d+)?)천/)
+    const manMatch = normalized.match(/(\d+(?:\.\d+)?)만/)
+    let total = 0
+    if (eokMatch) total += Number(eokMatch[1]) * 10000
+    if (cheonMatch) total += Number(cheonMatch[1]) * 1000
+    if (manMatch) total += Number(manMatch[1])
+    if (total > 0) return Math.round(total)
+    const numeric = normalized.match(/(\d+(?:\.\d+)?)/)
+    if (!numeric) return null
+    const value = Number(numeric[1])
+    return value < 100 ? Math.round(value * 10000) : Math.round(value)
+  }
+
+  const fetchBrandCostDirectForLocal = async (brandName) => {
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+    if (!apiKey || !import.meta.env.DEV) return null
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`
+    const body = {
+      contents: [{
+        parts: [{ text: `${brandName} 창업비용을 딱 하나의 숫자로만 답해줘. 단위는 억원으로. 예: 2.2억. 범위 말고 대표값 하나만.` }]
+      }]
+    }
+    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error?.message ?? 'Gemini local request failed')
+    const costText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
+    const totalManwon = parseCostToManwon(costText)
+    if (!costText || !totalManwon) throw new Error('Gemini local response could not be parsed')
+    return { costText, totalManwon }
+  }
+
   const toggleCard = (idx) => {
     const opening = selectedCard !== idx
     setSelectedCard(prev => prev === idx ? null : idx)
@@ -53,10 +89,17 @@ export default function App() {
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error ?? 'Gemini request failed')
-      console.log(`🐔 ${brandName} 창업비용 (API):`, data.cost)
-      setApiCosts(prev => ({ ...prev, [screenKey]: data.cost }))
+      console.log(`🐔 ${brandName} 창업비용 (API):`, data.costText, data.totalManwon)
+      setApiCosts(prev => ({ ...prev, [screenKey]: data }))
     } catch (error) {
-      console.warn(`🐔 ${brandName} 창업비용 API 실패:`, error)
+      try {
+        const localData = await fetchBrandCostDirectForLocal(brandName)
+        if (!localData) throw error
+        console.log(`🐔 ${brandName} 창업비용 (local fallback):`, localData.costText, localData.totalManwon)
+        setApiCosts(prev => ({ ...prev, [screenKey]: localData }))
+      } catch (fallbackError) {
+        console.warn(`🐔 ${brandName} 창업비용 API 실패:`, fallbackError)
+      }
     } finally {
       setApiLoadings(prev => ({ ...prev, [screenKey]: false }))
     }

@@ -96,9 +96,54 @@ function extractAmt(str = '') {
   return m ? parseInt(m[1]) : 0
 }
 
+function extractManwon(str = '') {
+  const cleaned = String(str).replace(/,/g, '')
+  const m = cleaned.match(/(\d+(?:\.\d+)?)만/)
+  return m ? Number(m[1]) : 0
+}
+
 function extractRevenue(label = '') {
   const m = label.replace(/,/g, '').match(/매출\s*(\d+)만/)
   return m ? parseInt(m[1]) : 1300
+}
+
+function formatManwon(value = 0) {
+  const rounded = Math.round(value)
+  if (rounded >= 10000) {
+    const eok = Math.floor(rounded / 10000)
+    const rest = rounded % 10000
+    if (rest === 0) return `${eok}억`
+    if (rest % 1000 === 0) return `${eok}억 ${rest / 1000}천만`
+    return `${eok}억 ${rest.toLocaleString()}만`
+  }
+  return `${rounded.toLocaleString()}만`
+}
+
+function useCountUp(target, delay = 0) {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    if (!Number.isFinite(target) || target <= 0) {
+      setValue(target || 0)
+      return
+    }
+    let raf = 0
+    const timeout = setTimeout(() => {
+      const start = performance.now()
+      const duration = 650
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        setValue(target * eased)
+        if (progress < 1) raf = requestAnimationFrame(tick)
+      }
+      raf = requestAnimationFrame(tick)
+    }, delay)
+    return () => {
+      clearTimeout(timeout)
+      cancelAnimationFrame(raf)
+    }
+  }, [target, delay])
+  return value
 }
 
 // ── insight 점 2개 렌더링 ─────────────────────────────────────
@@ -260,18 +305,103 @@ function HubOverviewChart({ data, color }) {
 }
 
 // ── 차트 6: 허브 섹션 초기비용 미니 요약 (얼마 드나?) ────────
-function HubCostChart({ data, color }) {
-  const ready = useBarAnim()
-  const costs = BRAND_COSTS[data.brandKey] ?? []
-  const total = BRAND_TOTAL[data.brandKey]
-  if (!costs.length) return null
+function buildSyncedCosts(costs, totalManwon) {
+  if (!Number.isFinite(totalManwon) || totalManwon <= 0) return null
+  const baseTotal = costs.reduce((sum, item) => sum + extractManwon(item.amt), 0)
+  if (baseTotal <= 0) return null
+  let runningTotal = 0
+  const synced = costs.map((item, index) => {
+    const isLast = index === costs.length - 1
+    const value = isLast
+      ? Math.max(totalManwon - runningTotal, 0)
+      : Math.round(extractManwon(item.amt) / baseTotal * totalManwon)
+    runningTotal += value
+    return { ...item, amtValue: value, amt: formatManwon(value) }
+  })
+  const max = Math.max(...synced.map(item => item.amtValue), 1)
+  return synced.map(item => ({ ...item, pct: Math.round((item.amtValue / max) * 100) }))
+}
+
+function AnimatedAmount({ value, fallback, delay = 0 }) {
+  const counted = useCountUp(value, delay)
+  return <>{Number.isFinite(value) && value > 0 ? formatManwon(counted) : fallback}</>
+}
+
+function CostChartLoading({ brandKey }) {
+  const items = BRAND_COSTS[brandKey] ?? [
+    { label: '가맹비' }, { label: '인테리어' }, { label: '장비/설비' }, { label: '숨겨진 비용' },
+  ]
+  // 항목마다 최대값·감속계수를 살짝 다르게 — 자연스럽게 달라 보임
+  const MAX = [82, 78, 80, 75]
+  const K   = [0.030, 0.028, 0.032, 0.026]
+
+  const [progresses, setProgresses] = useState(items.map(() => 0))
+  const [started, setStarted] = useState(items.map(() => false))
+
+  useEffect(() => {
+    const timers = items.map((_, i) =>
+      setTimeout(() => setStarted(prev => { const n = [...prev]; n[i] = true; return n }), i * 900)
+    )
+    return () => timers.forEach(clearTimeout)
+  }, [])
+
+  useEffect(() => {
+    const iv = setInterval(() => {
+      setProgresses(prev => prev.map((p, i) => {
+        if (!started[i]) return p
+        const max = MAX[i]
+        const speed = K[i] * (max - p)
+        return Math.min(max, p + speed)
+      }))
+    }, 100)
+    return () => clearInterval(iv)
+  }, [started])
+
   return (
     <div>
       <ChartLabel>초기비용 구성</ChartLabel>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-        {costs.map((item, i) => (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {items.map((item, i) => (
           <div key={item.label}>
-            <BarRow left={item.label} right={item.amt} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 6 }}>
+              <span style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-korean)' }}>
+                {item.label}
+              </span>
+              <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: 'rgba(201,163,101,0.5)', letterSpacing: '0.04em' }}>
+                조회 중
+              </span>
+            </div>
+            <div style={{ height: 4, background: 'rgba(255,255,255,0.07)', borderRadius: 3, overflow: 'hidden' }}>
+              <div style={{
+                height: '100%', borderRadius: 3,
+                background: 'linear-gradient(90deg, #C9A365, #C9A36555)',
+                width: `${progresses[i]}%`,
+                transition: 'width 0.08s linear',
+              }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function HubCostChart({ data, color, apiTotalManwon, apiLoading = false }) {
+  if (apiLoading) return <CostChartLoading brandKey={data.brandKey} />
+  const ready = useBarAnim()
+  const costs = BRAND_COSTS[data.brandKey] ?? []
+  const syncedCosts = buildSyncedCosts(costs, apiTotalManwon)
+  const displayCosts = syncedCosts ?? costs
+  const total = Number.isFinite(apiTotalManwon) && apiTotalManwon > 0 ? formatManwon(apiTotalManwon) : BRAND_TOTAL[data.brandKey]
+  if (!costs.length) return null
+  return (
+    <div>
+      <ChartLabel>{syncedCosts ? 'Gemini 총액 맞춤 구성' : '초기비용 구성'}</ChartLabel>
+      {syncedCosts && <ChartNote>Gemini 총액에 맞춰 구성비를 비례 조정했습니다</ChartNote>}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+        {displayCosts.map((item, i) => (
+          <div key={item.label}>
+            <BarRow left={item.label} right={<AnimatedAmount value={item.amtValue} fallback={item.amt} delay={i * 80} />} />
             <Bar pct={item.pct} color={color} delay={i * 0.08} ready={ready} />
           </div>
         ))}
@@ -773,9 +903,10 @@ function TagRow({ label, dot }) {
 }
 
 // ── 렌더 차트 선택 ────────────────────────────────────────────
-function ChartSection({ data, ac }) {
+function ChartSection({ data, ac, apiCost, apiLoading = false }) {
+  const apiTotalManwon = typeof apiCost === 'object' ? apiCost?.totalManwon : null
   if (data.brandKey && data.title === '해볼 만할까?')  return <HubOverviewChart data={data} color={ac.color} />
-  if (data.brandKey && data.title === '얼마 드나?')    return <HubCostChart data={data} color={ac.color} />
+  if (data.brandKey && data.title === '얼마 드나?')    return <HubCostChart data={data} color={ac.color} apiTotalManwon={apiTotalManwon} apiLoading={apiLoading} />
   if (data.brandKey && data.title === '얼마 남나?')    return <HubProfitChart data={data} color={ac.color} />
   if (data.brandKey && (data.title === '왜 망하나?' || data.title === '어디서 망하나?')) return <HubFailureChart data={data} color={ac.color} />
 
@@ -874,6 +1005,29 @@ function Row1ValDisplay({ value, fontSize, color, lineHeight = 0.95, letterSpaci
 function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = null, apiLoading = false }) {
   const [headerPressed, setHeaderPressed] = useState(false)
   const [btnPressed, setBtnPressed] = useState(false)
+  const apiCostText = typeof apiCost === 'object' ? apiCost?.costText : apiCost
+
+  const [countNum, setCountNum] = useState(0)
+  useEffect(() => {
+    if (!apiLoading) { setCountNum(0); return }
+    setCountNum(0)
+    let cur = 0
+    const iv = setInterval(() => {
+      const step = cur < 1000 ? Math.ceil(Math.random() * 50 + 10)
+                 : cur < 100000 ? Math.ceil(Math.random() * 3000 + 500)
+                 : cur < 10000000 ? Math.ceil(Math.random() * 200000 + 50000)
+                 : Math.ceil(Math.random() * 5000000 + 1000000)
+      cur = cur + step
+      setCountNum(cur)
+    }, 60)
+    return () => clearInterval(iv)
+  }, [apiLoading])
+
+  function formatCount(n) {
+    if (n >= 100000000) return `${(n / 100000000).toFixed(1)}억`
+    if (n >= 10000) return `${Math.floor(n / 10000).toLocaleString()}만원`
+    return `${n.toLocaleString()}원`
+  }
 
   return (
     <div style={{
@@ -915,21 +1069,30 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
         <div style={{ marginBottom: 6 }}>
           <div>
             {apiLoading ? (
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'var(--color-text-primary)', letterSpacing: '-1px' }}>불러오는 중...</div>
-            ) : apiCost ? (
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: ac.color, letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{apiCost}</div>
+              <div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'rgba(255,255,255,0.6)', letterSpacing: '-1px', fontVariantNumeric: 'tabular-nums' }}>
+                  {formatCount(countNum)}
+                </div>
+                <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(61,191,184,0.6)', marginTop: 10, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
+                  실시간 조회 중
+                </div>
+              </div>
+            ) : apiCostText ? (
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: ac.color, letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{apiCostText}</div>
             ) : (
               <Row1ValDisplay value={data.row1Val} fontSize={46} color="var(--color-text-primary)" lineHeight={0.9} letterSpacing="-1px" />
             )}
-            {!apiCost && /\d[\d,]*(만원|억|개)/.test(data.row1Val) && !data.row1Val.includes('%') && (
+            {!apiLoading && !apiCostText && /\d[\d,]*(만원|억|개)/.test(data.row1Val) && !data.row1Val.includes('%') && (
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
                 <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
               </div>
             )}
           </div>
-          <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
-            {apiCost ? 'Gemini AI 응답 · 실시간' : data.row1Label}
-          </div>
+          {!apiLoading && (
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
+              {apiCostText ? 'Gemini AI 응답 · 실시간' : data.row1Label}
+            </div>
+          )}
         </div>
       </div>
 
@@ -940,7 +1103,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
       <div style={{ padding: '16px 20px 0', display: 'flex', flexDirection: 'column', gap: 14 }}>
 
         {/* 동적 차트 */}
-        <ChartSection data={data} ac={ac} />
+        <ChartSection data={data} ac={ac} apiCost={apiCost} apiLoading={apiLoading} />
 
         {/* 태그 */}
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
