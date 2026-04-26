@@ -715,6 +715,34 @@ function FlatCard({ data, onToggle, visible, ac }) {
   )
 }
 
+// row1Val 안의 '상반기' '하반기'만 0.5em (부모의 절반)으로 — 가로 폭 절약
+function Row1ValDisplay({ value, fontSize, color, lineHeight = 0.95, letterSpacing = '-0.5px' }) {
+  const base = {
+    fontFamily: 'var(--font-display)',
+    fontSize,
+    lineHeight,
+    color,
+    letterSpacing,
+    wordBreak: 'keep-all',
+    overflowWrap: 'break-word',
+  }
+  if (!value || !/(상반기|하반기)/.test(value)) {
+    return <div style={base}>{value}</div>
+  }
+  const parts = value.split(/(상반기|하반기)/g)
+  return (
+    <div style={base}>
+      {parts.map((part, i) =>
+        part === '상반기' || part === '하반기' ? (
+          <span key={i} style={{ fontSize: '0.5em' }}>{part}</span>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </div>
+  )
+}
+
 // ── 포커스 모드: 확장된 큰 카드 ──────────────────────────────
 function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = null, apiLoading = false }) {
   const [headerPressed, setHeaderPressed] = useState(false)
@@ -759,9 +787,13 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
         {/* 큰 수치 */}
         <div style={{ marginBottom: 6 }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: apiCost ? ac.color : 'var(--color-text-primary)', letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
-              {apiLoading ? '불러오는 중...' : apiCost ?? data.row1Val}
-            </div>
+            {apiLoading ? (
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'var(--color-text-primary)', letterSpacing: '-1px' }}>불러오는 중...</div>
+            ) : apiCost ? (
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: ac.color, letterSpacing: '-1px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{apiCost}</div>
+            ) : (
+              <Row1ValDisplay value={data.row1Val} fontSize={46} color="var(--color-text-primary)" lineHeight={0.9} letterSpacing="-1px" />
+            )}
             {!apiCost && /\d[\d,]*(만원|억|개)/.test(data.row1Val) && !data.row1Val.includes('%') && (
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
                 <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
@@ -897,7 +929,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
         <div style={{ padding: '0 18px 18px', borderTop: '1px solid var(--color-border-default)' }}>
           <div style={{ padding: '14px 0 12px', borderBottom: '1px solid var(--color-border-default)' }}>
             <div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--color-text-primary)', lineHeight: 0.95, letterSpacing: '-0.5px', wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{row1Val}</div>
+              <Row1ValDisplay value={row1Val} fontSize={36} color="var(--color-text-primary)" lineHeight={0.95} letterSpacing="-0.5px" />
               {/\d[\d,]*(만원|억|개)/.test(row1Val) && !row1Val.includes('%') && (
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
                   <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>

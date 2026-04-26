@@ -644,7 +644,7 @@ export const screens = {
         hint: '계약 시 일시납',
         val: '660만원',
         valColor: 'yellow',
-        row1Val: '660만원 일시납 (표준형, VAT 포함)',
+        row1Val: '660만원 일시납(표준·VAT)',
         row1Label: '3년 계약 · 1년 단위 갱신',
         tags: [
           { label: '배달전용형은 330만', type: 'neu' },
@@ -678,7 +678,7 @@ export const screens = {
         hint: '주방 장비 일체',
         val: '933만원',
         valColor: 'yellow',
-        row1Val: '933만원 (냉장·냉동 별도 1,370만+)',
+        row1Val: '933만원 (냉장 별도 1,370만+)',
         row1Label: '튀김기 397만 + 주방용품 536만',
         tags: [
           { label: '냉장·냉동·온수기 별도', type: 'warn' },
@@ -1116,7 +1116,7 @@ export const screens = {
         hint: '계약 시 일시납',
         val: '1,100만원',
         valColor: 'yellow',
-        row1Val: '1,100만원 일시납 (올리브치킨, VAT 포함)',
+        row1Val: '1,100만원 일시납(VAT)',
         row1Label: '2년 계약 · 2년 단위 갱신',
         tags: [
           { label: 'BSK(소형)는 550만', type: 'neu' },
@@ -1226,7 +1226,7 @@ export const screens = {
         hint: '원재료 단위당 부과',
         val: '300~400원/마리',
         valColor: 'green',
-        row1Val: '마리당 300원(상반기)·400원(하반기)',
+        row1Val: '마리당 300~400원',
         row1Label: '별도 로열티 없음 — 광고비만 부과',
         tags: [
           { label: '로열티 없음 (정보공개서 명시)', type: 'ok' },
