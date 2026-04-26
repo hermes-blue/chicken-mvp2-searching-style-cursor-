@@ -396,8 +396,7 @@ function HubCostChart({ data, color, apiTotalManwon, apiLoading = false }) {
   if (!costs.length) return null
   return (
     <div>
-      <ChartLabel>{syncedCosts ? 'Gemini 총액 맞춤 구성' : '초기비용 구성'}</ChartLabel>
-      {syncedCosts && <ChartNote>Gemini 총액에 맞춰 구성비를 비례 조정했습니다</ChartNote>}
+      <ChartHeader label="초기비용 구성" note={syncedCosts ? '공정위 기반 실시간 추정값이에요' : null} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
         {displayCosts.map((item, i) => (
           <div key={item.label}>
@@ -762,6 +761,21 @@ function ChartLabel({ children }) {
   )
 }
 
+function ChartHeader({ label, note }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, marginBottom: 12 }}>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-text-faint)' }}>
+        {label}
+      </div>
+      {note && (
+        <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.34)', fontWeight: 300, lineHeight: 1.4, textAlign: 'right', wordBreak: 'keep-all' }}>
+          {note}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function ChartNote({ children }) {
   return (
     <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.32)', fontWeight: 300, lineHeight: 1.5, marginTop: -7, marginBottom: 12, wordBreak: 'keep-all' }}>
@@ -1090,7 +1104,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
           </div>
           {!apiLoading && (
             <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
-              {apiCostText ? 'Gemini AI 응답 · 실시간' : data.row1Label}
+            {data.row1Label}
             </div>
           )}
         </div>
