@@ -45,19 +45,21 @@ export default function App() {
 
   const fetchBrandCost = async (screenKey, brandName) => {
     setApiLoadings(prev => ({ ...prev, [screenKey]: true }))
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`
-    const body = {
-      contents: [{
-        parts: [{ text: `${brandName} 창업비용을 딱 하나의 숫자로만 답해줘. 단위는 억원으로. 예: 2.2억. 범위 말고 대표값 하나만.` }]
-      }]
+    try {
+      const res = await fetch('/api/gemini-cost', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ brandName }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? 'Gemini request failed')
+      console.log(`🐔 ${brandName} 창업비용 (API):`, data.cost)
+      setApiCosts(prev => ({ ...prev, [screenKey]: data.cost }))
+    } catch (error) {
+      console.warn(`🐔 ${brandName} 창업비용 API 실패:`, error)
+    } finally {
+      setApiLoadings(prev => ({ ...prev, [screenKey]: false }))
     }
-    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
-    const data = await res.json()
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
-    console.log(`🐔 ${brandName} 창업비용 (API):`, text)
-    setApiCosts(prev => ({ ...prev, [screenKey]: text }))
-    setApiLoadings(prev => ({ ...prev, [screenKey]: false }))
   }
 
   const screen = screens[currentScreen]

@@ -117,7 +117,7 @@ export const screens = {
         row1Val: '총 1억 5,000만원',
         row1Label: '보증금 포함 시 최대 2억',
         tags: [
-          { label: '가맹비 900만', type: 'warn' },
+          { label: '가맹비 1,100만', type: 'warn' },
           { label: '인테리어 6.5천', type: 'warn' },
           { label: '예비금 별도', type: 'warn' },
         ],
@@ -131,9 +131,9 @@ export const screens = {
         title: '얼마 남나?',
         brandKey: 'BHC치킨',
         hint: '한 달 실제 순이익',
-        val: '약 280만',
+        val: '약 100~150만',
         valColor: 'yellow',
-        row1Val: '월 순이익 280만원',
+        row1Val: '월 순이익 약 100~150만원',
         row1Label: '매출 1,200만 · 직원 1명 기준',
         tags: [
           { label: '재료비 -456만', type: 'warn' },
@@ -141,10 +141,10 @@ export const screens = {
           { label: '임대료 -150만', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '잘 되면 한 달에 280만 남아요.' },
+          { dot: 'teal', text: '월매출 1,200만이면 순이익은 100만대가 더 현실적이에요.' },
           { dot: 'gold', text: '직원 한 명 더 쓰면 100만대예요.' },
         ],
-        qBtn: { label: '열심히 해도 월 280이 전부야? →', target: 's9' },
+        qBtn: { label: '열심히 해도 월 100만대가 전부야? →', target: 's9' },
       },
       {
         title: '왜 망하나?',
@@ -253,16 +253,16 @@ export const screens = {
         title: '가맹비',
         hint: '계약 시 일시납',
         official: true,
-        val: '770만원',
+        val: '1,100만원',
         valColor: 'yellow',
-        row1Val: '770만원 일시납 (딜리버리 기준)',
+        row1Val: '1,100만원 일시납',
         row1Label: '2년 계약 · 1년 단위 갱신',
         tags: [
-          { label: '비어존은 1,100만', type: 'neu' },
+          { label: '공식 1,100만', type: 'neu' },
           { label: '환불 조건 까다로움', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '딜리버리 770만, 비어존 1,100만 원이에요.' },
+          { dot: 'teal', text: '공식 가맹비는 1,100만 원이에요.' },
           { dot: 'gold', text: '설명회에서 하는 말보다 계약서 숫자가 진짜예요.', source: '비즈트리뷴' },
         ],
         qBtn: { label: '계약 취소하면 돈 돌려받을 수 있어? →', target: 's13' },
@@ -323,7 +323,7 @@ export const screens = {
   s9: {
     brand: null,
     title: '얼마 남나?',
-    sub: '월 순이익 약 280만 (20평·직원1명)',
+    sub: '월 순이익 약 100~150만 (매출 1,200만 기준)',
     breadcrumb: ['BHC', '얼마 남나?'],
     cards: [
       {
@@ -380,16 +380,16 @@ export const screens = {
       {
         title: '실제 순이익',
         hint: '모든 비용 제외 후',
-        val: '약 280만원',
+        val: '약 100~150만원',
         valColor: 'yellow',
-        row1Val: '약 280만원',
+        row1Val: '약 100~150만원',
         row1Label: '매출 1,200만 · 직원 1명 기준',
         tags: [
           { label: '직원 2명 → 100만대', type: 'warn' },
-          { label: '매출 1,500만 → 420만', type: 'neu' },
+          { label: '매출 1,500만 → 150~180만', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '매출 200만 올리면 순이익 50% 올라요.' },
+          { dot: 'teal', text: '월매출 1,200만이면 순이익은 100만대가 더 현실적이에요.' },
           { dot: 'gold', text: '할인 행사하면 줄 서요. 대신 그날 마진은 얇아져요.', source: '이코노뉴스' },
         ],
         qBtn: { label: '직원 한 명이 순이익과 줄다리기한다고? →', target: 's13' },
@@ -506,7 +506,7 @@ export const screens = {
         row1Val: '총 1억~1억 3천만원',
         row1Label: '임대비·권리금 제외 추정액',
         tags: [
-          { label: '가맹비 660만', type: 'warn' },
+          { label: '가맹비 676.5만', type: 'warn' },
           { label: '인테리어 5.9천+', type: 'warn' },
           { label: '예비금 별도', type: 'warn' },
         ],
@@ -642,16 +642,16 @@ export const screens = {
       {
         title: '가맹비',
         hint: '계약 시 일시납',
-        val: '660만원',
+        val: '676.5만원',
         valColor: 'yellow',
-        row1Val: '660만원 일시납(표준·VAT)',
+        row1Val: '676.5만원 일시납',
         row1Label: '3년 계약 · 1년 단위 갱신',
         tags: [
           { label: '배달전용형은 330만', type: 'neu' },
           { label: '환불 조건 까다로움', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '660만 원, 교육비 355만 별도예요.' },
+          { dot: 'teal', text: '676.5만 원, 교육비 355만 별도예요.' },
           { dot: 'gold', text: '1개월이 지나면 환불 문이 거의 닫혀요.' },
         ],
         qBtn: { label: '교육비가 왜 따로 있어? →', target: 'sgyo13' },
@@ -695,14 +695,14 @@ export const screens = {
         hint: '보증금 + 예비금',
         val: '+3천만+',
         valColor: 'red',
-        row1Val: '보증금 1,000만 + 예비금 별도',
+        row1Val: '보증금 100만 + 예비금 별도',
         row1Label: '임대보증금·권리금·초도상품비 별도',
         tags: [
-          { label: '보증금 1,000만 (공식)', type: 'warn' },
+          { label: '보증금 100만 (공식)', type: 'warn' },
           { label: '예비금 2,000만+', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '보증금 1,000만은 계약 종료 시 돌려받아요.' },
+          { dot: 'teal', text: '보증금 100만은 계약 종료 시 돌려받아요.' },
           { dot: 'gold', text: '가격을 못 올려요. 근데 원가는 혼자 오르고 있어요.', source: '스포츠한국' },
         ],
         qBtn: { label: '돈이 얇으면 어느 순간부터 숨찰까? →', target: 'sgyo13' },
@@ -890,9 +890,9 @@ export const screens = {
         title: '얼마 드나?',
         brandKey: '비비큐(BBQ)',
         hint: '초기 투자 현실적으로',
-        val: '7,575만원',
+        val: '9,078.9만원',
         valColor: 'yellow',
-        row1Val: '총 7,575만원 (올리브치킨 15평)',
+        row1Val: '공식 부담금 9,078.9만원',
         row1Label: '임대비·전기·가스 별도',
         tags: [
           { label: '가맹비 1,100만', type: 'warn' },
@@ -900,7 +900,7 @@ export const screens = {
           { label: '예비금 별도', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '올리브치킨 기준 총 7,575만이에요.' },
+          { dot: 'teal', text: '공식 부담금은 9,078.9만 원이에요.' },
           { dot: 'gold', text: '타입별 편차 큼 — 빌리지는 4억7천만이에요.' },
         ],
         qBtn: { label: '타입마다 투자비가 이렇게 달라? →', target: 'sbbq5' },
@@ -909,9 +909,9 @@ export const screens = {
         title: '얼마 남나?',
         brandKey: '비비큐(BBQ)',
         hint: '한 달 실제 순이익',
-        val: '약 340만',
+        val: '약 140~170만',
         valColor: 'yellow',
-        row1Val: '월 순이익 340만원',
+        row1Val: '월 순이익 약 140~170만원',
         row1Label: '매출 1,400만 · 직원 1명 기준',
         tags: [
           { label: '재료비 -532만', type: 'warn' },
@@ -919,10 +919,10 @@ export const screens = {
           { label: '로열티 -42만', type: 'warn' },
         ],
         insights: [
-          { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
+          { dot: 'teal', text: '월매출 1,400만이면 순이익은 100만대 후반이 더 현실적이에요.' },
           { dot: 'gold', text: '가격을 못 올려요. 근데 원가는 혼자 오르고 있어요.', source: '위키트리' },
         ],
-        qBtn: { label: '매출 1,400인데 순이익이 340뿐이야? →', target: 'sbbq9' },
+        qBtn: { label: '매출 1,400이면 실제로 얼마나 남을까? →', target: 'sbbq9' },
       },
       {
         title: '왜 망하나?',
@@ -979,7 +979,7 @@ export const screens = {
         row1Val: '총 9천~1억 2천만원',
         row1Label: '3대 브랜드 대비 40% 저렴',
         tags: [
-          { label: '가맹비 500만', type: 'ok' },
+          { label: '가맹비 1,100만', type: 'ok' },
           { label: '인테리어 5천~', type: 'neu' },
           { label: '예비금 별도', type: 'warn' },
         ],
@@ -1108,7 +1108,7 @@ export const screens = {
   sbbq5: {
     brand: null,
     title: '얼마 드나?',
-    sub: '총 7,575만원 (올리브치킨 기준)',
+    sub: '공식 부담금 9,078.9만원',
     breadcrumb: ['BBQ', '얼마 드나?'],
     cards: [
       {
@@ -1184,7 +1184,7 @@ export const screens = {
   sbbq9: {
     brand: null,
     title: '얼마 남나?',
-    sub: '월 순이익 약 340만 (20평·직원1명)',
+    sub: '월 순이익 약 140~170만 (매출 1,400만 기준)',
     breadcrumb: ['BBQ', '얼마 남나?'],
     cards: [
       {
@@ -1241,16 +1241,16 @@ export const screens = {
       {
         title: '실제 순이익',
         hint: '모든 비용 제외 후',
-        val: '약 340만원',
+        val: '약 140~170만원',
         valColor: 'yellow',
-        row1Val: '약 340만원',
+        row1Val: '약 140~170만원',
         row1Label: '매출 1,400만 · 직원 1명 기준',
         tags: [
           { label: '직원 2명 → 120만대', type: 'warn' },
-          { label: '매출 1,700만 → 480만', type: 'neu' },
+          { label: '매출 1,700만 → 170~210만', type: 'neu' },
         ],
         insights: [
-          { dot: 'teal', text: '잘 되면 한 달에 340만 남아요.' },
+          { dot: 'teal', text: '월매출 1,400만이면 순이익은 100만대 후반이 더 현실적이에요.' },
           { dot: 'gold', text: '브랜드는 프리미엄이에요. 근데 동네 상권이 그 가격을 받아줘야 해요.', source: '아주경제' },
         ],
         qBtn: { label: '불황 오면 매출이 얼마나 빠져? →', target: 'sbbq13' },

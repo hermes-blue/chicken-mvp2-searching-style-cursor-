@@ -13,35 +13,35 @@ const BRAND_COSTS = {
     { label: '인테리어',   amt: '7,000만', pct: 78 },
     { label: '장비·설비',  amt: '5,000만', pct: 56 },
     { label: '숨겨진 비용', amt: '5,500만', pct: 61 },
-    { label: '가맹비',    amt: '1,000만', pct: 11 },
+    { label: '가맹비',    amt: '676.5만', pct: 8 },
   ],
   '비비큐(BBQ)': [
     { label: '인테리어',   amt: '9,000만', pct: 100 },
     { label: '숨겨진 비용', amt: '5,500만', pct: 61 },
     { label: '장비·설비',  amt: '4,500만', pct: 50 },
-    { label: '가맹비',    amt: '1,500만', pct: 17 },
+    { label: '가맹비',    amt: '1,100만', pct: 12 },
   ],
   'BHC치킨': [
     { label: '인테리어',   amt: '4,620만', pct: 51 },
     { label: '숨겨진 비용', amt: '3,000만+', pct: 33 },
     { label: '장비·설비',  amt: '4,800만', pct: 53 },
-    { label: '가맹비',    amt: '770만',   pct: 9 },
+    { label: '가맹비',    amt: '1,100만', pct: 12 },
   ],
   '푸라닭치킨': [
     { label: '인테리어',   amt: '5,000만', pct: 56 },
     { label: '숨겨진 비용', amt: '3,000만', pct: 33 },
     { label: '장비·설비',  amt: '3,500만', pct: 39 },
-    { label: '가맹비',    amt: '500만',   pct: 6  },
+    { label: '가맹비',    amt: '1,100만', pct: 12 },
   ],
 }
 
 // 비용 항목 4개 브랜드 비교 데이터
 const COST_COMPARE = {
   '가맹비': [
-    { name: '교촌', val: 1000, label: '1,000만' },
-    { name: 'BBQ',  val: 1500, label: '1,500만' },
-    { name: 'BHC',  val: 770,  label: '770만'   },
-    { name: '푸라닭', val: 500, label: '500만'  },
+    { name: '교촌', val: 676.5, label: '676.5만' },
+    { name: 'BBQ',  val: 1100, label: '1,100만' },
+    { name: 'BHC',  val: 1100, label: '1,100만' },
+    { name: '푸라닭', val: 1100, label: '1,100만' },
   ],
   '인테리어': [
     { name: '교촌', val: 7000, label: '7,000만' },
@@ -301,7 +301,7 @@ const HUB_PROFIT_DATA = {
       { label: '임대료',         amt: 150, pct: 13 },
       { label: '기타 (광고·관리비)', amt: 64, pct: 5 },
     ],
-    profit: 165,
+    profit: 130,
   },
   '비비큐(BBQ)': {
     revenue: 1400,
@@ -312,7 +312,7 @@ const HUB_PROFIT_DATA = {
       { label: '로열티 (3%)',  amt: 42,  pct: 3  },
       { label: '기타',         amt: 86,  pct: 6  },
     ],
-    profit: 340,
+    profit: 155,
   },
   '푸라닭치킨': {
     revenue: 1000,
@@ -465,10 +465,10 @@ const SUBCHART_DATA = {
   '실제 순이익': {
     label: '매출별 순이익 시뮬레이션',
     items: [
-      { name: '매출 900만',    pct: 18, val: '약 100만' },
-      { name: '매출 1,200만',  pct: 50, val: '약 280만' },
-      { name: '매출 1,500만',  pct: 75, val: '약 420만' },
-      { name: '매출 1,800만',  pct: 95, val: '약 580만' },
+      { name: '매출 900만',    pct: 24, val: '약 90~110만' },
+      { name: '매출 1,200만',  pct: 34, val: '약 100~150만' },
+      { name: '매출 1,500만',  pct: 46, val: '약 150~180만' },
+      { name: '매출 1,800만',  pct: 58, val: '약 180~220만' },
     ],
   },
   '로열티': {
