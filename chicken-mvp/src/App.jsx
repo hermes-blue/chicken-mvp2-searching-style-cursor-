@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { screens } from './data'
 import Card from './components/Card'
 

@@ -67,7 +67,7 @@ const COST_COMPARE = {
 function detectChartType(title) {
   if (['교촌치킨', '비비큐(BBQ)', 'BHC치킨', '푸라닭치킨'].includes(title))
     return 'brand'
-  if (['어디서 망하나?', '입지 실패', '자금 소진', '본사 갈등', '번아웃 폐업', '가격 저항', '집객 부족'].includes(title))
+  if (['왜 망하나?', '어디서 망하나?', '입지 미스매치', '자금 소진', '본사 갈등', '체력 고비', '가격 저항', '집객 부족'].includes(title))
     return 'failure'
   if (['얼마 남나?', '재료비', '인건비', '임대료', '실제 순이익', '로열티'].includes(title))
     return 'profit'
@@ -82,7 +82,7 @@ function useBarAnim(delay = 120) {
   useEffect(() => {
     const t = setTimeout(() => setReady(true), delay)
     return () => clearTimeout(t)
-  }, [])
+  }, [delay])
   return ready
 }
 
@@ -244,19 +244,15 @@ const HUB_OVERVIEW_DATA = {
 }
 
 function HubOverviewChart({ data, color }) {
-  const ready = useBarAnim()
   const items = HUB_OVERVIEW_DATA[data.brandKey] ?? []
   if (!items.length) return null
-  const max = 100
   return (
     <div>
-      <ChartLabel>종합 평가 지표</ChartLabel>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
+      <ChartLabel>비교용 감각 지표</ChartLabel>
+      <ChartNote>공식 점수보다 방향만 봐주세요</ChartNote>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
         {items.map((item, i) => (
-          <div key={item.label}>
-            <BarRow left={item.label} right={`${item.pct}점`} />
-            <Bar pct={Math.round((item.pct / max) * 100)} color={color} delay={i * 0.08} ready={ready} />
-          </div>
+          <LevelTile key={item.label} label={item.label} level={qualLevel(item.pct)} color={color} delay={i * 0.04} />
         ))}
       </div>
     </div>
@@ -355,27 +351,27 @@ function HubProfitChart({ data, color }) {
 const HUB_FAILURE_DATA = {
   '교촌치킨': [
     { label: '자금 소진',  pct: 35 },
-    { label: '입지 실패',  pct: 33 },
+    { label: '입지 미스매치',  pct: 33 },
     { label: '본사 갈등',  pct: 20 },
-    { label: '번아웃 폐업', pct: 12 },
+    { label: '체력 고비', pct: 12 },
   ],
   'BHC치킨': [
-    { label: '입지 실패',  pct: 38 },
+    { label: '입지 미스매치',  pct: 38 },
     { label: '자금 소진',  pct: 31 },
     { label: '본사 갈등',  pct: 18 },
-    { label: '번아웃 폐업', pct: 13 },
+    { label: '체력 고비', pct: 13 },
   ],
   '비비큐(BBQ)': [
     { label: '가격 저항',  pct: 32 },
-    { label: '입지 실패',  pct: 31 },
+    { label: '입지 미스매치',  pct: 31 },
     { label: '자금 소진',  pct: 25 },
     { label: '본사 갈등',  pct: 12 },
   ],
   '푸라닭치킨': [
     { label: '집객 부족',  pct: 40 },
-    { label: '입지 실패',  pct: 30 },
+    { label: '입지 미스매치',  pct: 30 },
     { label: '자금 소진',  pct: 20 },
-    { label: '번아웃 폐업', pct: 10 },
+    { label: '체력 고비', pct: 10 },
   ],
 }
 
@@ -428,7 +424,7 @@ const SUBCHART_DATA = {
       { name: '배달 경쟁',      pct: 75, val: '심함' },
     ],
   },
-  '폐업 위험도': {
+  '운영 고비': {
     label: '3년 통계',
     items: [
       { name: '3년 내 폐업률',  pct: 30, val: '30%' },
@@ -486,7 +482,7 @@ const SUBCHART_DATA = {
   },
 
   // s13계열 - 어디서 망하나? 세부
-  '입지 실패': {
+  '입지 미스매치': {
     label: '상권 타입별 3년 내 폐업률',
     items: [
       { name: '배달상권 + 홀', pct: 85, val: '65%' },
@@ -513,7 +509,7 @@ const SUBCHART_DATA = {
       { name: '해지 위약금',   pct: 65, val: '수천만' },
     ],
   },
-  '번아웃 폐업': {
+  '체력 고비': {
     label: '근무 부담 지표',
     items: [
       { name: '주 근무일',     pct: 95, val: '주 7일' },
@@ -542,6 +538,15 @@ const SUBCHART_DATA = {
   },
 }
 
+const QUALITATIVE_SUBCHARTS = new Set([
+  '브랜드 파워',
+  '초보자 난이도',
+  '경쟁 강도',
+  '운영 고비',
+  '본사 갈등',
+  '체력 고비',
+])
+
 function SubBarChart({ data, color }) {
   const ready = useBarAnim()
   const d = SUBCHART_DATA[data.title]
@@ -555,6 +560,22 @@ function SubBarChart({ data, color }) {
             <BarRow left={item.name} right={item.val} />
             <Bar pct={item.pct} color={color} delay={i * 0.07} ready={ready} />
           </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function QualitativeSubChart({ data, color }) {
+  const d = SUBCHART_DATA[data.title]
+  if (!d) return null
+  return (
+    <div>
+      <ChartLabel>{d.label}</ChartLabel>
+      <ChartNote>서로 다른 지표를 묶은 요약입니다</ChartNote>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {d.items.map((item, i) => (
+          <SignalRow key={item.name} label={item.name} value={item.val} tone={qualTone(item.pct)} color={color} delay={i * 0.04} />
         ))}
       </div>
     </div>
@@ -611,6 +632,109 @@ function ChartLabel({ children }) {
   )
 }
 
+function ChartNote({ children }) {
+  return (
+    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.32)', fontWeight: 300, lineHeight: 1.5, marginTop: -7, marginBottom: 12, wordBreak: 'keep-all' }}>
+      {children}
+    </div>
+  )
+}
+
+function qualLevel(pct) {
+  if (pct >= 85) return { text: '매우 높음', tone: 'high' }
+  if (pct >= 70) return { text: '높음', tone: 'good' }
+  if (pct >= 55) return { text: '보통', tone: 'mid' }
+  if (pct >= 40) return { text: '낮음', tone: 'low' }
+  return { text: '매우 낮음', tone: 'low' }
+}
+
+function qualTone(pct) {
+  if (pct >= 75) return 'high'
+  if (pct >= 55) return 'mid'
+  if (pct >= 35) return 'low'
+  return 'faint'
+}
+
+const QUAL_TONE_STYLE = {
+  high:  { bg: 'rgba(224,90,78,0.12)',  border: 'rgba(224,90,78,0.28)',  text: '#E05A4E' },
+  good:  { bg: 'rgba(61,191,184,0.12)', border: 'rgba(61,191,184,0.28)', text: '#3DBFB8' },
+  mid:   { bg: 'rgba(201,163,101,0.12)', border: 'rgba(201,163,101,0.28)', text: '#C9A365' },
+  low:   { bg: 'rgba(155,127,232,0.10)', border: 'rgba(155,127,232,0.24)', text: '#BCAAF4' },
+  faint: { bg: 'rgba(255,255,255,0.05)', border: 'rgba(255,255,255,0.09)', text: 'rgba(255,255,255,0.58)' },
+}
+
+function LevelTile({ label, level, color, delay = 0 }) {
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 80 + delay * 1000)
+    return () => clearTimeout(t)
+  }, [delay])
+  const tone = QUAL_TONE_STYLE[level.tone] ?? QUAL_TONE_STYLE.mid
+  return (
+    <div style={{
+      minHeight: 62,
+      borderRadius: 12,
+      background: ready ? tone.bg : 'rgba(255,255,255,0.035)',
+      border: `1px solid ${ready ? tone.border : 'rgba(255,255,255,0.07)'}`,
+      padding: '10px 11px',
+      transition: 'background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, opacity 0.35s ease',
+      transform: ready ? 'translateY(0)' : 'translateY(6px)',
+      opacity: ready ? 1 : 0,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 7 }}>
+        <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, boxShadow: `0 0 6px ${color}80`, flexShrink: 0 }} />
+        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.56)', fontWeight: 500, wordBreak: 'keep-all' }}>{label}</span>
+      </div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: tone.text, letterSpacing: '-0.2px' }}>{level.text}</div>
+    </div>
+  )
+}
+
+function SignalRow({ label, value, tone, color, delay = 0 }) {
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 80 + delay * 1000)
+    return () => clearTimeout(t)
+  }, [delay])
+  const toneStyle = QUAL_TONE_STYLE[tone] ?? QUAL_TONE_STYLE.mid
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 10,
+      minHeight: 38,
+      padding: '8px 10px',
+      borderRadius: 10,
+      background: ready ? 'rgba(255,255,255,0.045)' : 'rgba(255,255,255,0.025)',
+      border: '1px solid rgba(255,255,255,0.07)',
+      transition: 'background 0.35s ease, transform 0.35s ease, opacity 0.35s ease',
+      transform: ready ? 'translateY(0)' : 'translateY(5px)',
+      opacity: ready ? 1 : 0,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
+        <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, boxShadow: `0 0 5px ${color}80`, flexShrink: 0 }} />
+        <span style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.68)', wordBreak: 'keep-all' }}>{label}</span>
+      </div>
+      <span style={{
+        flexShrink: 0,
+        maxWidth: '44%',
+        textAlign: 'right',
+        fontSize: 11,
+        fontWeight: 800,
+        color: toneStyle.text,
+        background: toneStyle.bg,
+        border: `1px solid ${toneStyle.border}`,
+        borderRadius: 9999,
+        padding: '3px 8px',
+        wordBreak: 'keep-all',
+      }}>
+        {value}
+      </span>
+    </div>
+  )
+}
+
 function BarRow({ left, right }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
@@ -653,9 +777,12 @@ function ChartSection({ data, ac }) {
   if (data.brandKey && data.title === '해볼 만할까?')  return <HubOverviewChart data={data} color={ac.color} />
   if (data.brandKey && data.title === '얼마 드나?')    return <HubCostChart data={data} color={ac.color} />
   if (data.brandKey && data.title === '얼마 남나?')    return <HubProfitChart data={data} color={ac.color} />
-  if (data.brandKey && data.title === '어디서 망하나?') return <HubFailureChart data={data} color={ac.color} />
+  if (data.brandKey && (data.title === '왜 망하나?' || data.title === '어디서 망하나?')) return <HubFailureChart data={data} color={ac.color} />
 
-  if (SUBCHART_DATA[data.title]) return <SubBarChart data={data} color={ac.color} />
+  if (SUBCHART_DATA[data.title]) {
+    if (QUALITATIVE_SUBCHARTS.has(data.title)) return <QualitativeSubChart data={data} color={ac.color} />
+    return <SubBarChart data={data} color={ac.color} />
+  }
 
   const type = detectChartType(data.title)
   switch (type) {
