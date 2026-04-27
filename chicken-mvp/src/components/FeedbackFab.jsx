@@ -1,4 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
+import { supabase } from '../lib/supabaseClient'
+
+const RATING_BY_VALUE = {
+  overall_helpful: '나름 도움됐어요',
+  overall_so_so: '그냥 그랬어요',
+  overall_disappointed: '좀 아쉬웠어요',
+}
 
 const OVERALL_OPTIONS = [
   { label: '나름 도움됐어요 👍', value: 'overall_helpful' },
@@ -21,6 +28,8 @@ export default function FeedbackFab() {
   const [overall, setOverall] = useState(null)
   const [reasons, setReasons] = useState(() => new Set())
   const [comment, setComment] = useState('')
+  const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState('')
 
   const closeSheet = useCallback(() => {
     setOpen(false)
@@ -28,6 +37,8 @@ export default function FeedbackFab() {
     setOverall(null)
     setReasons(new Set())
     setComment('')
+    setSaving(false)
+    setSaveError('')
   }, [])
 
   useEffect(() => {
@@ -53,15 +64,40 @@ export default function FeedbackFab() {
     })
   }
 
-  const submit = () => {
+  const submit = async () => {
     if (!overall) return
-    const payload = {
-      overall,
-      reasonsNegative: Array.from(reasons),
-      comment: comment.trim() || null,
-      at: new Date().toISOString(),
+    setSaveError('')
+
+    if (!supabase) {
+      setSaveError('Supabase 환경변수를 확인해주세요. (.env에 VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY)')
+      return
     }
-    console.log('[feedback]', payload)
+
+    const rating = RATING_BY_VALUE[overall]
+    if (!rating) {
+      setSaveError('잘못된 선택이에요. 다시 시도해주세요.')
+      return
+    }
+
+    const reasonList = Array.from(reasons)
+    const free = comment.trim()
+    setSaving(true)
+    const { error } = await supabase.from('feedback').insert({
+      rating,
+      reasons: reasonList,
+      freetext: free || null,
+    })
+    setSaving(false)
+
+    if (error) {
+      console.error('[feedback] Supabase insert failed:', error)
+      setSaveError(error.message || '전송에 실패했어요. 잠시 후 다시 시도해주세요.')
+      return
+    }
+
+    if (import.meta.env.DEV) {
+      console.log('[feedback] saved', { rating, reasons: reasonList, freetext: free || null })
+    }
     setStep('thanks')
   }
 
@@ -304,9 +340,15 @@ export default function FeedbackFab() {
                   />
                 </label>
 
+                {saveError ? (
+                  <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-korean)', fontSize: 12, lineHeight: 1.5, color: 'var(--color-accent-red)' }}>
+                    {saveError}
+                  </p>
+                ) : null}
+
                 <button
                   type="button"
-                  disabled={!overall}
+                  disabled={!overall || saving}
                   onClick={submit}
                   style={{
                     width: '100%',
@@ -317,16 +359,16 @@ export default function FeedbackFab() {
                     fontFamily: 'var(--font-korean)',
                     fontSize: 15,
                     fontWeight: 600,
-                    cursor: overall ? 'pointer' : 'not-allowed',
-                    background: overall
+                    cursor: !overall || saving ? 'not-allowed' : 'pointer',
+                    background: overall && !saving
                       ? 'linear-gradient(165deg, var(--color-accent-gold) 0%, #a8844a 100%)'
                       : 'var(--color-bg-card-hover)',
-                    color: overall ? '#1a1510' : 'var(--color-text-muted)',
-                    opacity: overall ? 1 : 0.7,
-                    boxShadow: overall ? '0 4px 16px rgba(201, 163, 101, 0.25)' : 'none',
+                    color: overall && !saving ? '#1a1510' : 'var(--color-text-muted)',
+                    opacity: overall && !saving ? 1 : 0.7,
+                    boxShadow: overall && !saving ? '0 4px 16px rgba(201, 163, 101, 0.25)' : 'none',
                   }}
                 >
-                  보내기
+                  {saving ? '보내는 중...' : '보내기'}
                 </button>
               </>
             ) : (
