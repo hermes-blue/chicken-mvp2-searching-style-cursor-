@@ -74,12 +74,18 @@ export default function FeedbackFab() {
     lineHeight: 1.45,
     padding: '12px 14px',
     borderRadius: 'var(--radius-button)',
-    border: `1px solid ${active ? 'var(--color-accent-gold-border)' : 'rgba(255,255,255,0.16)'}`,
-    background: active ? 'var(--color-accent-gold-tint)' : 'var(--color-bg-card)',
-    color: active ? 'var(--color-text-primary)' : 'rgba(255,255,255,0.82)',
+    border: `1px solid ${active ? 'rgba(201,163,101,0.68)' : 'rgba(255,255,255,0.16)'}`,
+    background: active
+      ? 'linear-gradient(160deg, rgba(201,163,101,0.24) 0%, rgba(36,30,22,0.94) 100%)'
+      : 'var(--color-bg-card)',
+    color: active ? 'rgba(255,244,224,0.98)' : 'rgba(255,255,255,0.82)',
+    boxShadow: active
+      ? '0 0 0 1px rgba(201,163,101,0.22), 0 8px 20px rgba(201,163,101,0.18)'
+      : 'none',
     cursor: 'pointer',
     textAlign: 'left',
-    transition: 'background 0.15s ease, border-color 0.15s ease',
+    transform: active ? 'translateY(-1px)' : 'translateY(0)',
+    transition: 'background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease',
   })
 
   return (
