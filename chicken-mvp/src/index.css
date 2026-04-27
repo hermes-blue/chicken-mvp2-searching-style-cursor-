@@ -93,3 +93,48 @@ html, body {
   animation: ctaShine 3s ease-in-out infinite;
   pointer-events: none;
 }
+
+/* 피드백 FAB — 닭다리 흔들기 · 펄스 링 */
+@keyframes wiggle {
+  0%, 85%, 100% { transform: rotate(0deg); }
+  87% { transform: rotate(-14deg); }
+  90% { transform: rotate(12deg); }
+  93% { transform: rotate(-9deg); }
+  96% { transform: rotate(6deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.35; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.feedback-fab-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent-gold);
+  pointer-events: none;
+  animation: pulse-ring 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  transform-origin: center center;
+}
+
+.feedback-fab-ring-delay {
+  animation-delay: 1.1s;
+}
+
+.feedback-fab-emoji {
+  display: inline-block;
+  animation: wiggle 5s ease-in-out infinite;
+  transform-origin: 60% 70%;
+}
+
+.feedback-fab-group .feedback-fab-tooltip {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .feedback-fab-group:hover .feedback-fab-tooltip {
+    opacity: 1;
+  }
+}

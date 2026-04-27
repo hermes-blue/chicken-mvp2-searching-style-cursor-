@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { screens } from './data'
 import Card from './components/Card'
+import FeedbackFab from './components/FeedbackFab'
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('s0')
@@ -106,6 +107,8 @@ export default function App() {
   }
 
   const screen = screens[currentScreen]
+  // 하단 푸터 + 피드백 FAB 높이만큼 본문 여백을 줘서 카드와 겹침 방지
+  const contentBottomPadding = 'calc(32px + 52px + 28px + env(safe-area-inset-bottom, 0px))'
 
   return (
     <div style={{
@@ -142,7 +145,7 @@ export default function App() {
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'rgba(255,255,255,0.18)', letterSpacing: '0.1em', marginLeft: 4 }}>정보공개서 2025</span>
       </div>
 
-      <div style={{ padding: '56px 20px 60px' }}>
+      <div style={{ padding: `56px 20px ${contentBottomPadding}` }}>
         {/* 뒤로가기 + 단계 표시 */}
         {stack.length > 0 && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
@@ -283,6 +286,8 @@ export default function App() {
           ))}
         </div>
       </div>
+
+      <FeedbackFab />
     </div>
   )
 }
