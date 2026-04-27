@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useState } from 'react'
 
 const OVERALL_OPTIONS = [
-  '오 꽤 유용했는데? 👍',
-  '그냥 심심해서 해봤어 😐',
-  '솔직히 좀 구렸어... 미안 😬',
+  { label: '나름 도움됐어요 👍', value: 'overall_helpful' },
+  { label: '그냥 그랬어요 😐', value: 'overall_so_so' },
+  { label: '좀 아쉬웠어요 😬', value: 'overall_disappointed' },
 ]
 
 const REASON_OPTIONS = [
-  '숫자를 믿기 어려웠어',
-  '검색하면 더 잘 나올 것 같아',
-  '브랜드가 너무 적어',
-  '내가 궁금한 게 없었어',
-  '딱히 없어 잘 됐어',
+  { label: '신뢰가 안가요 🤔', value: 'reason_low_trust' },
+  { label: 'ChatGPT에게 물어보는게 나아요 🤖', value: 'reason_prefers_chatgpt' },
+  { label: '마이프차가 더 좋아요 🏪', value: 'reason_prefers_myfranchise' },
+  { label: '쓰기가 불편했어요 😵', value: 'reason_usability_issue' },
+  { label: '정보가 빈약해요 📉', value: 'reason_lack_of_info' },
+  { label: '기타 ✍️', value: 'reason_other' },
 ]
 
 export default function FeedbackFab() {
@@ -43,11 +44,11 @@ export default function FeedbackFab() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open, closeSheet])
 
-  const toggleReason = (label) => {
+  const toggleReason = (value) => {
     setReasons((prev) => {
       const next = new Set(prev)
-      if (next.has(label)) next.delete(label)
-      else next.add(label)
+      if (next.has(value)) next.delete(value)
+      else next.add(value)
       return next
     })
   }
@@ -73,9 +74,9 @@ export default function FeedbackFab() {
     lineHeight: 1.45,
     padding: '12px 14px',
     borderRadius: 'var(--radius-button)',
-    border: `1px solid ${active ? 'var(--color-accent-gold-border)' : 'var(--color-border-default)'}`,
+    border: `1px solid ${active ? 'var(--color-accent-gold-border)' : 'rgba(255,255,255,0.16)'}`,
     background: active ? 'var(--color-accent-gold-tint)' : 'var(--color-bg-card)',
-    color: active ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+    color: active ? 'var(--color-text-primary)' : 'rgba(255,255,255,0.82)',
     cursor: 'pointer',
     textAlign: 'left',
     transition: 'background 0.15s ease, border-color 0.15s ease',
@@ -107,7 +108,7 @@ export default function FeedbackFab() {
             borderRadius: 12,
             background: 'var(--color-bg-card)',
             border: '1px solid var(--color-border-hover)',
-            color: 'var(--color-text-primary)',
+            color: 'rgba(245, 240, 232, 0.96)',
             fontFamily: 'var(--font-korean)',
             fontSize: 12,
             lineHeight: 1.45,
@@ -116,7 +117,7 @@ export default function FeedbackFab() {
             pointerEvents: 'none',
           }}
         >
-          구렸어? 칭찬해줘도 돼 🙏
+          의견 한 조각 부탁드려요 🙏
           <span
             style={{
               position: 'absolute',
@@ -229,36 +230,33 @@ export default function FeedbackFab() {
                     lineHeight: 1.25,
                   }}
                 >
-                  솔직히 쓸만했어? 🍗
+                  쓸만하셨나요? <span style={{ fontFamily: 'var(--font-korean)', fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.58)' }}>(선택)</span>
                 </p>
 
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-text-faint)', marginBottom: 10 }}>
-                  한 줄 평
-                </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 22 }}>
-                  {OVERALL_OPTIONS.map((label) => (
+                  {OVERALL_OPTIONS.map((option) => (
                     <button
-                      key={label}
+                      key={option.value}
                       type="button"
-                      onClick={() => setOverall(label)}
-                      style={chipBase(overall === label)}
+                      onClick={() => setOverall(option.value)}
+                      style={chipBase(overall === option.value)}
                     >
-                      {label}
+                      {option.label}
                     </button>
                   ))}
                 </div>
 
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-text-faint)', marginBottom: 10 }}>
-                  구렸으면 왜 구렸어? (복수 선택)
+                <p style={{ fontFamily: 'var(--font-korean)', fontSize: 18, fontWeight: 700, letterSpacing: '-0.2px', color: 'rgba(245,240,232,0.96)', margin: '0 0 10px' }}>
+                  뭐가 아쉬웠나요? <span style={{ fontFamily: 'var(--font-korean)', fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.58)' }}>(멀티선택가능)</span>
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
-                  {REASON_OPTIONS.map((label) => {
-                    const on = reasons.has(label)
+                  {REASON_OPTIONS.map((option) => {
+                    const on = reasons.has(option.value)
                     return (
                       <button
-                        key={label}
+                        key={option.value}
                         type="button"
-                        onClick={() => toggleReason(label)}
+                        onClick={() => toggleReason(option.value)}
                         style={{
                           ...chipBase(on),
                           padding: '9px 12px',
@@ -267,21 +265,21 @@ export default function FeedbackFab() {
                           minWidth: 'calc(50% - 4px)',
                         }}
                       >
-                        {label}
+                        {option.label}
                       </button>
                     )
                   })}
                 </div>
 
                 <label style={{ display: 'block', marginBottom: 8 }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-text-faint)' }}>
-                    한 마디만 털어놔봐 (선택)
+                  <span style={{ fontFamily: 'var(--font-korean)', fontSize: 18, fontWeight: 700, letterSpacing: '-0.2px', color: 'rgba(245,240,232,0.96)' }}>
+                    조언 한마디, 욕도 괜찮아요 😅 <span style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.58)' }}>(선택)</span>
                   </span>
                   <textarea
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                     rows={3}
-                    placeholder="적고 싶을 때만 적어도 돼요"
+                    placeholder="고견부탁드려요"
                     style={{
                       display: 'block',
                       width: '100%',
@@ -290,7 +288,7 @@ export default function FeedbackFab() {
                       borderRadius: 'var(--radius-button)',
                       border: '1px solid var(--color-border-default)',
                       background: 'var(--color-bg-card)',
-                      color: 'var(--color-text-primary)',
+                      color: 'rgba(245, 240, 232, 0.95)',
                       fontFamily: 'var(--font-korean)',
                       fontSize: 13,
                       padding: '12px 14px',
@@ -328,10 +326,10 @@ export default function FeedbackFab() {
             ) : (
               <div style={{ textAlign: 'center', padding: '28px 8px 12px' }}>
                 <p style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: 'var(--color-text-primary)', margin: '0 0 12px', lineHeight: 1.3 }}>
-                  고마워! 🍗
+                  창업 꼭 성공하세요 💰
                 </p>
-                <p style={{ fontFamily: 'var(--font-korean)', fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                  더 나은 서비스 만들게
+                <p style={{ fontFamily: 'var(--font-korean)', fontSize: 14, color: 'rgba(255,255,255,0.82)', margin: 0, lineHeight: 1.6 }}>
+                  남겨준 의견, 진짜 큰 도움이 됩니다
                 </p>
                 <button
                   type="button"
