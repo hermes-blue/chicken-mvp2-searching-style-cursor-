@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1",
     "@tailwindcss/vite": "^4.2.2",
+    "@vercel/analytics": "^2.0.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2"
