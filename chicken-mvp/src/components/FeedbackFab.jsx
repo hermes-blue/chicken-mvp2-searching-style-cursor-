@@ -13,20 +13,10 @@ const OVERALL_OPTIONS = [
   { label: '좀 아쉬웠어요 😬', value: 'overall_disappointed' },
 ]
 
-const REASON_OPTIONS = [
-  { label: '신뢰가 안가요 🤔', value: 'reason_low_trust' },
-  { label: 'ChatGPT에게 물어보는게 나아요 🤖', value: 'reason_prefers_chatgpt' },
-  { label: '마이프차가 더 좋아요 🏪', value: 'reason_prefers_myfranchise' },
-  { label: '쓰기가 불편했어요 😵', value: 'reason_usability_issue' },
-  { label: '정보가 빈약해요 📉', value: 'reason_lack_of_info' },
-  { label: '기타 ✍️', value: 'reason_other' },
-]
-
 export default function FeedbackFab() {
   const [open, setOpen] = useState(false)
   const [step, setStep] = useState('form')
   const [overall, setOverall] = useState(null)
-  const [reasons, setReasons] = useState(() => new Set())
   const [comment, setComment] = useState('')
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState('')
@@ -35,7 +25,6 @@ export default function FeedbackFab() {
     setOpen(false)
     setStep('form')
     setOverall(null)
-    setReasons(new Set())
     setComment('')
     setSaving(false)
     setSaveError('')
@@ -55,15 +44,6 @@ export default function FeedbackFab() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open, closeSheet])
 
-  const toggleReason = (value) => {
-    setReasons((prev) => {
-      const next = new Set(prev)
-      if (next.has(value)) next.delete(value)
-      else next.add(value)
-      return next
-    })
-  }
-
   const submit = async () => {
     if (!overall) return
     setSaveError('')
@@ -79,12 +59,11 @@ export default function FeedbackFab() {
       return
     }
 
-    const reasonList = Array.from(reasons)
     const free = comment.trim()
     setSaving(true)
     const { error } = await supabase.from('feedback').insert({
       rating,
-      reasons: reasonList,
+      reasons: [],
       freetext: free || null,
     })
     setSaving(false)
@@ -96,7 +75,7 @@ export default function FeedbackFab() {
     }
 
     if (import.meta.env.DEV) {
-      console.log('[feedback] saved', { rating, reasons: reasonList, freetext: free || null })
+      console.log('[feedback] saved', { rating, reasons: [], freetext: free || null })
     }
     setStep('thanks')
   }
@@ -134,8 +113,7 @@ export default function FeedbackFab() {
           right: fabRight,
           bottom: fabBottom,
           zIndex: 1000,
-          width: 52,
-          height: 52,
+          width: 'max-content',
         }}
       >
         <div
@@ -175,41 +153,63 @@ export default function FeedbackFab() {
           />
         </div>
 
-        <div style={{ position: 'relative', width: 52, height: 52 }}>
-          <span
-            className="feedback-fab-ring"
-            aria-hidden
-          />
-          <span
-            className="feedback-fab-ring feedback-fab-ring-delay"
-            aria-hidden
-          />
-          <button
-            type="button"
-            aria-label="피드백 보내기"
-            onClick={() => { setOpen(true); setStep('form') }}
-            className="feedback-fab-btn"
+        <button
+          type="button"
+          aria-label="피드백 — 한마디 남기기"
+          onClick={() => { setOpen(true); setStep('form') }}
+          className="feedback-fab-btn"
+          style={{
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 8,
+            height: 48,
+            padding: '0 14px 0 10px',
+            borderRadius: 999,
+            border: '1px solid var(--color-accent-gold-border)',
+            background: 'linear-gradient(165deg, rgba(201,163,101,0.18) 0%, rgba(17,16,16,0.98) 55%)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)',
+            cursor: 'pointer',
+            zIndex: 2,
+          }}
+        >
+          <div
             style={{
               position: 'relative',
-              width: 52,
-              height: 52,
-              borderRadius: '50%',
-              border: '1px solid var(--color-accent-gold-border)',
-              background: 'linear-gradient(165deg, rgba(201,163,101,0.18) 0%, rgba(17,16,16,0.98) 55%)',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)',
-              cursor: 'pointer',
+              width: 36,
+              height: 36,
+              flexShrink: 0,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: 0,
-              zIndex: 2,
             }}
           >
-            <span className="feedback-fab-emoji" style={{ fontSize: 26, lineHeight: 1, display: 'block' }} role="img" aria-hidden>
+            <span className="feedback-fab-ring" aria-hidden />
+            <span className="feedback-fab-ring feedback-fab-ring-delay" aria-hidden />
+            <span
+              className="feedback-fab-emoji"
+              style={{ fontSize: 22, lineHeight: 1, position: 'relative', zIndex: 1 }}
+              role="img"
+              aria-hidden
+            >
               🍗
             </span>
-          </button>
-        </div>
+          </div>
+          <span
+            style={{
+              fontFamily: 'var(--font-korean)',
+              fontSize: 14,
+              fontWeight: 700,
+              letterSpacing: '-0.3px',
+              color: 'rgba(255, 244, 224, 0.96)',
+              whiteSpace: 'nowrap',
+              lineHeight: 1,
+            }}
+          >
+            한마디
+          </span>
+        </button>
       </div>
 
       {/* 바텀시트 */}
@@ -286,31 +286,6 @@ export default function FeedbackFab() {
                       {option.label}
                     </button>
                   ))}
-                </div>
-
-                <p style={{ fontFamily: 'var(--font-korean)', fontSize: 18, fontWeight: 700, letterSpacing: '-0.2px', color: 'rgba(245,240,232,0.96)', margin: '0 0 10px' }}>
-                  뭐가 아쉬웠나요? <span style={{ fontFamily: 'var(--font-korean)', fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.58)' }}>(멀티선택가능)</span>
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
-                  {REASON_OPTIONS.map((option) => {
-                    const on = reasons.has(option.value)
-                    return (
-                      <button
-                        key={option.value}
-                        type="button"
-                        onClick={() => toggleReason(option.value)}
-                        style={{
-                          ...chipBase(on),
-                          padding: '9px 12px',
-                          fontSize: 12,
-                          flex: '1 1 calc(50% - 4px)',
-                          minWidth: 'calc(50% - 4px)',
-                        }}
-                      >
-                        {option.label}
-                      </button>
-                    )
-                  })}
                 </div>
 
                 <label style={{ display: 'block', marginBottom: 8 }}>
