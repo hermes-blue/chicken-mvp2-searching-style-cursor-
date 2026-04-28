@@ -157,9 +157,9 @@ function InsightList({ insights, text }) {
           <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: INSIGHT_DOT[item.dot] ?? '#9B7FE8', flexShrink: 0, marginTop: 4 }} />
             <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
-              <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, wordBreak: 'keep-all' }}>{item.text}</span>
+              <span style={{ fontSize: 13, fontWeight: 400, color: 'rgba(255,255,255,0.78)', lineHeight: 1.6, wordBreak: 'keep-all' }}>{item.text}</span>
               {item.source && (
-                <span style={{ flexShrink: 0, fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(255,180,80,0.8)', border: '1px solid rgba(255,180,80,0.35)', borderRadius: 4, padding: '2px 6px', letterSpacing: '0.04em', whiteSpace: 'nowrap', marginTop: 2 }}>
+                <span style={{ flexShrink: 0, fontSize: 11, fontFamily: 'var(--font-mono)', color: 'rgba(255,180,80,0.86)', border: '1px solid rgba(255,180,80,0.35)', borderRadius: 4, padding: '2px 6px', letterSpacing: '0.04em', whiteSpace: 'nowrap', marginTop: 2 }}>
                   📰 {item.source}
                 </span>
               )}
@@ -169,7 +169,7 @@ function InsightList({ insights, text }) {
       </div>
     )
   }
-  return <p style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, margin: 0, wordBreak: 'keep-all' }}>{text}</p>
+  return <p style={{ fontSize: 13, fontWeight: 400, color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, margin: 0, wordBreak: 'keep-all' }}>{text}</p>
 }
 
 // ── 바 공통 ───────────────────────────────────────────────────
@@ -232,7 +232,7 @@ function ProfitChart({ data, color }) {
       <ChartLabel>{isProfit ? '순이익 비중' : '비용 비중'}</ChartLabel>
       <BigStat val={pct} unit="%" color={barColor} sub="of 월매출" />
       <Bar pct={pct} color={barColor} ready={ready} height={6} />
-      <div style={{ fontSize: 11, color: 'var(--color-text-muted)', fontWeight: 300, marginTop: 6, wordBreak: 'keep-all' }}>
+      <div style={{ fontSize: 12, color: 'var(--color-text-muted)', fontWeight: 400, marginTop: 6, wordBreak: 'keep-all' }}>
         {data.row1Label}
       </div>
     </div>
@@ -738,7 +738,7 @@ function OverviewChart({ data, color }) {
         {data.val}
       </div>
       <Bar pct={score} color={color} ready={ready} height={5} />
-      <div style={{ fontSize: 11, color: 'var(--color-text-muted)', fontWeight: 300, marginTop: 6, marginBottom: 14 }}>
+      <div style={{ fontSize: 12, color: 'var(--color-text-muted)', fontWeight: 400, marginTop: 6, marginBottom: 14 }}>
         {data.row1Val}
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
@@ -752,7 +752,7 @@ function OverviewChart({ data, color }) {
 // ── 공통 UI 조각 ──────────────────────────────────────────────
 function ChartLabel({ children }) {
   return (
-    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-text-faint)', marginBottom: 12 }}>
+    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-text-faint)', marginBottom: 12 }}>
       {children}
     </div>
   )
@@ -761,11 +761,11 @@ function ChartLabel({ children }) {
 function ChartHeader({ label, note }) {
   return (
     <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, marginBottom: 12 }}>
-      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-text-faint)' }}>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-text-faint)' }}>
         {label}
       </div>
       {note && (
-        <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.34)', fontWeight: 300, lineHeight: 1.4, textAlign: 'right', wordBreak: 'keep-all' }}>
+        <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', fontWeight: 400, lineHeight: 1.4, textAlign: 'right', wordBreak: 'keep-all' }}>
           {note}
         </div>
       )}
@@ -775,7 +775,7 @@ function ChartHeader({ label, note }) {
 
 function ChartNote({ children }) {
   return (
-    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.32)', fontWeight: 300, lineHeight: 1.5, marginTop: -7, marginBottom: 12, wordBreak: 'keep-all' }}>
+    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.48)', fontWeight: 400, lineHeight: 1.5, marginTop: -7, marginBottom: 12, wordBreak: 'keep-all' }}>
       {children}
     </div>
   )
@@ -813,7 +813,7 @@ function LevelTile({ label, level, color, delay = 0 }) {
   const tone = QUAL_TONE_STYLE[level.tone] ?? QUAL_TONE_STYLE.mid
   return (
     <div style={{
-      minHeight: 62,
+      minHeight: 68,
       borderRadius: 12,
       background: ready ? tone.bg : 'rgba(255,255,255,0.035)',
       border: `1px solid ${ready ? tone.border : 'rgba(255,255,255,0.07)'}`,
@@ -824,7 +824,7 @@ function LevelTile({ label, level, color, delay = 0 }) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 7 }}>
         <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, boxShadow: `0 0 6px ${color}80`, flexShrink: 0 }} />
-        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.56)', fontWeight: 500, wordBreak: 'keep-all' }}>{label}</span>
+        <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', fontWeight: 600, wordBreak: 'keep-all' }}>{label}</span>
       </div>
       <div style={{ fontSize: 14, fontWeight: 800, color: tone.text, letterSpacing: '-0.2px' }}>{level.text}</div>
     </div>
@@ -844,7 +844,7 @@ function SignalRow({ label, value, tone, color, delay = 0 }) {
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: 10,
-      minHeight: 38,
+      minHeight: 42,
       padding: '8px 10px',
       borderRadius: 10,
       background: ready ? 'rgba(255,255,255,0.045)' : 'rgba(255,255,255,0.025)',
@@ -855,13 +855,13 @@ function SignalRow({ label, value, tone, color, delay = 0 }) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
         <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, boxShadow: `0 0 5px ${color}80`, flexShrink: 0 }} />
-        <span style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.68)', wordBreak: 'keep-all' }}>{label}</span>
+        <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.72)', wordBreak: 'keep-all' }}>{label}</span>
       </div>
       <span style={{
         flexShrink: 0,
         maxWidth: '44%',
         textAlign: 'right',
-        fontSize: 11,
+        fontSize: 13,
         fontWeight: 800,
         color: toneStyle.text,
         background: toneStyle.bg,
@@ -879,8 +879,8 @@ function SignalRow({ label, value, tone, color, delay = 0 }) {
 function BarRow({ left, right }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 5 }}>
-      <span style={{ fontFamily: 'var(--font-korean)', fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.65)' }}>{left}</span>
-      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'rgba(255,255,255,0.9)' }}>{right}</span>
+      <span style={{ fontFamily: 'var(--font-korean)', fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.72)' }}>{left}</span>
+      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'rgba(255,255,255,0.94)' }}>{right}</span>
     </div>
   )
 }
@@ -890,7 +890,7 @@ function BigStat({ val, unit, color, sub }) {
     <div style={{ display: 'flex', alignItems: 'flex-end', gap: 3, marginBottom: 8 }}>
       <span style={{ fontFamily: 'var(--font-display)', fontSize: 42, color, lineHeight: 1 }}>{val}</span>
       <span style={{ fontFamily: 'var(--font-display)', fontSize: 22, color, fontStyle: 'italic', lineHeight: 1.2 }}>{unit}</span>
-      {sub && <span style={{ fontSize: 11, color: 'var(--color-text-muted)', marginLeft: 4, marginBottom: 4 }}>{sub}</span>}
+      {sub && <span style={{ fontSize: 13, color: 'var(--color-text-muted)', marginLeft: 4, marginBottom: 4 }}>{sub}</span>}
     </div>
   )
 }
@@ -898,8 +898,8 @@ function BigStat({ val, unit, color, sub }) {
 function TotalRow({ label, val, color }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 13px', background: 'rgba(255,255,255,0.04)', border: `1px solid rgba(255,255,255,0.08)`, borderRadius: 12, marginTop: 14 }}>
-      <span style={{ fontFamily: 'var(--font-korean)', fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>{label}</span>
-      <span style={{ fontFamily: 'var(--font-display)', fontSize: 20, color }}>{val}</span>
+      <span style={{ fontFamily: 'var(--font-korean)', fontSize: 14, color: 'rgba(255,255,255,0.62)' }}>{label}</span>
+      <span style={{ fontFamily: 'var(--font-display)', fontSize: 24, color }}>{val}</span>
     </div>
   )
 }
@@ -908,7 +908,7 @@ function TagRow({ label, dot }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
       <div style={{ width: 5, height: 5, borderRadius: '50%', background: dot, flexShrink: 0, boxShadow: `0 0 5px ${dot}80` }} />
-      <span style={{ fontSize: 12, fontWeight: 300, color: 'rgba(255,255,255,0.7)' }}>{label}</span>
+      <span style={{ fontSize: 13, fontWeight: 400, color: 'rgba(255,255,255,0.78)' }}>{label}</span>
     </div>
   )
 }
@@ -960,7 +960,7 @@ function FlatCard({ data, onToggle, visible, ac }) {
       onPointerLeave={() => setPressed(false)}
       style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 16px', height: 48,
+        padding: '0 16px', height: 52,
         background: pressed ? 'var(--color-bg-card-hover)' : 'var(--color-bg-card)',
         border: `1px solid ${pressed ? 'var(--color-border-hover)' : 'var(--color-border-default)'}`,
         borderRadius: 14, cursor: 'pointer',
@@ -973,11 +973,11 @@ function FlatCard({ data, onToggle, visible, ac }) {
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <div style={{ width: 5, height: 5, borderRadius: '50%', background: ac.color, boxShadow: `0 0 6px ${ac.color}80`, flexShrink: 0 }} />
-        <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--color-text-primary)', letterSpacing: '-0.3px' }}>
+        <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-text-primary)', letterSpacing: '-0.3px' }}>
           {data.title}
         </span>
       </div>
-      <span style={{ fontFamily: 'var(--font-display)', fontSize: 14, color: ac.color }}>
+      <span style={{ fontFamily: 'var(--font-display)', fontSize: 17, color: ac.color }}>
         {data.val}
       </span>
     </div>
@@ -1067,7 +1067,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: ac.color, boxShadow: `0 0 8px ${ac.color}80` }} />
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: ac.color, letterSpacing: '0.1em' }}>{data.title}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: ac.color, letterSpacing: '0.1em' }}>{data.title}</span>
           </div>
           <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -1084,7 +1084,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'rgba(255,255,255,0.6)', letterSpacing: '-1px', fontVariantNumeric: 'tabular-nums' }}>
                   {formatCount(countNum)}
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(61,191,184,0.6)', marginTop: 10, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
+                <div style={{ fontSize: 12, fontWeight: 400, color: 'rgba(61,191,184,0.7)', marginTop: 10, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
                   실시간 조회 중
                 </div>
               </div>
@@ -1095,12 +1095,12 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
             )}
             {!apiLoading && !apiCostText && /\d[\d,]*(만원|억|개)/.test(data.row1Val) && !data.row1Val.includes('%') && (
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
-                <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
+                <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.76)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
               </div>
             )}
           </div>
           {!apiLoading && (
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
+            <div style={{ fontSize: 12, fontWeight: 400, color: 'var(--color-text-muted)', marginTop: 8, wordBreak: 'keep-all' }}>
             {data.row1Label}
             </div>
           )}
@@ -1119,7 +1119,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
         {/* 태그 */}
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
           {data.tags?.map((tag, i) => (
-            <span key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 500, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 9999, ...TAG_STYLES[tag.type] }}>
+            <span key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 9999, ...TAG_STYLES[tag.type] }}>
               {tag.label}
             </span>
           ))}
@@ -1138,7 +1138,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
               <circle cx="8" cy="8" r="5" stroke="rgba(61,191,184,0.3)" strokeWidth="0.5"/>
               <text x="8" y="10.5" textAnchor="middle" fontSize="5" fill="rgba(61,191,184,0.6)" fontFamily="sans-serif" fontWeight="700">공정위</text>
             </svg>
-            <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.56)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
           </div>
         )}
       </div>
@@ -1215,7 +1215,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
           <div style={{ width: 6, height: 6, borderRadius: '50%', background: ac.color, boxShadow: `0 0 8px ${ac.color}80`, marginTop: 6, flexShrink: 0 }} />
           <div style={{ minWidth: 0 }}>
             <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--color-text-primary)', letterSpacing: '-0.3px' }}>{title}</div>
-            {!selected && <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginTop: 3, fontWeight: 300 }}>{hint}</div>}
+            {!selected && <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 3, fontWeight: 400 }}>{hint}</div>}
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0, marginLeft: 12 }}>
@@ -1226,22 +1226,22 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
         </div>
       </div>
 
-      <div style={{ maxHeight: selected ? 340 : 0, overflow: 'hidden', transition: 'max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1)' }}>
+      <div style={{ maxHeight: selected ? 380 : 0, overflow: 'hidden', transition: 'max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1)' }}>
         <div style={{ padding: '0 18px 18px', borderTop: '1px solid var(--color-border-default)' }}>
           <div style={{ padding: '14px 0 12px', borderBottom: '1px solid var(--color-border-default)' }}>
             <div>
               <Row1ValDisplay value={row1Val} fontSize={36} color="var(--color-text-primary)" lineHeight={0.95} letterSpacing="-0.5px" />
               {/\d[\d,]*(만원|억|개)/.test(row1Val) && !row1Val.includes('%') && (
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
-                  <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.7)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
+                  <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'rgba(61,191,184,0.76)', border: '1px solid rgba(61,191,184,0.3)', borderRadius: 4, padding: '2px 5px', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>공정위자료기반</span>
                 </div>
               )}
             </div>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'var(--color-text-muted)', marginTop: 6, wordBreak: 'keep-all' }}>{row1Label}</div>
+            <div style={{ fontSize: 12, fontWeight: 400, color: 'var(--color-text-muted)', marginTop: 6, wordBreak: 'keep-all' }}>{row1Label}</div>
           </div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', padding: '10px 0', borderBottom: '1px solid var(--color-border-default)' }}>
             {tags?.map((tag, i) => (
-              <span key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 500, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 9999, ...TAG_STYLES[tag.type] }}>
+              <span key={i} style={{ fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 9999, ...TAG_STYLES[tag.type] }}>
                 {tag.label}
               </span>
             ))}
@@ -1257,7 +1257,7 @@ export default function Card({ data, index = 0, selected, anySelected, focusMode
                   <circle cx="8" cy="8" r="5" stroke="rgba(61,191,184,0.3)" strokeWidth="0.5"/>
                   <text x="8" y="10.5" textAnchor="middle" fontSize="5" fill="rgba(61,191,184,0.6)" fontFamily="sans-serif" fontWeight="700">공정위</text>
                 </svg>
-                <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
+                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.56)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>공정거래위원회 기반</span>
               </div>
             )}
             {qBtn && (

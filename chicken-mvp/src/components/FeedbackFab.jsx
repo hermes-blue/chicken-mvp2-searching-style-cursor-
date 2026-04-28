@@ -81,7 +81,7 @@ export default function FeedbackFab() {
   }
 
   const fabRight = 'max(12px, calc((100vw - 390px) / 2 + 12px))'
-  const fabBottom = 'calc(32px + 12px + env(safe-area-inset-bottom, 0px))'
+  const fabBottom = 'calc(40px + 12px + env(safe-area-inset-bottom, 0px))'
 
   const chipBase = (active) => ({
     fontFamily: 'var(--font-korean)',

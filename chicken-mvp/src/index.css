@@ -22,9 +22,9 @@ html, body {
   --color-border-hover:   rgba(255, 255, 255, 0.12);
 
   --color-text-primary:   #F5F0E8;
-  --color-text-secondary: rgba(255, 255, 255, 0.55);
-  --color-text-muted:     rgba(255, 255, 255, 0.30);
-  --color-text-faint:     rgba(255, 255, 255, 0.18);
+  --color-text-secondary: rgba(255, 255, 255, 0.72);
+  --color-text-muted:     rgba(255, 255, 255, 0.56);
+  --color-text-faint:     rgba(255, 255, 255, 0.40);
 
   --color-accent-gold:    #C9A365;
   --color-accent-cyan:    #3DBFB8;

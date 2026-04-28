@@ -4,7 +4,8 @@
 
 ```bash
 # 개발 서버 실행
-d chicken-mvp ; npm run dev
+
+cd chicken-mvp ; npm run dev
 # 패키지 설치
 npm install
 
@@ -39,7 +40,7 @@ npm run build
 
 5.명령어
 
-git add .; git commit -m " 문구전체수정정"; git push
+git add .; git commit -m "피드백수정1"; git push
 git checkout .     git pull
 npm install, npm run dev
 Simple Browser: Show

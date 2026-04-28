@@ -108,7 +108,7 @@ export default function App() {
 
   const screen = screens[currentScreen]
   // 하단 푸터 + 피드백 FAB 높이만큼 본문 여백을 줘서 카드와 겹침 방지
-  const contentBottomPadding = 'calc(32px + 52px + 28px + env(safe-area-inset-bottom, 0px))'
+  const contentBottomPadding = 'calc(40px + 52px + 28px + env(safe-area-inset-bottom, 0px))'
 
   return (
     <div style={{
@@ -129,7 +129,7 @@ export default function App() {
         transform: 'translateX(-50%)',
         width: '100%',
         maxWidth: 390,
-        height: 32,
+        height: 40,
         background: 'rgba(10,9,7,0.92)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
         display: 'flex',
@@ -139,10 +139,10 @@ export default function App() {
         zIndex: 999,
         backdropFilter: 'blur(8px)',
       }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>Data Source</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.26)', textTransform: 'uppercase' }}>Data Source</span>
         <span style={{ width: 1, height: 10, background: 'rgba(255,255,255,0.1)' }} />
-        <span style={{ fontFamily: 'var(--font-korean)', fontSize: 9, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.04em' }}>공정거래위원회 · 통계청</span>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'rgba(255,255,255,0.18)', letterSpacing: '0.1em', marginLeft: 4 }}>정보공개서 2025</span>
+        <span style={{ fontFamily: 'var(--font-korean)', fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.04em' }}>공정거래위원회 · 통계청</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', marginLeft: 4 }}>정보공개서 2025</span>
       </div>
 
       <div style={{ padding: `56px 20px ${contentBottomPadding}` }}>
@@ -259,9 +259,9 @@ export default function App() {
 
         {/* 서브타이틀 */}
         <p style={{
-          fontSize: 12,
-          fontWeight: 300,
-          color: 'rgba(255,255,255,0.35)',
+          fontSize: 13,
+          fontWeight: 400,
+          color: 'rgba(255,255,255,0.5)',
           lineHeight: 1.6,
           marginBottom: 28,
         }}>
