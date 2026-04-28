@@ -290,7 +290,7 @@ export default function FeedbackFab() {
 
                 <label style={{ display: 'block', marginBottom: 8 }}>
                   <span style={{ fontFamily: 'var(--font-korean)', fontSize: 18, fontWeight: 700, letterSpacing: '-0.2px', color: 'rgba(245,240,232,0.96)' }}>
-                    조언 한마디, 욕도 괜찮아요 😅 <span style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.58)' }}>(선택)</span>
+                    조언 한마디, 욕도 괜찮아요 😅
                   </span>
                   <textarea
                     value={comment}
