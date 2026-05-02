@@ -1,8 +1,10 @@
 import autoKyochonNews from './auto-kyochon-news.json'
+import mvpDbPatch from './mvp-db-patch.json'
+import { applyMvpDbPatch } from './applyMvpDbPatch'
 
 const autoKyochonInsight = autoKyochonNews?.displayLine || '1위 브랜드, 간판이 손님 데려와요.'
 
-export const screens = {
+const baseScreens = {
   s0: {
     brand: null,
     title: '어느 브랜드가 궁금해?',
@@ -1638,3 +1640,5 @@ export const screens = {
     ],
   },
 }
+
+export const screens = applyMvpDbPatch(baseScreens, mvpDbPatch)
