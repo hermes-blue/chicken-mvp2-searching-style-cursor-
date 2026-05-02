@@ -1,0 +1,969 @@
+{
+  "generatedAt": "2026-05-02T07:35:10.051Z",
+  "source": {
+    "table": "public.franchise_analysis",
+    "rowCount": 20
+  },
+  "cards": [
+    {
+      "id": "234910",
+      "jngIfrmpSn": "234910",
+      "title": "예술치킨(artchicken)",
+      "brandKey": "예술치킨(artchicken)",
+      "hint": "경아식당청천점 · 2024 정보공개서",
+      "val": "낮음",
+      "valColor": "green",
+      "row1Val": "2,585만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 낮음",
+          "type": "ok"
+        },
+        {
+          "label": "숨은 비용 낮음",
+          "type": "ok"
+        },
+        {
+          "label": "자율성 주의",
+          "type": "neu"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "전반적으로 정보 공개가 투명하고, 가맹점주에게 불리한 조항이나 숨겨진 비용이 적어 안정적인 사업 운영이 가능할 것으로 판단됩니다. 다만, 가맹본부의 메뉴 및 가격 권장 사항을 준수해야 하는 점은 고려해야 합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 4억 5,316만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "예술치킨(artchicken) 상세 데이터 보기",
+        "target": "brand-234910"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 25850000,
+        "averageSalesKrw": 453162000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "LOW",
+        "autonomyGrade": "MEDIUM",
+        "overallRiskGrade": "LOW"
+      }
+    },
+    {
+      "id": "237106",
+      "jngIfrmpSn": "237106",
+      "title": "꽉찬쌀통닭",
+      "brandKey": "꽉찬쌀통닭",
+      "hint": "(주)채움푸드 · 2023 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "870만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "신규 브랜드로 사업 연혁이 짧고 가맹점 수가 적어 운영 안정성에 대한 데이터가 부족합니다. 하지만 가맹본부의 법 위반 이력이 없고, 영업지역 보호 등 가맹점 사업자를 위한 일부 조항이 존재합니다. 다만, 가맹점 사업자의 자율성이 낮고, 차액가맹금 등 잠재적 비용 발생 가능성이 있어 종합적인 위험도는 중간 수준입니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 1억 3,430만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "꽉찬쌀통닭 상세 데이터 보기",
+        "target": "brand-237106"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 8700000,
+        "averageSalesKrw": 134304000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "237100",
+      "jngIfrmpSn": "237100",
+      "title": "코리엔탈깻잎두마리치킨",
+      "brandKey": "코리엔탈깻잎두마리치킨",
+      "hint": "(주)채움푸드 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "1,307만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 낮음",
+          "type": "ok"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 감소 추세와 운영상의 제한 사항을 고려할 때 중간 정도의 위험이 존재합니다. 다만, 명확한 초기 비용 정보와 가맹점 영업지역 보호 정책은 긍정적인 요소입니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 1억 4,275만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "코리엔탈깻잎두마리치킨 상세 데이터 보기",
+        "target": "brand-237100"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 13071000,
+        "averageSalesKrw": 142754000,
+        "exitRiskGrade": "MEDIUM",
+        "hiddenCostGrade": "LOW",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "230896",
+      "jngIfrmpSn": "230896",
+      "title": "굽는치킨",
+      "brandKey": "굽는치킨",
+      "hint": "계산씨케이 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "1,452만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "초기 투자 비용이 상대적으로 낮고, 법적 리스크가 적다는 장점이 있습니다. 그러나 가맹점 수 감소 추세, 높은 수준의 운영 제한, 차액가맹금 발생 등은 잠재적 위험 요소입니다. 전반적으로 가맹점사업자의 자율성은 낮으나, 안정적인 운영 지원은 기대할 수 있습니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 6,240만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "굽는치킨 상세 데이터 보기",
+        "target": "brand-230896"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 14520000,
+        "averageSalesKrw": 62398000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "209880",
+      "jngIfrmpSn": "209880",
+      "title": "꾸바라치킨",
+      "brandKey": "꾸바라치킨",
+      "hint": "(주)공존컴퍼니 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "2,070만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "신규 브랜드로 운영 이력이 부족하지만, 초기 비용, 지속적인 비용, 운영 제한 사항 등이 명확히 제시되어 있음. 정보 공개는 충실하나, 실제 운영 성과에 대한 정보가 없어 잠재적 위험은 존재함.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "꾸바라치킨 상세 데이터 보기",
+        "target": "brand-209880"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 20700000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "236164",
+      "jngIfrmpSn": "236164",
+      "title": "홍초불닭발&막창",
+      "brandKey": "홍초불닭발&막창",
+      "hint": "홍초불닭발(인천점) · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "2,280만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 증가 추세는 긍정적이나, 높은 수준의 운영 제한과 불명확한 추가 비용 발생 가능성이 존재합니다. 가맹점주의 자율성이 낮고, 잠재적인 숨겨진 비용에 대한 주의가 필요합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 11만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "홍초불닭발&막창 상세 데이터 보기",
+        "target": "brand-236164"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 22800000,
+        "averageSalesKrw": 110410,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "236104",
+      "jngIfrmpSn": "236104",
+      "title": "새우치킨덤",
+      "brandKey": "새우치킨덤",
+      "hint": "도움유통 · 2023 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "2,530만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "새우치킨덤 브랜드는 비교적 최근에 시작되었으며 (2021년), 가맹점 수 변동성이 크고 운영상의 제한이 많아 사업 초기 위험이 존재합니다. 다만, 가맹본부의 법 위반 이력이 없고, 가맹점사업자 피해보상보험에 가입하는 등 안정적인 운영을 위한 노력을 하고 있습니다. 초기 투자 비용과 지속적인 비용 부담을 신중히 검토해야 합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 7,145만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "새우치킨덤 상세 데이터 보기",
+        "target": "brand-236104"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 25300000,
+        "averageSalesKrw": 71453000,
+        "exitRiskGrade": "MEDIUM",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "209044",
+      "jngIfrmpSn": "209044",
+      "title": "비광닭발",
+      "brandKey": "비광닭발",
+      "hint": "와이앤제이푸드 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "3,050만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "초기 투자 비용이 비교적 높고, 운영 과정에서 가맹본부의 통제가 강하며, 정보 공개가 부족한 부분이 있어 중간 수준의 위험이 존재합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "비광닭발 상세 데이터 보기",
+        "target": "brand-209044"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 30500000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "UNKNOWN",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "208362",
+      "jngIfrmpSn": "208362",
+      "title": "하태준의 효자동닭꼬치",
+      "brandKey": "하태준의 효자동닭꼬치",
+      "hint": "하랑 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "3,080만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 증가 추세는 긍정적이나, 운영 자율성 제한 및 지정 업체 구매 의무 등은 주의가 필요합니다. 초기 투자 비용과 지속적인 비용 부담을 고려해야 합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "하태준의 효자동닭꼬치 상세 데이터 보기",
+        "target": "brand-208362"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 30800000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "219092",
+      "jngIfrmpSn": "219092",
+      "title": "홍희통닭",
+      "brandKey": "홍희통닭",
+      "hint": "(주)참맛푸드 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "3,512만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수가 증가하는 등 사업 성장 가능성은 있으나, 초기 투자 비용이 높고 운영 전반에 걸쳐 가맹본부의 제한이 많아 가맹점 사업자의 자율성이 낮습니다. 매출액 정보가 추정치로 제공되고 상세 정보가 생략된 점은 아쉬우나, 법 위반 사실이 없고 계약 기간 및 갱신 절차가 명확한 점은 긍정적입니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "홍희통닭 상세 데이터 보기",
+        "target": "brand-219092"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 35120000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "212570",
+      "jngIfrmpSn": "212570",
+      "title": "불로만치킨바베큐",
+      "brandKey": "불로만치킨바베큐",
+      "hint": "(주)불로만 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "3,725만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "사업 기간이 길고 브랜드 인지도가 있으나, 가맹점 수 감소 추세, 높은 초기 투자 비용 및 운영상의 높은 제약으로 인해 중간 수준의 위험도를 가집니다. 차액가맹금 비율과 운영 제약 사항을 면밀히 검토해야 합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 8,026만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "불로만치킨바베큐 상세 데이터 보기",
+        "target": "brand-212570"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 37250000,
+        "averageSalesKrw": 80260000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "230930",
+      "jngIfrmpSn": "230930",
+      "title": "닭봉씨치즈순살두마리치킨",
+      "brandKey": "닭봉씨치즈순살두마리치킨",
+      "hint": "계산씨케이 · 2023 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "4,070만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수가 감소하는 추세와 높은 수준의 운영 제한에도 불구하고, 법적 리스크가 낮고 가맹점사업자 보호 장치가 마련되어 있어 중간 수준의 위험도를 보입니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 5,813만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "닭봉씨치즈순살두마리치킨 상세 데이터 보기",
+        "target": "brand-230930"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 40700000,
+        "averageSalesKrw": 58134000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "236610",
+      "jngIfrmpSn": "236610",
+      "title": "잉치킨",
+      "brandKey": "잉치킨",
+      "hint": "사재 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "6,510만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 감소 추세, 특정 업체 지정 및 추가 비용 발생 가능성, 운영상의 제한 등이 있으나, 법 위반 사실이 없고 계약 종료 및 갱신 관련 규정이 명확하여 전반적인 위험은 중간 수준입니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 2억 9,979만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "잉치킨 상세 데이터 보기",
+        "target": "brand-236610"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 65100000,
+        "averageSalesKrw": 299793000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "232652",
+      "jngIfrmpSn": "232652",
+      "title": "김선하의 닭갈비 궁중누룽지탕",
+      "brandKey": "김선하의 닭갈비 궁중누룽지탕",
+      "hint": "김선하의닭갈비 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "6,580만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "안정적인 가맹점 운영 현황과 명확한 계약 조건에도 불구하고, 초기 투자 비용의 불확실성, 다양한 운영상의 제약, 그리고 가맹본부의 강력한 통제는 잠재적 위험 요소로 작용할 수 있습니다. 가맹점주의 신중한 검토가 필요합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "김선하의 닭갈비 궁중누룽지탕 상세 데이터 보기",
+        "target": "brand-232652"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 65800000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "232674",
+      "jngIfrmpSn": "232674",
+      "title": "추억닭발",
+      "brandKey": "추억닭발",
+      "hint": "추억닭발(본점) · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "7,095만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 변동이 크지 않고 법적 리스크가 낮으나, 초기 투자 비용 외 추가 비용 발생 가능성과 가맹본부의 운영 통제가 강한 점은 고려해야 합니다. 평균 매출액 정보가 없어 미래 수익 예측에 어려움이 있습니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "추억닭발 상세 데이터 보기",
+        "target": "brand-232674"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 70950000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "207710",
+      "jngIfrmpSn": "207710",
+      "title": "윤이불닭발",
+      "brandKey": "윤이불닭발",
+      "hint": "(주)블러프컴퍼니 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "8,250만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수가 증가하는 등 사업 성장 가능성이 있으나, 높은 초기 투자 비용, 본사의 강한 통제, 일부 필수 품목의 강제 구매 등은 고려해야 할 위험 요소임.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 2억 8,330만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "윤이불닭발 상세 데이터 보기",
+        "target": "brand-207710"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 82500000,
+        "averageSalesKrw": 283300000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "232784",
+      "jngIfrmpSn": "232784",
+      "title": "픽스치킨(PICKS CHICKEN)",
+      "brandKey": "픽스치킨(PICKS CHICKEN)",
+      "hint": "픽스치킨(주) · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "8,800만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "사업 초기 단계로 가맹점 수가 적고 운영 기간이 짧아 장기적인 안정성 판단이 어렵습니다. 창업 비용 외 추가 비용 발생 가능성과 운영상의 제약이 존재합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 3억 4,083만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "픽스치킨(PICKS CHICKEN) 상세 데이터 보기",
+        "target": "brand-232784"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 88000000,
+        "averageSalesKrw": 340826000,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "216940",
+      "jngIfrmpSn": "216940",
+      "title": "한가네숯불닭갈비",
+      "brandKey": "한가네숯불닭갈비",
+      "hint": "(주)한경코퍼레이션 · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "8,957만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 감소 추세와 초기 예상치 못한 비용 발생 가능성이 있으나, 법적 문제 이력이 없고 계약 기간이 1년으로 짧은 편임. 가맹본부의 통제가 강한 편이므로, 사업 운영 시 가맹본부의 지침을 철저히 따르는 것이 중요함. 평균 영업기간이 5.8년으로 비교적 안정적인 점은 긍정적이나, 가맹점 수 감소 추세에 대한 면밀한 분석이 필요함.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값은 4억 1,129만원입니다. 금액은 원자료와 추출 결과 재검토가 필요합니다."
+        }
+      ],
+      "qBtn": {
+        "label": "한가네숯불닭갈비 상세 데이터 보기",
+        "target": "brand-216940"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 89570000,
+        "averageSalesKrw": 411290000,
+        "exitRiskGrade": "MEDIUM",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "212158",
+      "jngIfrmpSn": "212158",
+      "title": "진도리닭도리탕",
+      "brandKey": "진도리닭도리탕",
+      "hint": "진도리F&B.CO · 2024 정보공개서",
+      "val": "주의",
+      "valColor": "yellow",
+      "row1Val": "9,790만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 주의",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹점 수 감소 추세, 높은 초기 투자 비용, 운영상의 제한 사항 존재하나, 법적 문제 발생 이력 없고 계약 관련 절차 명확하여 중간 수준의 위험도 평가.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "진도리닭도리탕 상세 데이터 보기",
+        "target": "brand-212158"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 97900000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "LOW",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "MEDIUM"
+      }
+    },
+    {
+      "id": "216466",
+      "jngIfrmpSn": "216466",
+      "title": "슈퍼치킨",
+      "brandKey": "슈퍼치킨",
+      "hint": "박경수 · 2024 정보공개서",
+      "val": "정보 부족",
+      "valColor": "yellow",
+      "row1Val": "4,180만원",
+      "row1Label": "총 예상 창업 비용",
+      "tags": [
+        {
+          "label": "종합 위험 정보 부족",
+          "type": "neu"
+        },
+        {
+          "label": "숨은 비용 주의",
+          "type": "neu"
+        },
+        {
+          "label": "자율성 낮음",
+          "type": "ok"
+        }
+      ],
+      "insights": [
+        {
+          "dot": "teal",
+          "text": "가맹사업을 시작한 지 얼마 되지 않아 운영 실적, 가맹점 현황, 매출액 등 핵심적인 데이터가 부족하여 전반적인 위험도를 평가하기 어렵습니다. 초기 투자 비용이 높고 운영상의 제약이 많아 신중한 검토가 필요합니다.",
+          "source": "franchise_analysis"
+        },
+        {
+          "dot": "gold",
+          "text": "평균 매출 공개값이 없거나 추출되지 않았습니다."
+        }
+      ],
+      "qBtn": {
+        "label": "슈퍼치킨 상세 데이터 보기",
+        "target": "brand-216466"
+      },
+      "metrics": {
+        "totalEstimatedStartupCostKrw": 41800000,
+        "averageSalesKrw": null,
+        "exitRiskGrade": "UNKNOWN",
+        "hiddenCostGrade": "MEDIUM",
+        "autonomyGrade": "LOW",
+        "overallRiskGrade": "UNKNOWN"
+      }
+    }
+  ]
+}
