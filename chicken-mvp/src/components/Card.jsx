@@ -123,7 +123,6 @@ function useCountUp(target, delay = 0) {
   const [value, setValue] = useState(0)
   useEffect(() => {
     if (!Number.isFinite(target) || target <= 0) {
-      setValue(target || 0)
       return
     }
     let raf = 0
@@ -143,7 +142,7 @@ function useCountUp(target, delay = 0) {
       cancelAnimationFrame(raf)
     }
   }, [target, delay])
-  return value
+  return Number.isFinite(target) && target > 0 ? value : target || 0
 }
 
 // ── insight 점 2개 렌더링 ─────────────────────────────────────
@@ -387,8 +386,8 @@ function CostChartLoading({ brandKey }) {
 }
 
 function HubCostChart({ data, color, apiTotalManwon, apiLoading = false }) {
-  if (apiLoading) return <CostChartLoading brandKey={data.brandKey} />
   const ready = useBarAnim()
+  if (apiLoading) return <CostChartLoading brandKey={data.brandKey} />
   const costs = BRAND_COSTS[data.brandKey] ?? []
   const syncedCosts = buildSyncedCosts(costs, apiTotalManwon)
   const displayCosts = syncedCosts ?? costs
@@ -1020,8 +1019,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
 
   const [countNum, setCountNum] = useState(0)
   useEffect(() => {
-    if (!apiLoading) { setCountNum(0); return }
-    setCountNum(0)
+    if (!apiLoading) return
     let cur = 0
     const iv = setInterval(() => {
       const step = cur < 1000 ? Math.ceil(Math.random() * 50 + 10)
@@ -1033,6 +1031,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
     }, 60)
     return () => clearInterval(iv)
   }, [apiLoading])
+  const loadingCountNum = apiLoading ? countNum : 0
 
   function formatCount(n) {
     if (n >= 100000000) return `${(n / 100000000).toFixed(1)}억`
@@ -1082,7 +1081,7 @@ function ExpandedFocusCard({ data, onToggle, onNavigate, visible, ac, apiCost = 
             {apiLoading ? (
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 46, lineHeight: 0.9, color: 'rgba(255,255,255,0.6)', letterSpacing: '-1px', fontVariantNumeric: 'tabular-nums' }}>
-                  {formatCount(countNum)}
+                  {formatCount(loadingCountNum)}
                 </div>
                 <div style={{ fontSize: 12, fontWeight: 400, color: 'rgba(61,191,184,0.7)', marginTop: 10, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
                   실시간 조회 중

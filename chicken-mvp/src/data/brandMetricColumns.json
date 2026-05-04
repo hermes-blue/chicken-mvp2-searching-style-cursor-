@@ -1,0 +1,57 @@
+{
+  "교촌치킨": {
+    "displayName": "교촌치킨",
+    "aliases": ["교촌"],
+    "screenKeys": ["sgyo0", "sgyo1", "sgyo5", "sgyo9", "sgyo13"],
+    "sourceType": "official",
+    "source": "공정위 정보공개서",
+    "disclosureYear": 2025,
+    "storeCount": 1362,
+    "averageSalesManwon": 72726,
+    "totalStartupCostManwon": 13049,
+    "franchiseFeeManwon": 676.5,
+    "depositManwon": 100,
+    "confidence": "HIGH"
+  },
+  "비비큐(BBQ)": {
+    "displayName": "비비큐(BBQ)",
+    "aliases": ["BBQ", "비비큐"],
+    "screenKeys": ["sbbq0", "sbbq1", "sbbq5", "sbbq9", "sbbq13"],
+    "sourceType": "official",
+    "source": "공정위 정보공개서",
+    "disclosureYear": 2025,
+    "storeCount": 2316,
+    "franchiseFeeManwon": 1100,
+    "interiorCostManwon": 3135,
+    "equipmentCostManwon": 2420,
+    "depositManwon": 500,
+    "officialBurdenManwon": 9078.9,
+    "confidence": "HIGH"
+  },
+  "BHC치킨": {
+    "displayName": "BHC치킨",
+    "aliases": ["BHC", "BHC 치킨"],
+    "screenKeys": ["sbhc0", "s1", "s5", "s9", "s13"],
+    "sourceType": "mixed",
+    "source": "공정위 정보공개서 + MVP 추정",
+    "disclosureYear": 2025,
+    "storeCount": 2228,
+    "totalStartupCostManwon": 15000,
+    "franchiseFeeManwon": 1100,
+    "profitEstimateManwonRange": [100, 150],
+    "confidence": "MEDIUM"
+  },
+  "푸라닭치킨": {
+    "displayName": "푸라닭치킨",
+    "aliases": ["푸라닭"],
+    "screenKeys": ["spura0", "spura1", "spura5", "spura9", "spura13"],
+    "sourceType": "mixed",
+    "source": "공정위 정보공개서 + MVP 추정",
+    "disclosureYear": 2025,
+    "storeCount": 715,
+    "franchiseFeeManwon": 1100,
+    "interiorCostManwon": 1880,
+    "depositManwon": 0,
+    "confidence": "MEDIUM"
+  }
+}

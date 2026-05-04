@@ -88,7 +88,8 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ brandName }),
       })
-      const data = await res.json()
+      const responseText = await res.text()
+      const data = responseText ? JSON.parse(responseText) : {}
       if (!res.ok) throw new Error(data.error ?? 'Gemini request failed')
       console.log(`🐔 ${brandName} 창업비용 (API):`, data.costText, data.totalManwon)
       setApiCosts(prev => ({ ...prev, [screenKey]: data }))
