@@ -1,5 +1,41 @@
 # Handoff Notes
 
+## Latest Result Summary
+
+- 2026-05-04 latest state:
+  - Local `master` was rebased on top of the latest `origin/master`.
+  - Remote had 28 newer `auto: update kyochon news` commits; these were preserved.
+  - The structure-refactor commit was replayed on top without conflicts.
+  - Pushed successfully to GitHub.
+  - Current latest commit: `39bcc78 제이슨구조완성`.
+  - `git status -sb`: clean, `master...origin/master` with no ahead/behind.
+- Main architecture result:
+  - Old shape: screen flow, button targets, card copy, tags, insights, source notes, and many numbers were mixed directly in `data.js`.
+  - New shape: `data.js` is becoming the screen map: screen order, card order, and `qBtn` navigation.
+  - `chicken-mvp/src/data/mvpScreenPatches.json` now holds many card display fields: copy, tags, insights, source-like notes.
+  - `chicken-mvp/src/data/brandMetricColumns.json` holds structured metric-style values: store count, franchise fee, deposit, official burden, average sales, source type, confidence.
+  - `chicken-mvp/src/data/metricScreenPatches.js` converts metric values into existing card fields.
+  - `chicken-mvp/src/applyMvpDbPatch.js` merges base screens, generated metric patches, and screen-copy patches at runtime.
+- Cost-detail split result:
+  - Cost-detail screens `s5`, `sgyo5`, `sbbq5`, `spura5` were split further.
+  - Their 16 cost-detail cards now keep mostly only `title` and `qBtn` in `data.js`.
+  - Display content moved into `mvpScreenPatches.json`.
+  - Metric-derived values intentionally remain generated from `brandMetricColumns.json` where available, so screen-copy JSON does not override those numeric rows.
+- User-facing clarification:
+  - “Column” and “JSON” are not separate file types here.
+  - Column-style data means JSON shaped like a table of numeric fields.
+  - Copy JSON means JSON shaped like card text/labels/insights.
+  - Some hardcoding remains intentionally: screen flow, card order, navigation targets, and some chart/static UI logic.
+- API check result:
+  - Gemini API code still exists.
+  - Browser code still calls `/api/gemini-cost`.
+  - Local Vite server at `127.0.0.1:5173` returns 404 for `/api/gemini-cost` because Vite does not run Vercel serverless functions.
+  - `chicken-mvp/.env.local` was not present, so the local direct Gemini fallback was inactive.
+  - This is a local-dev limitation, not evidence that the API path was removed.
+- Verification after rebase/push:
+  - `npm.cmd run build`: passed after rebase on latest origin.
+  - `git push origin master`: succeeded.
+
 ## Snapshot
 
 - Date: 2026-05-04
